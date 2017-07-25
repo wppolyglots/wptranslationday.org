@@ -108,6 +108,18 @@ wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
+/plugins
+/themes/twentyseventeen
+/themes/twentysixteen
+/themes/twentyfifteen
+/themes/twentyfourteen
+/themes/twentythirteen
+/themes/twentytwelve
+/themes/twentyeleven
+/themes/twentyten
+/themes/index.php
+index.php
+
 
 /.htaccess
 /license.txt
