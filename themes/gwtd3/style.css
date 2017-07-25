@@ -75,8 +75,8 @@ h1, h2, h3, h4, h5 {
 	background-image: url(img/questionmark.svg), linear-gradient(transparent, transparent);
 	background-repeat: no-repeat;
 	background-attachment: local;
-	background-position: 10% center;
-	background-size: contain;
+	background-position: 8% center;
+	background-size: 280px;
 	background-origin: content-box;
 }
 
@@ -87,8 +87,8 @@ h1, h2, h3, h4, h5 {
 	background-image: url(img/globe.svg), linear-gradient(transparent, transparent);
 	background-repeat: no-repeat;
 	background-attachment: local;
-	background-position: 10% center;
-	background-size: contain;
+	background-position: 8% center;
+	background-size: 350px;
 	background-origin: content-box;
 }
 
@@ -99,8 +99,8 @@ h1, h2, h3, h4, h5 {
 	background-image: url(img/rocket.svg), linear-gradient(transparent, transparent);
 	background-repeat: no-repeat;
 	background-attachment: local;
-	background-position: 10% center;
-	background-size: contain;
+	background-position: 8% center;
+	background-size: 350px;
 	background-origin: content-box;
 }
 
