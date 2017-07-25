@@ -118,7 +118,7 @@ wp-content/plugins/hello.php
 /themes/twentyeleven
 /themes/twentyten
 /themes/index.php
-index.php
+/index.php
 
 
 /.htaccess
