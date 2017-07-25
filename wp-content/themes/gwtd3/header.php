@@ -21,52 +21,68 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php if ( is_front_page() ) { ?>
-	<div class="section hero">
-		<div class="container">
-			<div class="row">
-				<div class="twelve columns text-center">
-					<?php the_header_image_tag(); ?>
+<div id="site-wrapper">
+	<div id="site-canvas">
+		<div id="mobile-menu-trigger">
+			<span class="dashicons dashicons-menu"></span>
+		</div>
+		<div id="site-menu">
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'primary-menu',
+				'menu_id' => 'primary-menu',
+			) );
+
+			wp_nav_menu( array(
+				'theme_location' => 'gwtd-menu',
+				'menu_id' => 'gwtd-menu',
+			) );
+			?>
+		</div>
+		<?php if ( is_front_page() ) { ?>
+		<div class="section hero">
+			<div class="container">
+				<div class="row">
+					<div class="twelve columns text-center">
+						<?php the_header_image_tag(); ?>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-<?php } else { ?>
-	<div class="section hero header">
-		<div class="container">
-			<div class="row">
-				<div class="twelve columns text-center">
-					<?php
-					$post = get_page_by_title( 'Internal Banner' );
-					the_post_thumbnail();
-					?>
+		<?php } else { ?>
+		<div class="section hero header">
+			<div class="container">
+				<div class="row">
+					<div class="twelve columns text-center">
+						<?php
+						$post = get_page_by_title( 'Internal Banner' );
+						the_post_thumbnail();
+						?>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-<?php } ?>
-<div class="section primary-menus">
-	<div class="container">
-		<div class="row">
-			<!--	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">-->
-			<?php //esc_html_e( 'Primary Menu', 'gwtd3' ); ?><!--</button>-->
-			<div class="five columns text-left">
-				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'gwtd-menu',
-					'menu_id' => 'gwtd-menu',
-				) );
-				?>
-			</div>
-			<div class="seven columns text-right">
-				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'primary-menu',
-					'menu_id' => 'primary-menu',
-				) );
-				?>
+		<?php } ?>
+		<div class="section primary-menus">
+			<div class="container">
+				<div class="row">
+					<div class="five columns text-left">
+						<?php
+						wp_nav_menu( array(
+							'theme_location' => 'gwtd-menu',
+							'menu_id' => 'gwtd-menu',
+						) );
+						?>
+					</div>
+					<div class="seven columns text-right">
+						<?php
+						wp_nav_menu( array(
+							'theme_location' => 'primary-menu',
+							'menu_id' => 'primary-menu',
+						) );
+						?>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-</div>
 
