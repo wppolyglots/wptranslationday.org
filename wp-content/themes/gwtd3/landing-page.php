@@ -5,8 +5,6 @@
 
 	get_header();
 
-	get_template_part( 'template-parts/header', 'hero' );
-
 ?>
 	<div class="section lp-what-it-is">
 		<div class="container">

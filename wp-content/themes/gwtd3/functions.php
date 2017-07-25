@@ -44,7 +44,8 @@ function gwtd3_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'gwtd3' ),
+		'primary-menu' => esc_html__( 'Primary Menu', 'gwtd3' ),
+		'gwtd-menu' => esc_html__( 'Gwtd Menu', 'gwtd3' ),
 	) );
 
 	/*
@@ -104,6 +105,16 @@ function gwtd3_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'gwtd3' ),
 		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'gwtd3' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Social', 'gwtd3' ),
+		'id'            => 'footer-social',
 		'description'   => esc_html__( 'Add widgets here.', 'gwtd3' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',

@@ -15,10 +15,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="six columns">
-				<h1 class="value-multiplier">Stay tuned!</h1>
+				<h2 class="value-multiplier">Stay tuned!</h2>
 			</div>
 			<div class="six columns text-right">
-				<h3 class="value-multiplier">icon icon icon</h3>
+				<?php if ( is_active_sidebar( 'footer-social' ) ) : ?>
+					<div id="footer-social">
+						<?php dynamic_sidebar( 'footer-social' ); ?>
+					</div>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
