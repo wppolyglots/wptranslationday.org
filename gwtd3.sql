@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2017 at 08:09 PM
+-- Generation Time: Jul 25, 2017 at 08:18 PM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -335,7 +335,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (66, 19, '_menu_item_object_id', '10'),
 (67, 19, '_menu_item_object', 'page'),
 (68, 19, '_menu_item_target', ''),
-(69, 19, '_menu_item_classes', 'a:1:{i:0;s:12:\"txt-darkblue\";}'),
+(69, 19, '_menu_item_classes', 'a:1:{i:0;s:6:\"how-li\";}'),
 (70, 19, '_menu_item_xfn', ''),
 (71, 19, '_menu_item_url', ''),
 (73, 20, '_menu_item_type', 'post_type'),
@@ -343,7 +343,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (75, 20, '_menu_item_object_id', '5'),
 (76, 20, '_menu_item_object', 'page'),
 (77, 20, '_menu_item_target', ''),
-(78, 20, '_menu_item_classes', 'a:1:{i:0;s:8:\"txt-pink\";}'),
+(78, 20, '_menu_item_classes', 'a:1:{i:0;s:7:\"what-li\";}'),
 (79, 20, '_menu_item_xfn', ''),
 (80, 20, '_menu_item_url', ''),
 (82, 21, '_menu_item_type', 'post_type'),
@@ -351,7 +351,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (84, 21, '_menu_item_object_id', '8'),
 (85, 21, '_menu_item_object', 'page'),
 (86, 21, '_menu_item_target', ''),
-(87, 21, '_menu_item_classes', 'a:1:{i:0;s:8:\"txt-blue\";}'),
+(87, 21, '_menu_item_classes', 'a:1:{i:0;s:8:\"where-li\";}'),
 (88, 21, '_menu_item_xfn', ''),
 (89, 21, '_menu_item_url', ''),
 (100, 23, '_wp_trash_meta_status', 'publish'),
@@ -454,9 +454,9 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (16, 1, '2017-07-25 11:02:34', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'closed', 'closed', '', '', '', '', '2017-07-25 11:02:34', '0000-00-00 00:00:00', '', 2, 'http://localhost/gwtd3/?p=16', 1, 'nav_menu_item', '', 0),
 (17, 1, '2017-07-25 11:02:35', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'closed', 'closed', '', '', '', '', '2017-07-25 11:02:35', '0000-00-00 00:00:00', '', 0, 'http://localhost/gwtd3/?p=17', 1, 'nav_menu_item', '', 0),
 (18, 1, '2017-07-25 11:02:44', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'closed', 'closed', '', '', '', '', '2017-07-25 11:02:44', '0000-00-00 00:00:00', '', 0, 'http://localhost/gwtd3/?p=18', 1, 'nav_menu_item', '', 0),
-(19, 1, '2017-07-25 11:03:06', '2017-07-25 11:03:06', '', 'HOW?', '', 'publish', 'closed', 'closed', '', '19', '', '', '2017-07-25 13:21:11', '2017-07-25 13:21:11', '', 2, 'http://localhost/gwtd3/?p=19', 3, 'nav_menu_item', '', 0),
-(20, 1, '2017-07-25 11:03:06', '2017-07-25 11:03:06', '', 'WHAT?', '', 'publish', 'closed', 'closed', '', '20', '', '', '2017-07-25 13:21:11', '2017-07-25 13:21:11', '', 2, 'http://localhost/gwtd3/?p=20', 1, 'nav_menu_item', '', 0),
-(21, 1, '2017-07-25 11:03:06', '2017-07-25 11:03:06', '', 'WHERE?', '', 'publish', 'closed', 'closed', '', '21', '', '', '2017-07-25 13:21:11', '2017-07-25 13:21:11', '', 2, 'http://localhost/gwtd3/?p=21', 2, 'nav_menu_item', '', 0),
+(19, 1, '2017-07-25 11:03:06', '2017-07-25 11:03:06', '', 'HOW?', '', 'publish', 'closed', 'closed', '', '19', '', '', '2017-07-25 18:16:18', '2017-07-25 18:16:18', '', 0, 'http://localhost/gwtd3/?p=19', 3, 'nav_menu_item', '', 0),
+(20, 1, '2017-07-25 11:03:06', '2017-07-25 11:03:06', '', 'WHAT?', '', 'publish', 'closed', 'closed', '', '20', '', '', '2017-07-25 18:16:17', '2017-07-25 18:16:17', '', 0, 'http://localhost/gwtd3/?p=20', 1, 'nav_menu_item', '', 0),
+(21, 1, '2017-07-25 11:03:06', '2017-07-25 11:03:06', '', 'WHERE?', '', 'publish', 'closed', 'closed', '', '21', '', '', '2017-07-25 18:16:17', '2017-07-25 18:16:17', '', 0, 'http://localhost/gwtd3/?p=21', 2, 'nav_menu_item', '', 0),
 (23, 1, '2017-07-25 11:04:24', '2017-07-25 11:04:24', '{\n    \"blogdescription\": {\n        \"value\": \"September 30th, 2017\",\n        \"type\": \"option\",\n        \"user_id\": 1\n    }\n}', '', '', 'trash', 'closed', 'closed', '', '912c4461-520e-45ad-b66e-9bbf3df48441', '', '', '2017-07-25 11:04:24', '2017-07-25 11:04:24', '', 0, 'http://localhost/gwtd3/912c4461-520e-45ad-b66e-9bbf3df48441/', 0, 'customize_changeset', '', 0),
 (24, 1, '2017-07-25 11:42:44', '2017-07-25 11:42:44', '', 'gwtd3Asset 15', '', 'inherit', 'open', 'closed', '', 'gwtd3asset-15', '', '', '2017-07-25 11:42:44', '2017-07-25 11:42:44', '', 0, 'http://localhost/gwtd3/wp-content/uploads/2017/07/gwtd3Asset-15.png', 0, 'attachment', 'image/png', 0),
 (25, 1, '2017-07-25 11:42:59', '2017-07-25 11:42:59', '', 'cropped-gwtd3Asset-15.png', '', 'inherit', 'open', 'closed', '', 'cropped-gwtd3asset-15-png', '', '', '2017-07-25 11:42:59', '2017-07-25 11:42:59', '', 0, 'http://localhost/gwtd3/wp-content/uploads/2017/07/cropped-gwtd3Asset-15.png', 0, 'attachment', 'image/png', 0),
@@ -596,7 +596,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (20, 1, 'wp_user-settings-time', '1500983140'),
 (21, 1, 'managenav-menuscolumnshidden', 'a:4:{i:0;s:11:\"link-target\";i:1;s:15:\"title-attribute\";i:2;s:3:\"xfn\";i:3;s:11:\"description\";}'),
 (22, 1, 'metaboxhidden_nav-menus', 'a:1:{i:0;s:12:\"add-post_tag\";}'),
-(23, 1, 'nav_menu_recently_edited', '4');
+(23, 1, 'nav_menu_recently_edited', '2');
 
 -- --------------------------------------------------------
 

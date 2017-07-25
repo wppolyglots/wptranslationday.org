@@ -337,21 +337,21 @@ h1, h2, h3, h4, h5 {
 	color: #14455B;
 }
 
-#primary-menu #menu-item-20 a {
+#primary-menu .what-li a {
 	color: #D5AFBB;
 }
 
-#primary-menu #menu-item-21 a {
+#primary-menu .where-li a {
 	color: #9AD9E1;
 }
 
-#primary-menu #menu-item-19 a {
+#primary-menu .how-li a {
 	color: #14455B;
 }
 
 #gwtd-menu a:hover,
 #primary-menu a:hover {
-	color: #C1C1C1 !important;
+	color: #FFFFFF !important;
 }
 
 /* Media Queries
