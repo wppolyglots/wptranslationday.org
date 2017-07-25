@@ -4,7 +4,7 @@ Theme URI: http://wptranslationday.org/
 Author: TBD...
 Author URI: https://multiple_wordpress_awesome.contributors
 Description: The most awesome theme for gwtd3!
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.txt
 Text Domain: gwtd3
@@ -71,16 +71,37 @@ h1, h2, h3, h4, h5 {
 .lp-what-it-is {
 	background: #d5afbb;
 	color: #471530;
+	background-image: url(img/questionmark.png) left top no-repeat ;
+	background-image: url(img/questionmark.svg), linear-gradient(transparent, transparent);
+	background-repeat: no-repeat;
+	background-attachment: local;
+	background-position: 10% center;
+	background-size: contain;
+	background-origin: content-box;
 }
 
 .lp-where-it-is {
 	background: #5a90aa;
 	color: #b4eeef;
+	background-image: url(img/globe.png) left top no-repeat ;
+	background-image: url(img/globe.svg), linear-gradient(transparent, transparent);
+	background-repeat: no-repeat;
+	background-attachment: local;
+	background-position: 10% center;
+	background-size: contain;
+	background-origin: content-box;
 }
 
 .lp-how-to-get-involved {
 	background: #17506b;
 	color: #d4aebb;
+	background-image: url(img/rocket.png) left top no-repeat ;
+	background-image: url(img/rocket.svg), linear-gradient(transparent, transparent);
+	background-repeat: no-repeat;
+	background-attachment: local;
+	background-position: 10% center;
+	background-size: contain;
+	background-origin: content-box;
 }
 
 .lp-what-it-is h1,

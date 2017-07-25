@@ -6,6 +6,8 @@
 get_header();
 
 get_template_part( 'template-parts/hero', 'hero' );
+
+//get_template_part( 'template-parts/menu', 'menu' );
 ?>
 	<div class="section lp-what-it-is">
 		<div class="container">
