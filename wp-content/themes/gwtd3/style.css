@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: TBD...
 Author URI: https://multiple_wordpress_awesome.contributors
 Description: The most awesome theme for gwtd3!
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: gwtd3
@@ -237,7 +237,6 @@ strong {
 	background: #D5AFBB;
 	color: #471530;
 	background-image: url(img/questionmark.png);
-	background-image: url(img/questionmark.svg), linear-gradient(transparent, transparent);
 	background-repeat: no-repeat;
 	background-attachment: local;
 	background-position: 8% center;
@@ -249,7 +248,6 @@ strong {
 	background: #54879B;
 	color: #CFEDF9;
 	background-image: url(img/globe.png);
-	background-image: url(img/globe.svg), linear-gradient(transparent, transparent);
 	background-repeat: no-repeat;
 	background-attachment: local;
 	background-position: 8% center;
@@ -265,7 +263,6 @@ strong {
 	background: #17506A;
 	color: #E5CFD7;
 	background-image: url(img/rocket.png);
-	background-image: url(img/rocket.svg), linear-gradient(transparent, transparent);
 	background-repeat: no-repeat;
 	background-attachment: local;
 	background-position: 8% center;
@@ -343,7 +340,7 @@ strong {
 	position: absolute;
 	top: 0;
 	left: -200px;
-	background: #5A90AA;
+	background: #206480;
 	padding: 15px;
 }
 
@@ -362,16 +359,29 @@ strong {
 	text-align: center;
 }
 
-#site-menu #gwtd-menu {
+#site-menu #gwtd-menu-mobile {
 	margin-top: 5rem;
 }
 
 #mobile-menu-trigger {
 	display: none;
 	position: fixed;
-	top: 0.5rem;
-	left: 0.5rem;
+	top: 1rem;
+	left: 1rem;
 	z-index: 100;
+}
+
+#mobile-menu-trigger button {
+	border: 0;
+	border-radius: 0;
+	background: none;
+	color: unset;
+	padding: 0;
+}
+
+#mobile-menu-trigger .dashicons,
+#mobile-menu-trigger .dashicons-before:before {
+	display: table-cell;
 }
 
 #mobile-menu-trigger:hover {
@@ -385,7 +395,7 @@ strong {
 
 .section.primary-menus {
 	padding: 1rem 0;
-	background: #5A90AA;
+	background: #206480;
 }
 
 .section.primary-menus ul {
@@ -409,24 +419,21 @@ strong {
 	margin-right: 0;
 }
 
-#gwtd-menu a {
-	color: #14455B;
+#gwtd-menu a,
+#gwtd-menu-mobile a {
+	color: #D1D3D4;
+	font-weight: 600;
 }
-
-#primary-menu .what-li a {
-	color: #D5AFBB;
-}
-
-#primary-menu .where-li a {
-	color: #9AD9E1;
-}
-
-#primary-menu .how-li a {
-	color: #14455B;
+#primary-menu a,
+#primary-menu-mobile a{
+	color: #90C3D3;
+	font-weight: 600;
 }
 
 #gwtd-menu a:hover,
-#primary-menu a:hover {
+#gwtd-menu-mobile a:hover,
+#primary-menu a:hover,
+#primary-menu-mobile a:hover {
 	color: #FFFFFF !important;
 }
 

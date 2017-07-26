@@ -13,7 +13,7 @@
 					<?php
 						$page = get_page_by_title( 'What is GWTD3?' );
 						$title = $page->post_title;
-						echo '<h2 class="value-multiplier">' . $title . '</h2>';
+						echo '<h2>' . $title . '</h2>';
 					?>
 				</div>
 			</div>
@@ -32,7 +32,7 @@
 					<?php
 						$page = get_page_by_title( 'Where is GWTD3?' );
 						$title = $page->post_title;
-						echo '<h2 class="value-multiplier">' . $title . '</h2>';
+						echo '<h2>' . $title . '</h2>';
 					?>
 				</div>
 			</div>
@@ -51,7 +51,7 @@
 					<?php
 						$page = get_page_by_title( 'Cool! How do I get involved?' );
 						$title = $page->post_title;
-						echo '<h2 class="value-multiplier">' . $title . '</h2>';
+						echo '<h2>' . $title . '</h2>';
 					?>
 				</div>
 			</div>

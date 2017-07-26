@@ -24,18 +24,20 @@
 <div id="site-wrapper">
 	<div id="site-canvas">
 		<div id="mobile-menu-trigger">
-			<span class="dashicons dashicons-menu"></span>
+			<button type="submit" value="" aria-label="Open Mobile Menu">
+				<span class="dashicons dashicons-menu"></span>
+			</button>
 		</div>
 		<div id="site-menu">
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'primary-menu',
-				'menu_id' => 'primary-menu',
+				'menu_id' => 'primary-menu-mobile',
 			) );
 
 			wp_nav_menu( array(
 				'theme_location' => 'gwtd-menu',
-				'menu_id' => 'gwtd-menu',
+				'menu_id' => 'gwtd-menu-mobile',
 			) );
 			?>
 		</div>
