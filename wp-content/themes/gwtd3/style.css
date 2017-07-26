@@ -233,6 +233,20 @@ strong {
 /* LP sections
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+#primary {
+	background: #CFEDF9;
+	color: #14455B;
+}
+
+#primary a {
+	color: #C14E92;
+}
+
+#primary a:hover,
+#primary a:focus {
+	text-decoration: underline;
+}
+
 .section.lp-what-it-is {
 	background: #D5AFBB;
 	color: #471530;
@@ -275,6 +289,25 @@ strong {
 .section.lp-how-to-get-involved h2 {
 	font-size: 8.0rem;
 	z-index: 10;
+}
+
+/* Call for Speakers
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.section.call-for-speaker h1 {
+	text-align: center;
+}
+
+.caldera-grid hr {
+	border-top-color: #471530 !important;
+}
+
+.caldera-grid .btn-default {
+	background-color: #D5AFBB !important;
+	color: #471530 !important;
+	font-size: 3rem !important;
+	font-weight: 600 !important;
+	height: auto !important;
 }
 
 /* Header
