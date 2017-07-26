@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: TBD...
 Author URI: https://multiple_wordpress_awesome.contributors
 Description: The most awesome theme for gwtd3!
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: gwtd3
@@ -49,6 +49,10 @@ a {
 }
 
 h1, h2, h3, h4, h5 {
+	font-weight: 600;
+}
+
+strong {
 	font-weight: 600;
 }
 
@@ -229,22 +233,6 @@ h1, h2, h3, h4, h5 {
 /* LP sections
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-.questionmark,
-.globe,
-.rocket {
-	display: none;
-	width: 100%;
-	text-align:center;
-	clear: both;
-	margin-bottom: 4rem;
-}
-
-.questionmark img,
-.globe img,
-.rocket img {
-	width: 150px;
-}
-
 .section.lp-what-it-is {
 	background: #D5AFBB;
 	color: #471530;
@@ -253,13 +241,13 @@ h1, h2, h3, h4, h5 {
 	background-repeat: no-repeat;
 	background-attachment: local;
 	background-position: 8% center;
-	background-size: 280px;
+	background-size: 350px;
 	background-origin: content-box;
 }
 
 .section.lp-where-it-is {
-	background: #5A90AA;
-	color: #9AD9E1;
+	background: #54879B;
+	color: #CFEDF9;
 	background-image: url(img/globe.png);
 	background-image: url(img/globe.svg), linear-gradient(transparent, transparent);
 	background-repeat: no-repeat;
@@ -270,12 +258,12 @@ h1, h2, h3, h4, h5 {
 }
 
 .section.lp-where-it-is h2 {
-	color: #14455B;
+	color: #17506A;
 }
 
 .section.lp-how-to-get-involved {
-	background: #21627E;
-	color: #D5AFBB;
+	background: #17506A;
+	color: #E5CFD7;
 	background-image: url(img/rocket.png);
 	background-image: url(img/rocket.svg), linear-gradient(transparent, transparent);
 	background-repeat: no-repeat;
@@ -289,6 +277,7 @@ h1, h2, h3, h4, h5 {
 .section.lp-where-it-is h2,
 .section.lp-how-to-get-involved h2 {
 	font-size: 8.0rem;
+	z-index: 10;
 }
 
 /* Header
@@ -349,22 +338,32 @@ h1, h2, h3, h4, h5 {
 }
 
 #site-menu {
-	width: 300px;
+	width: 200px;
 	height: 100%;
 	position: absolute;
 	top: 0;
-	left: -300px;
+	left: -200px;
 	background: #5A90AA;
 	padding: 15px;
 }
 
 #site-wrapper.show-nav #site-canvas {
-	-webkit-transform: translateX(300px);
-	transform: translateX(300px);
+	-webkit-transform: translateX(200px);
+	transform: translateX(200px);
 }
 
 #site-menu ul {
 	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#site-menu ul li {
+	text-align: center;
+}
+
+#site-menu #gwtd-menu {
+	margin-top: 5rem;
 }
 
 #mobile-menu-trigger {
@@ -438,7 +437,7 @@ h1, h2, h3, h4, h5 {
 	.section.lp-what-it-is h2,
 	.section.lp-where-it-is h2,
 	.section.lp-how-to-get-involved h2 {
-		font-size: 6.0rem;
+		font-size: 5.0rem;
 	}
 
 	.footer h2 {
@@ -462,19 +461,15 @@ h1, h2, h3, h4, h5 {
 	.section.lp-what-it-is h2,
 	.section.lp-where-it-is h2,
 	.section.lp-how-to-get-involved h2 {
-		font-size: 3.5rem;
-	}
-
-	.questionmark,
-	.globe,
-	.rocket {
-		display: block;
+		margin: 5rem 0;
 	}
 
 	.section.lp-what-it-is,
 	.section.lp-where-it-is,
 	.section.lp-how-to-get-involved {
-		background-image: none;
+		background-position: 20px 20px;
+		background-size: 200px;
+		background-origin: padding-box;
 	}
 	.section.primary-menus .columns {
 		display: none;

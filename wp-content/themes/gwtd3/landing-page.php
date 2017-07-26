@@ -10,9 +10,6 @@
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">
-					<div class="questionmark">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/questionmark.png">
-					</div>
 					<?php
 						$page = get_page_by_title( 'What is GWTD3?' );
 						$title = $page->post_title;
@@ -32,9 +29,6 @@
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">
-					<div class="globe">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/globe.png">
-					</div>
 					<?php
 						$page = get_page_by_title( 'Where is GWTD3?' );
 						$title = $page->post_title;
@@ -54,9 +48,6 @@
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">
-					<div class="rocket">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/rocket.png">
-					</div>
 					<?php
 						$page = get_page_by_title( 'Cool! How do I get involved?' );
 						$title = $page->post_title;

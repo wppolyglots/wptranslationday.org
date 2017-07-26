@@ -134,7 +134,7 @@ function gwtd3_scripts() {
 
 	wp_enqueue_style( 'dashicons' );
 
-	wp_enqueue_style( 'gwtd3-fonts', 'https://fonts.googleapis.com/css?family=Changa:400,700|Open+Sans:400,400i,600,700' );
+	wp_enqueue_style( 'gwtd3-fonts', 'https://fonts.googleapis.com/css?family=Changa:400,600,700|Open+Sans:400,400i,600,700' );
 
 	wp_enqueue_script( 'gwtd3-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20170725', true );
 

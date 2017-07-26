@@ -8,11 +8,14 @@
 		function toggleNav() {
 			if ( $( '#site-wrapper' ).hasClass( 'show-nav' ) ) {
 				$( '#site-wrapper' ).removeClass( 'show-nav' );
+				$( '#mobile-menu-trigger .dashicons' ).removeClass( 'dashicons-no' );
+				$( '#mobile-menu-trigger .dashicons' ).addClass( 'dashicons-menu' );
 			} else {
 				$( '#site-wrapper' ).addClass( 'show-nav' );
+				$( '#mobile-menu-trigger .dashicons' ).removeClass( 'dashicons-menu' );
+				$( '#mobile-menu-trigger .dashicons' ).addClass( 'dashicons-no' );
 			}
 		}
-
 
 		$( window ).scroll( function() {
 			if ( $( this ).scrollTop() < 400 ) {
@@ -21,6 +24,14 @@
 				$( '#to-top' ).fadeIn();
 			}
 		} );
+
+		$( window ).resize(function() {
+			if ( $( '#site-wrapper' ).hasClass( 'show-nav' ) ) {
+				$( '#site-wrapper' ).removeClass( 'show-nav' );
+				$( '#mobile-menu-trigger .dashicons' ).removeClass( 'dashicons-no' );
+				$( '#mobile-menu-trigger .dashicons' ).addClass( 'dashicons-menu' );
+			}
+		});
 
 		$( 'a[href*=\\#]' ).on( 'click', function( event ) {
 			if ( $( this ).attr( 'id' ) === 'smoothup' ) {
