@@ -46,7 +46,7 @@ strong {
 -------------------------------------------------- */
 
 .text-color-pink {
-	color: #A62878;
+	color: #a62878;
 }
 
 .text-color-pink--darker {
@@ -54,39 +54,39 @@ strong {
 }
 
 .text-color-pink--lighter {
-	color: #D5AFBB;
+	color: #d5afbb;
 }
 
 .text-color-pink--light {
-	color: #C14E92;
+	color: #c14e92;
 }
 
 .text-color-pink--dark {
-	color: #8A1F64;
+	color: #8a1f64;
 }
 
 .text-color-blue {
-	color: #21759B;
+	color: #21759b;
 }
 
 .text-color-blue--darker {
-	color: #17506A;
+	color: #17506a;
 }
 
 .text-color-blue--lighter {
-	color: #9AD9E1;
+	color: #9ad9e1;
 }
 
 .text-color-blue--light {
-	color: #56B8CA;
+	color: #56b8ca;
 }
 
 .text-color-blue--light-extra {
-	color: #5A90AA;
+	color: #5a90aa;
 }
 
 .text-color-blue--dark {
-	color: #21627E;
+	color: #21627e;
 }
 
 .text-color-gray {
@@ -94,23 +94,23 @@ strong {
 }
 
 .text-color-gray--darker {
-	color: #1A1A1C;
+	color: #1a1a1c;
 }
 
 .text-color-gray--lighter {
-	color: #C1C1C1;
+	color: #c1c1c1;
 }
 
 .text-color-gray--light {
-	color: #8A8A8A;
+	color: #8a8a8a;
 }
 
 .text-color-gray--dark {
-	color: #2E2E2E;
+	color: #2e2e2e;
 }
 
 .bg-color-pink {
-	background-color: #A62878;
+	background-color: #a62878;
 }
 
 .bg-color-pink--darker {
@@ -118,39 +118,39 @@ strong {
 }
 
 .bg-color-pink--lighter {
-	background-color: #D5AFBB;
+	background-color: #d5afbb;
 }
 
 .bg-color-pink--light {
-	background-color: #C14E92;
+	background-color: #c14e92;
 }
 
 .bg-color-pink--dark {
-	background-color: #8A1F64;
+	background-color: #8a1f64;
 }
 
 .bg-color-blue {
-	background-color: #21759B;
+	background-color: #21759b;
 }
 
 .bg-color-blue--darker {
-	background-color: #17506A;
+	background-color: #17506a;
 }
 
 .bg-color-blue--lighter {
-	background-color: #9AD9E1;
+	background-color: #9ad9e1;
 }
 
 .bg-color-blue--light {
-	background-color: #56B8CA;
+	background-color: #56b8ca;
 }
 
 .bg-color-blue--dark-extra {
-	background-color: #5A90AA;
+	background-color: #5a90aa;
 }
 
 .bg-color-blue--dark {
-	background-color: #21627E;
+	background-color: #21627e;
 }
 
 .bg-color-gray {
@@ -158,25 +158,25 @@ strong {
 }
 
 .bg-color-gray--darker {
-	background-color: #1A1A1C;
+	background-color: #1a1a1c;
 }
 
 .bg-color-gray--lighter {
-	background-color: #C1C1C1;
+	background-color: #c1c1c1;
 }
 
 .bg-color-gray--light {
-	background-color: #8A8A8A;
+	background-color: #8a8a8a;
 }
 
 .bg-color-gray--dark {
-	background-color: #2E2E2E;
+	background-color: #2e2e2e;
 }
 
 /* Shared and Helpers
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .text-color-blue {
-	color: #21759B;
+	color: #21759b;
 }
 
 /* Shared and Helpers
@@ -220,12 +220,12 @@ strong {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 #primary {
-	background: #D3DDE0;
-	color: #17506A;
+	background: #d3dde0;
+	color: #17506a;
 }
 
 #primary a {
-	color: #C14E92;
+	color: #c14e92;
 }
 
 #primary a:hover,
@@ -234,7 +234,7 @@ strong {
 }
 
 .section.lp-what-it-is {
-	background: #D5AFBB;
+	background: #d5afbb;
 	color: #471530;
 	background-image: url(img/questionmark.png);
 	background-repeat: no-repeat;
@@ -245,8 +245,8 @@ strong {
 }
 
 .section.lp-where-it-is {
-	background: #54879B;
-	color: #D3DDE0;
+	background: #54879b;
+	color: #d3dde0;
 	background-image: url(img/globe.png);
 	background-repeat: no-repeat;
 	background-attachment: local;
@@ -256,12 +256,12 @@ strong {
 }
 
 .section.lp-where-it-is h2 {
-	color: #17506A;
+	color: #17506a;
 }
 
 .section.lp-how-to-get-involved {
-	background: #17506A;
-	color: #E5CFD7;
+	background: #17506a;
+	color: #e5cfd7;
 	background-image: url(img/rocket.png);
 	background-repeat: no-repeat;
 	background-attachment: local;
@@ -289,7 +289,7 @@ strong {
 }
 
 .caldera-grid .btn-default {
-	background-color: #D5AFBB !important;
+	background-color: #d5afbb !important;
 	color: #471530 !important;
 	font-size: 3rem !important;
 	font-weight: 600 !important;
@@ -301,15 +301,15 @@ strong {
 
 .section.hero {
 	background: #471530;
-	color: #D5AFBB;
+	color: #d5afbb;
 }
 
 /* Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .footer {
-	background: #2E2E2E;
-	color: #C1C1C1;
+	background: #2e2e2e;
+	color: #c1c1c1;
 	padding: 0;
 }
 
@@ -333,7 +333,6 @@ strong {
 #footer-social a img {
 	width: 62px;
 }
-
 
 /* Sponsors Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -420,7 +419,7 @@ strong {
 }
 
 #mobile-menu-trigger span {
-	color: #FFFFFF;
+	color: #fff;
 	font-size: 4rem;
 }
 
@@ -452,12 +451,13 @@ strong {
 
 #gwtd-menu a,
 #gwtd-menu-mobile a {
-	color: #D1D3D4;
+	color: #d1d3d4;
 	font-weight: 600;
 }
+
 #primary-menu a,
-#primary-menu-mobile a{
-	color: #90C3D3;
+#primary-menu-mobile a {
+	color: #90c3d3;
 	font-weight: 600;
 }
 
@@ -465,7 +465,7 @@ strong {
 #gwtd-menu-mobile a:hover,
 #primary-menu a:hover,
 #primary-menu-mobile a:hover {
-	color: #FFFFFF !important;
+	color: #fff !important;
 }
 
 /* Media Queries
@@ -509,6 +509,7 @@ strong {
 		background-size: 200px;
 		background-origin: padding-box;
 	}
+
 	.section.primary-menus .columns {
 		display: none;
 	}
@@ -530,8 +531,8 @@ strong {
 
 /* Countdown timer */
 .section.lp-when-it-is {
-	background: #80456B;
-	color: #EDDAE2;
+	background: #80456b;
+	color: #eddae2;
 	background-image: url(img/clock.png);
 	background-repeat: no-repeat;
 	background-position: 20px 20px;
@@ -546,17 +547,20 @@ strong {
 
 #countdown {
 	display: flex;
-	line-height:1;
+	line-height: 1;
 }
+
 #countdown div {
 	width: 25%;
 	text-align: center;
 	font-size: 48px;
 	font-weight: 600;
 }
+
 #countdown div + div {
 	border-left: 1px solid rgba(237, 218, 226, 0.3);
 }
+
 #countdown div > span {
 	font-size: 20px;
 	display: block;
@@ -564,6 +568,7 @@ strong {
 	color: rgba(237, 218, 226, 0.3);
 	font-weight: 400;
 }
+
 #countdown span span {
 	display: none;
 }
@@ -572,50 +577,62 @@ strong {
 	#countdown div {
 		font-size: 60px;
 	}
+
 	#countdown span span {
 		display: inline;
 	}
 }
+
 @media (min-width: 768px) {
 	.section.lp-when-it-is {
 		background-size: 350px;
 		background-position: 8% center;
 		background-origin: content-box;
 	}
+
 	.section.lp-when-it-is h2 {
 		font-size: 8rem;
 		margin-bottom: 20px;
 	}
+
 	#countdown div {
 		font-size: 80px;
 	}
+
 	#countdown div > span {
 		font-size: 25px;
 	}
 }
+
 @media (min-width: 992px) {
 	#countdown div {
 		font-size: 120px;
 	}
+
 	#countdown div > span {
 		font-size: 30px;
 	}
 }
+
 @media (min-width: 1200px) {
 	#countdown div {
 		font-size: 180px;
 	}
+
 	#countdown div > span {
 		font-size: 40px;
 	}
 }
+
 /* End: Countdown timer */
 @media (min-width: 1440px) {
 	#countdown div {
 		font-size: 200px;
 	}
+
 	#countdown div > span {
 		font-size: 50px;
 	}
 }
+
 /* End: Countdown timer */
