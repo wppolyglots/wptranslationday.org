@@ -128,6 +128,9 @@ add_action( 'widgets_init', 'gwtd3_widgets_init' );
  * Enqueue scripts and styles.
  */
 function gwtd3_scripts() {
+
+	wp_enqueue_style( 'gwtd3-s', get_template_directory_uri() . '/layouts/s.css', array(), '20170725' );
+
 	wp_enqueue_style( 'gwtd3-skeleton', get_template_directory_uri() . '/layouts/skeleton.css', array(), '20170725' );
 
 	wp_enqueue_style( 'gwtd3-style', get_stylesheet_uri() );
