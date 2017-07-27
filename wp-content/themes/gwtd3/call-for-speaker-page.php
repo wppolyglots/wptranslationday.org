@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="section call-for-speaker">
+	<div id="primary" class="bg-color-blue--neutral-light text-color-blue--darker section call-for-speaker">
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">
