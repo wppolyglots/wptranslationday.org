@@ -546,3 +546,93 @@ strong {
 	}
 }
 /* End: Bottom Sponsors footer. */
+
+/* Countdown timer */
+.section.lp-when-it-is {
+	background: #80456B;
+	color: #EDDAE2;
+	background-image: url(img/clock.png);
+	background-repeat: no-repeat;
+	background-position: 20px 20px;
+	background-size: 200px;
+}
+
+.section.lp-when-it-is h2 {
+	font-size: 5.0rem;
+	margin: 5rem 0;
+	z-index: 10;
+}
+
+#countdown {
+	display: flex;
+	line-height:1;
+}
+#countdown div {
+	width: 25%;
+	text-align: center;
+	font-size: 48px;
+}
+#countdown div + div {
+	border-left: 1px solid rgba(237, 218, 226, 0.3);
+}
+#countdown div > span {
+	font-size: 20px;
+	display: block;
+	text-transform: uppercase;
+	color: rgba(237, 218, 226, 0.3);
+}
+#countdown span span {
+	display: none;
+}
+
+@media (min-width: 568px) {
+	#countdown div {
+		font-size: 60px;
+	}
+	#countdown span span {
+		display: inline;
+	}
+}
+@media (min-width: 768px) {
+	.section.lp-when-it-is {
+		background-size: 350px;
+		background-position: 8% center;
+		background-origin: content-box;
+	}
+	.section.lp-when-it-is h2 {
+		font-size: 8rem;
+		margin-bottom: 20px;
+	}
+	#countdown div {
+		font-size: 80px;
+	}
+	#countdown div > span {
+		font-size: 25px;
+	}
+}
+@media (min-width: 992px) {
+	#countdown div {
+		font-size: 120px;
+	}
+	#countdown div > span {
+		font-size: 30px;
+	}
+}
+@media (min-width: 1200px) {
+	#countdown div {
+		font-size: 180px;
+	}
+	#countdown div > span {
+		font-size: 40px;
+	}
+}
+/* End: Countdown timer */
+@media (min-width: 1440px) {
+	#countdown div {
+		font-size: 200px;
+	}
+	#countdown div > span {
+		font-size: 50px;
+	}
+}
+/* End: Countdown timer */
