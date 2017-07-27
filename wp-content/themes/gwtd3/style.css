@@ -519,3 +519,30 @@ strong {
 		display: block;
 	}
 }
+
+/* Bottom Sponsors footer. */
+.bottom.sp .item {
+	text-align: center;
+}
+.bottom.sp .item + .item {
+	margin-top: 40px;
+}
+@media( min-width: 768px ) {
+	.bottom.sp .flex-row {
+		display: flex;
+		margin-left: -20px;
+		margin-right: -20px;
+		justify-content: space-between;
+	}
+	.bottom.sp .item {
+		padding: 0 20px;
+		max-width: 50%;
+	}
+	.bottom.sp .item.siteground .title {
+		margin-bottom: 60px;
+	}
+	.bottom.sp .item + .item {
+		margin-top: 0;
+	}
+}
+/* End: Bottom Sponsors footer. */
