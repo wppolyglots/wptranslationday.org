@@ -1,10 +1,25 @@
 # Ignore everything
+
 /*
+
+/wp-content/cache
+/wp-content/plugins/akismet
+/wp-content/plugins/autoptimize
+/wp-content/plugins/google-analytics-for-wordpress
+/wp-content/plugins/insert-headers-and-footers
+/wp-content/plugins/jetpack
+/wp-content/plugins/wordpress-seo
+/wp-content/plugins/wp-super-cache
+
+advanced-cache.php
+wp-cache-config.php
+
+/wp-content/themes/gwtd3/php_errorlog
 
 # But not these files...
 !.gitignore
 !wp-content/
-!gwtd3.sql
 !dev.gwtd3.sql
 !LICENSE
 !README.md
+!favicon.ico
