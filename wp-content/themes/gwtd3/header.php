@@ -60,8 +60,8 @@
 			) );
 			?>
 		</div>
-		<?php if ( is_front_page() ) { ?>
-		<div class="section hero">
+		<?php if ( is_front_page() && get_header_image() != null ) { ?>
+		<div class="section hero bg-color-pink--darker">
 			<div class="container">
 				<div class="row">
 					<div class="twelve columns text-center">
@@ -70,15 +70,33 @@
 				</div>
 			</div>
 		</div>
+		<?php } elseif ( is_front_page() ) { ?>
+		<div id="when" class="section lp-when-it-is bg-color-pink--dark text-color-pink--light">
+			<div class="container">
+				<div class="row">
+					<div class="twelve columns">
+						<h2><?php echo 'When is GWTD3?'; ?></h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="eleven columns offset-by-one">
+						<p><strong>Global WordPress Translation Day</strong> will be from <strong>00.00 to 24.00 UTC on September 30, 2017.</strong> To help you get ready, here's the countdown to kick off:</p>
+						<div id="countdown"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<?php } else { ?>
-		<div class="section hero header">
+		<div class="section hero header bg-color-pink--darker">
 			<div class="container">
 				<div class="row">
 					<div class="twelve columns text-center">
-						<?php
-						$post = get_page_by_title( 'Internal Banner' );
-						the_post_thumbnail();
-						?>
+						<a href="https://wptranslationday.org" title="Global WordPress Translation Day 3">
+							<?php
+							$post = get_page_by_title( 'Internal Banner' );
+							the_post_thumbnail();
+							?>
+						</a>
 					</div>
 				</div>
 			</div>

@@ -45,133 +45,130 @@ strong {
 /* Colors
 -------------------------------------------------- */
 
-.text-color-pink {
-	color: #a62878;
+/* Colors used so far
+-------------------------------------------------- */
+
+/* GRAYS */
+
+.bg-color-gray--lighter {
+	background-color: #ccc;
 }
 
-.text-color-pink--darker {
-	color: #471530;
+.bg-color-gray--light {
+	background-color: #c2c1c1;
 }
 
-.text-color-pink--lighter {
-	color: #d5afbb;
+.bg-color-gray--dark {
+	background-color: #2e2e2e;
 }
 
-.text-color-pink--light {
-	color: #c14e92;
-}
-
-.text-color-pink--dark {
-	color: #8a1f64;
-}
-
-.text-color-blue {
-	color: #21759b;
-}
-
-.text-color-blue--darker {
-	color: #17506a;
-}
-
-.text-color-blue--lighter {
-	color: #9ad9e1;
-}
-
-.text-color-blue--light {
-	color: #56b8ca;
-}
-
-.text-color-blue--light-extra {
-	color: #5a90aa;
-}
-
-.text-color-blue--dark {
-	color: #21627e;
-}
-
-.text-color-gray {
-	color: #464647;
-}
-
-.text-color-gray--darker {
-	color: #1a1a1c;
+.bg-color-gray--darker {
+	background-color: #1b1c1c;
 }
 
 .text-color-gray--lighter {
-	color: #c1c1c1;
+	color: #ccc;
 }
 
 .text-color-gray--light {
-	color: #8a8a8a;
+	color: #c2c1c1;
 }
 
 .text-color-gray--dark {
 	color: #2e2e2e;
 }
 
-.bg-color-pink {
-	background-color: #a62878;
+.text-color-gray--darker {
+	color: #1b1c1c;
 }
+
+/* PINKS */
 
 .bg-color-pink--darker {
 	background-color: #471530;
 }
 
-.bg-color-pink--lighter {
-	background-color: #d5afbb;
+.bg-color-pink--dark {
+	background-color: #80456b;
+}
+
+.bg-color-pink {
+	background-color: #d4aeba;
 }
 
 .bg-color-pink--light {
-	background-color: #c14e92;
+	background-color: #eddae2;
 }
 
-.bg-color-pink--dark {
-	background-color: #8a1f64;
+.text-color-pink--darker {
+	color: #471530;
 }
 
-.bg-color-blue {
-	background-color: #21759b;
+.text-color-pink--dark {
+	color: #80456b;
 }
+
+.text-color-pink {
+	color: #d4aeba;
+}
+
+.text-color-pink--light {
+	color: #eddae2;
+}
+
+/* BLUES */
 
 .bg-color-blue--darker {
 	background-color: #17506a;
 }
 
-.bg-color-blue--lighter {
-	background-color: #9ad9e1;
+.bg-color-blue--dark {
+	background-color: #206480;
+}
+
+.bg-color-blue {
+	background-color: #387887;
 }
 
 .bg-color-blue--light {
-	background-color: #56b8ca;
+	background-color: #90c3d3;
 }
 
-.bg-color-blue--dark-extra {
-	background-color: #5a90aa;
+.bg-color-blue--lighter {
+	background-color: #e1f8ff;
 }
 
-.bg-color-blue--dark {
-	background-color: #21627e;
+.text-color-blue--darker {
+	color: #17506a;
 }
 
-.bg-color-gray {
-	background-color: #464647;
+.text-color-blue--dark {
+	color: #206480;
 }
 
-.bg-color-gray--darker {
-	background-color: #1a1a1c;
+.text-color-blue {
+	color: #387887;
 }
 
-.bg-color-gray--lighter {
-	background-color: #c1c1c1;
+.text-color-blue--light {
+	color: #90c3d3;
 }
 
-.bg-color-gray--light {
-	background-color: #8a8a8a;
+.text-color-blue--lighter {
+	color: #e1f8ff;
 }
 
-.bg-color-gray--dark {
-	background-color: #2e2e2e;
+/* neutrals */
+
+.text-color-blue--neutral-light {
+	color: #d3dde0;
 }
+
+.bg-color-blue--neutral-light {
+	background-color: #d3dde0;
+}
+
+
 
 /* Shared and Helpers
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -219,13 +216,13 @@ strong {
 /* LP sections
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-#primary {
-	background: #d3dde0;
-	color: #17506a;
-}
+/*#primary {*/
+	/*background: #d3dde0;*/
+	/*color: #17506a;*/
+/*}*/
 
 #primary a {
-	color: #c14e92;
+	color: #80456b;
 }
 
 #primary a:hover,
@@ -234,8 +231,6 @@ strong {
 }
 
 .section.lp-what-it-is {
-	background: #d5afbb;
-	color: #471530;
 	background-image: url(img/questionmark.png);
 	background-repeat: no-repeat;
 	background-attachment: local;
@@ -245,8 +240,6 @@ strong {
 }
 
 .section.lp-where-it-is {
-	background: #54879b;
-	color: #d3dde0;
 	background-image: url(img/globe.png);
 	background-repeat: no-repeat;
 	background-attachment: local;
@@ -255,13 +248,7 @@ strong {
 	background-origin: content-box;
 }
 
-.section.lp-where-it-is h2 {
-	color: #17506a;
-}
-
 .section.lp-how-to-get-involved {
-	background: #17506a;
-	color: #e5cfd7;
 	background-image: url(img/rocket.png);
 	background-repeat: no-repeat;
 	background-attachment: local;
@@ -289,27 +276,17 @@ strong {
 }
 
 .caldera-grid .btn-default {
-	background-color: #d5afbb !important;
+	background-color: #d4aeba !important;
 	color: #471530 !important;
 	font-size: 3rem !important;
 	font-weight: 600 !important;
 	height: auto !important;
 }
 
-/* Header
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.section.hero {
-	background: #471530;
-	color: #d5afbb;
-}
-
 /* Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .footer {
-	background: #2e2e2e;
-	color: #c1c1c1;
 	padding: 0;
 }
 
@@ -531,8 +508,6 @@ strong {
 
 /* Countdown timer */
 .section.lp-when-it-is {
-	background: #80456b;
-	color: #eddae2;
 	background-image: url(img/clock.png);
 	background-repeat: no-repeat;
 	background-position: 20px 20px;
@@ -541,7 +516,6 @@ strong {
 
 .section.lp-when-it-is h2 {
 	font-size: 5.0rem;
-	margin: 5rem 0;
 	z-index: 10;
 }
 

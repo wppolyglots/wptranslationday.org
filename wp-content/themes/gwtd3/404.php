@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class=" section content-area">
+	<div id="primary" class="bg-color-blue--neutral-light text-color-blue--darker section content-area">
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">

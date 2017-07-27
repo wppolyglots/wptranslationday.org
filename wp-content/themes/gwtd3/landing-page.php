@@ -6,7 +6,7 @@
 	get_header();
 
 ?>
-	<div id="what" class="section lp-what-it-is">
+	<div id="what" class="section lp-what-it-is bg-color-pink .text-color-pink--darker">
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">
@@ -25,7 +25,7 @@
 		</div>
 	</div>
 
-	<div id="where" class="section lp-where-it-is">
+	<div id="where" class="section lp-where-it-is bg-color-blue text-color-blue--lighter">
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">
@@ -43,8 +43,8 @@
 			</div>
 		</div>
 	</div>
-
-	<div id="when" class="section lp-when-it-is">
+	<?php if ( is_front_page() && get_header_image() != null ) { ?>
+	<div id="when" class="section lp-when-it-is bg-color-pink--dark text-color-pink--light">
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">
@@ -59,8 +59,8 @@
 			</div>
 		</div>
 	</div>
-
-	<div id="how" class="section lp-how-to-get-involved">
+	<?php } ?>
+	<div id="how" class="section lp-how-to-get-involved bg-color-blue--darker text-color-pink--light">
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">

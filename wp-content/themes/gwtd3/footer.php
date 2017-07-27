@@ -10,7 +10,7 @@
  */
 
 ?>
-		<div class="section footer">
+		<div class="section footer bg-color-gray--dark text-color-gray--light">
 			<div class="container">
 				<div class="row">
 					<div class="six columns">
