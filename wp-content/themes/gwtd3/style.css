@@ -100,6 +100,14 @@ strong {
 	background-color: #eddae2;
 }
 
+.bg-color-pink--polyglots {
+	background-color: #a52878;
+}
+
+.text-color-pink--polyglots {
+	color: #a52878;
+}
+
 .text-color-pink--darker {
 	color: #471530;
 }
@@ -445,13 +453,21 @@ strong {
 	color: #fff !important;
 }
 
+/* Caldera Forms
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.caldera_forms_form .field_required {
+	color: #a52878 !important;
+}
+
+
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 @media (max-width: 992px) {
 	.section.lp-what-it-is h2,
 	.section.lp-where-it-is h2,
-	.section.lp-how-to-get-involved h2 {
+	.section.lp-how-to-get-involved h2,
+	.section.lp-when-it-is h2 {
 		font-size: 5.0rem;
 	}
 
@@ -475,7 +491,8 @@ strong {
 @media (max-width: 768px) {
 	.section.lp-what-it-is h2,
 	.section.lp-where-it-is h2,
-	.section.lp-how-to-get-involved h2 {
+	.section.lp-how-to-get-involved h2,
+	.section.lp-when-it-is h2 {
 		margin: 5rem 0;
 	}
 
@@ -512,11 +529,6 @@ strong {
 	background-repeat: no-repeat;
 	background-position: 20px 20px;
 	background-size: 200px;
-}
-
-.section.lp-when-it-is h2 {
-	font-size: 5.0rem;
-	z-index: 10;
 }
 
 #countdown {
