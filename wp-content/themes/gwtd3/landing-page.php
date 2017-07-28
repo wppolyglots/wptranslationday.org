@@ -48,7 +48,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">
-					<h2><?php echo 'When is GWTD3?'; ?></h2>
+					<h2><?php echo 'When is WPTranslationDay 3?'; ?></h2>
 				</div>
 			</div>
 			<div class="row">
