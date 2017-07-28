@@ -145,7 +145,13 @@ function gwtd3_scripts() {
 
 	wp_enqueue_script( 'jquery' );
 
-	wp_enqueue_script( 'gwtd3-custom-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '20170725', true );
+	if ( is_front_page() ) {
+		wp_enqueue_script( 'gwtd3-moment', get_template_directory_uri() . '/js/moment.js', array( 'jquery' ), '20170725', true );
+		wp_enqueue_script( 'gwtd3-moment-data', get_template_directory_uri() . '/js/moment.timezone.with.data.js', array( 'jquery' ), '20170725', true );
+		wp_enqueue_script( 'gwtd3-countdown', get_template_directory_uri() . '/js/jquery.countdown.min.js', array( 'jquery' ), '20170725', true );
+	}
+
+	wp_enqueue_script( 'gwtd3-custom-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '20170725', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
