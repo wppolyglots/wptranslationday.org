@@ -231,6 +231,7 @@ strong {
 
 #primary a {
 	color: #80456b;
+	text-decoration: underline;
 }
 
 #primary a:hover,
