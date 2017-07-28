@@ -93,7 +93,7 @@
 					<div class="twelve columns text-center">
 						<a href="https://wptranslationday.org" title="Global WordPress Translation Day 3">
 							<?php
-							$post = get_page_by_title( 'Internal Banner' );
+							$post = get_post( 37 );
 							the_post_thumbnail();
 							?>
 						</a>
