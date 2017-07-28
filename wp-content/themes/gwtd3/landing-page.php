@@ -80,16 +80,12 @@
 	</div>
 
 <script>
-
 	//////////////////////
 	/* Countdown timer */
 	///////////////////
 	(function( $ ) {
-
 		$( 'document' ).ready( function() {
-
 			var gwtdTime = moment.tz("2017-09-30 00:00:00", "Etc/UTC");
-
 			$('#countdown').countdown(gwtdTime.toDate(), {elapse: true})
 				.on('update.countdown', function(event) {
 					var $this = $(this);
@@ -108,57 +104,8 @@
 						);
 					}
 				});
-
-//			$('#countdown').countdown(gwtdTime.toDate(), function(event) {
-////				$(this).html(event.strftime('%D days %H:%M:%S'));
-//
-//				$(this).html( "<div>" +
-//								event.strftime('%D') +
-//								"<span>d<span>ays</span></span></div><div>" +
-//								event.strftime('%H') +
-//								"<span>h<span>ours</span></span></div><div>" +
-//								event.strftime('%M') +
-//								"<span>m<span>inutes</span></span></div><div>" +
-//								event.strftime('%S') +
-//								"<span>s<span>econds</span></span></div>"
-//				);
-//			});
 		})
-
-
-//		$('#clock').countdown(date, function(event) {
-//			$(this).html(event.strftime('%D days %H:%M:%S'));
-//		});
-
 	})( jQuery );
-
-//	// Set the date we're counting down to
-//	var countDownDate = new Date("Sep 30, 2017 00:00:00").getTime();
-//
-//	// Update the count down every 1 second
-//	var x = setInterval(function() {
-//
-//		// Get todays date and time
-//		var now = new Date().getTime();
-//
-//		// Find the distance between now an the count down date
-//		var distance = countDownDate - now;
-//
-//		// Time calculations for days, hours, minutes and seconds
-//		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-//		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-//		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-//		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-//
-//		// Display the result in the element with id="demo"
-//		document.getElementById("countdown").innerHTML = "<div>" + days + "<span>d<span>ays</span></span></div><div>" + hours + "<span>h<span>ours</span></span></div><div>" + minutes + "<span>m<span>inutes</span></span></div><div>" + seconds + "<span>s<span>econds</span></span></div>";
-//
-//		// If the count down is finished, write some text
-//		if (distance < 0) {
-//			clearInterval(x);
-//			document.getElementById("countdown").innerHTML = "It's time for GWTD #3!";
-//		}
-//	}, 1000);
 </script>
 <?php
 	get_footer();
