@@ -11,7 +11,7 @@
 			<div class="row">
 				<div class="twelve columns">
 					<?php
-						$page = get_page_by_title( 'What is GWTD3?' );
+						$page = get_post( 5 );
 						$title = $page->post_title;
 						echo '<h2>' . $title . '</h2>';
 					?>
@@ -30,7 +30,7 @@
 			<div class="row">
 				<div class="twelve columns">
 					<?php
-						$page = get_page_by_title( 'Where is GWTD3?' );
+						$page = get_post( 8 );
 						$title = $page->post_title;
 						echo '<h2>' . $title . '</h2>';
 					?>
@@ -65,7 +65,7 @@
 			<div class="row">
 				<div class="twelve columns">
 					<?php
-						$page = get_page_by_title( 'Cool! How do I get involved?' );
+						$page = get_post( 10 );
 						$title = $page->post_title;
 						echo '<h2>' . $title . '</h2>';
 					?>
