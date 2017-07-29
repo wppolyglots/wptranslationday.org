@@ -502,6 +502,20 @@ strong {
 
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+#catapult-cookie-bar h3 {
+	font-size: 3rem;
+}
+
+#catapult-cookie-bar button {
+	padding: 0 30px !important;
+}
+
+#catapult-cookie-bar .ctcc-left-side {
+	font-size: 1.5rem;
+}
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 @media (max-width: 992px) {
 	.section.lp-what-it-is h2,
@@ -570,40 +584,41 @@ strong {
 	.home .offset-by-one {
 		margin-left: 0;
 	}
+
 	.section.lp-what-it-is {
-	background-image: url(img/questionmark.png);
-	background-repeat: no-repeat;
-	background-attachment: local;
-	background-position: 20px 20px;
-	background-size: 200px;
-	background-origin: content-box;
+		background-image: url(img/questionmark.png);
+		background-repeat: no-repeat;
+		background-attachment: local;
+		background-position: 20px 20px;
+		background-size: 200px;
+		background-origin: content-box;
 	}
 
 	.section.lp-where-it-is {
-	background-image: url(img/globe.png);
-	background-repeat: no-repeat;
-	background-attachment: local;
-	background-position: 20px 20px;
-	background-size: 200px;
-	background-origin: content-box;
+		background-image: url(img/globe.png);
+		background-repeat: no-repeat;
+		background-attachment: local;
+		background-position: 20px 20px;
+		background-size: 200px;
+		background-origin: content-box;
 	}
 
 	.section.lp-when-it-is {
-	background-image: url(img/clock.png);
-	background-repeat: no-repeat;
-	background-attachment: local;
-	background-position: 20px 20px;
-	background-size: 200px;
-	background-origin: content-box;
+		background-image: url(img/clock.png);
+		background-repeat: no-repeat;
+		background-attachment: local;
+		background-position: 20px 20px;
+		background-size: 200px;
+		background-origin: content-box;
 	}
 
 	.section.lp-how-to-get-involved {
-	background-image: url(img/rocket.png);
-	background-repeat: no-repeat;
-	background-attachment: local;
-	background-position: 20px 20px;
-	background-size: 200px;
-	background-origin: content-box;
+		background-image: url(img/rocket.png);
+		background-repeat: no-repeat;
+		background-attachment: local;
+		background-position: 20px 20px;
+		background-size: 200px;
+		background-origin: content-box;
 	}
 
 }
