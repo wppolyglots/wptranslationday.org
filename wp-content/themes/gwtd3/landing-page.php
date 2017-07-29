@@ -6,7 +6,7 @@
 	get_header();
 
 ?>
-	<div id="what" class="section lp-what-it-is bg-color-pink .text-color-pink--darker">
+	<div id="what" class="section lp-what-it-is bg-color-pink text-color-pink--darker">
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">

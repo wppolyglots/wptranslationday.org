@@ -257,6 +257,15 @@ strong {
 	background-origin: content-box;
 }
 
+.section.lp-when-it-is {
+	background-image: url(img/clock.png);
+	background-repeat: no-repeat;
+	background-attachment: local;
+	background-position: 8% center;
+	background-size: 350px;
+	background-origin: content-box;
+}
+
 .section.lp-how-to-get-involved {
 	background-image: url(img/rocket.png);
 	background-repeat: no-repeat;
@@ -268,8 +277,9 @@ strong {
 
 .section.lp-what-it-is h2,
 .section.lp-where-it-is h2,
-.section.lp-how-to-get-involved h2 {
-	font-size: 8.0rem;
+.section.lp-how-to-get-involved h2,
+.section.lp-when-it-is h2 {
+	font-size: 7.0rem;
 	z-index: 10;
 }
 
@@ -460,7 +470,6 @@ strong {
 	color: #a52878 !important;
 }
 
-
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -494,12 +503,14 @@ strong {
 	.section.lp-where-it-is h2,
 	.section.lp-how-to-get-involved h2,
 	.section.lp-when-it-is h2 {
+		font-size: 4.0rem;
 		margin: 5rem 0;
 	}
 
 	.section.lp-what-it-is,
 	.section.lp-where-it-is,
-	.section.lp-how-to-get-involved {
+	.section.lp-how-to-get-involved,
+	.section.lp-when-it-is {
 		background-position: 20px 20px;
 		background-size: 200px;
 		background-origin: padding-box;
@@ -525,12 +536,6 @@ strong {
 }
 
 /* Countdown timer */
-.section.lp-when-it-is {
-	background-image: url(img/clock.png);
-	background-repeat: no-repeat;
-	background-position: 20px 20px;
-	background-size: 200px;
-}
 
 #countdown {
 	display: flex;
@@ -571,16 +576,6 @@ strong {
 }
 
 @media (min-width: 768px) {
-	.section.lp-when-it-is {
-		background-size: 350px;
-		background-position: 8% center;
-		background-origin: content-box;
-	}
-
-	.section.lp-when-it-is h2 {
-		font-size: 8rem;
-		margin-bottom: 20px;
-	}
 
 	#countdown div {
 		font-size: 80px;
