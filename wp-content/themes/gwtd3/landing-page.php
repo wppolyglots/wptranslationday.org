@@ -53,7 +53,7 @@
 			</div>
 			<div class="row">
 				<div class="eleven columns offset-by-one">
-					<p><strong>WPTranslationDay 3</strong> will be from <strong>00.00 to 24.00 UTC on September 30, 2017.</strong> To help you get ready, here's the countdown to kick off:</p>
+					<p><strong>WPTranslationDay 3</strong> will be from <strong>00:00 to 23:59 UTC on September 30, 2017.</strong> To help you get ready, here's the countdown to kick off:</p>
 					<div id="countdown"></div>
 				</div>
 			</div>
