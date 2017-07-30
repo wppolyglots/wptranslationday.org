@@ -16,6 +16,8 @@ wp-cache-config.php
 
 /wp-content/themes/gwtd3/php_errorlog
 
+.svn
+
 # But not these files...
 !.gitignore
 !wp-content/
