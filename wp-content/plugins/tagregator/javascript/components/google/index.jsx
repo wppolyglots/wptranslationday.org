@@ -28,7 +28,7 @@ export default React.createClass({
 
 		return (
 			<div className={ item.itemMeta.cssClasses }>
-				<a className="tggr-author-profile clearfix" href={ url + author.username } rel="nofollow">
+				<a className="tggr-author-profile clearfix" href={ url + author.userId } rel="nofollow">
 					{ author.image && <img src={ author.image } alt="" className="tggr-author-avatar" /> }
 					<span className="tggr-author-name">{ author.name }</span>
 					<span className="tggr-author-username">@{ author.username }</span>

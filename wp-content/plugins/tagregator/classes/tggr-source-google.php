@@ -264,6 +264,7 @@ if ( ! class_exists( 'TGGRSourceGoogle' ) ) {
 				'name'     => $postmeta['author_name'][0],
 				'username' => $postmeta['author_name'][0],
 				'image'    => $postmeta['author_image_url'][0],
+				'userId'   => $postmeta['author_id'][0],
 			);
 
 			$item['itemMeta'] = array(
