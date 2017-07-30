@@ -29,7 +29,7 @@ if ( ! class_exists( 'TGGRSourceInstagram' ) ) {
 		 */
 		protected function __construct() {
 			$this->view_folder   = dirname( __DIR__ ) . '/views/'. str_replace( '.php', '', basename( __FILE__ ) );
-			$this->setting_names = array( 'Client ID', 'Highlighted Accounts', 'Banned Accounts', '_newest_media_id' );
+			$this->setting_names = array( 'Client ID', 'Client Secret', 'Redirect URL', 'Access Token', 'Highlighted Accounts', 'Banned Accounts', '_newest_media_id' );
 
 			foreach ( $this->setting_names as $key ) {
 				$this->default_settings[ strtolower( str_replace( ' ', '_', $key ) ) ] = '';
@@ -138,6 +138,7 @@ if ( ! class_exists( 'TGGRSourceInstagram' ) ) {
 		public function import_new_items( $hashtag ) {
 			$media = self::get_new_media(
 				TGGRSettings::get_instance()->settings[ __CLASS__ ]['client_id'],
+				TGGRSettings::get_instance()->settings[ __CLASS__ ]['access_token'],
 				$hashtag,
 				TGGRSettings::get_instance()->settings[ __CLASS__ ]['_newest_media_id']
 			);
@@ -152,19 +153,37 @@ if ( ! class_exists( 'TGGRSourceInstagram' ) ) {
 		 * @mvc Model
 		 *
 		 * @param string $client_id
+		 * @param string $access_token
 		 * @param string $hashtag
 		 * @param string $max_id The ID of the most recent item that is already saved in the database
 		 * @return mixed string|false
 		 */
-		protected static function get_new_media( $client_id, $hashtag, $max_id ) {
+		protected static function get_new_media( $client_id, $access_token, $hashtag, $max_id ) {
 			$response = $media = false;
 
-			if ( $client_id && $hashtag ) {
-				$url = sprintf(
-					'%s/v1/tags/%s/media/recent?client_id=%s',
+			// url for SELF posts https://api.instagram.com/v1/users/self/media/recent/?access_token=XXXX
+			/*
+			 * $url = sprintf(
+					'%s/v1/users/self/media/recent?access_token=%s&count=6',
+					self::API_URL,
+					urlencode( $access_token )
+				);
+			 */
+			// url for PUBLIC tags // https://api.instagram.com/v1/tags/XXXX/media/recent/?access_token=XXXX
+			/*
+			 * $url = sprintf(
+					'%s/v1/tags/%s/media/recent?access_token=%s',
 					self::API_URL,
 					urlencode( str_replace( '#', '', $hashtag ) ),
-					urlencode( $client_id )
+					urlencode( $access_token )
+				);
+			 */
+
+			if ( $access_token && $hashtag ) {
+				$url = sprintf(
+					'%s/v1/users/self/media/recent?access_token=%s&count=6',
+					self::API_URL,
+					urlencode( $access_token )
 				);
 
 				$response = wp_remote_get( $url );
@@ -175,7 +194,7 @@ if ( ! class_exists( 'TGGRSourceInstagram' ) ) {
 				}
 			}
 
-			self::log( __METHOD__, 'Results', compact( 'client_id', 'hashtag', 'max_id', 'response' ) );
+//			self::log( __METHOD__, 'Results', compact( 'access_token', 'hashtag', 'max_id', 'response' ) );
 
 			return $media;
 		}
