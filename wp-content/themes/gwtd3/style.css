@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: TBD...
 Author URI: https://multiple_wordpress_awesome.contributors
 Description: The most awesome theme for gwtd3!
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: gwtd3
@@ -257,7 +257,7 @@ strong {
 	position: absolute;
 	width: 350px;
 	height: 350px;
-	left: -98px;
+	left: -140px;
 	background-repeat: no-repeat;
 	background-attachment: local;
 	background-position: top left;
@@ -475,6 +475,8 @@ strong {
 #countdown {
 	display: flex;
 	line-height: 1;
+	z-index: 100;
+	position: relative;
 }
 
 #countdown div {
@@ -591,7 +593,7 @@ strong {
 		background-attachment: local;
 		background-position: 20px 20px;
 		background-size: 200px;
-		background-origin: content-box;
+		background-origin: border-box;
 	}
 
 	.section.lp-where-it-is {
@@ -600,7 +602,7 @@ strong {
 		background-attachment: local;
 		background-position: 20px 20px;
 		background-size: 200px;
-		background-origin: content-box;
+		background-origin: border-box;
 	}
 
 	.section.lp-when-it-is {
@@ -609,7 +611,7 @@ strong {
 		background-attachment: local;
 		background-position: 20px 20px;
 		background-size: 200px;
-		background-origin: content-box;
+		background-origin: border-box;
 	}
 
 	.section.lp-how-to-get-involved {
@@ -618,7 +620,7 @@ strong {
 		background-attachment: local;
 		background-position: 20px 20px;
 		background-size: 200px;
-		background-origin: content-box;
+		background-origin: border-box;
 	}
 
 }
