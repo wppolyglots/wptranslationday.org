@@ -267,7 +267,7 @@ if ( ! class_exists( 'TGGRMediaSource' ) ) {
 			$class = get_called_class();
 			$setting = str_replace( $class::SETTINGS_PREFIX, '', $field['label_for'] );
 			$textarea_settings = array( 'highlighted_accounts', 'banned_accounts' );
-
+			$checkbox_settings = array( 'sandbox_mode' );
 			require( dirname( __DIR__ ) . '/views/media-sources-common/page-settings-fields.php' );
 		}
 

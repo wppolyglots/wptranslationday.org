@@ -135,6 +135,9 @@ if ( ! class_exists( 'TGGRSourceGoogle' ) ) {
 		 * @param string $hashtag
 		 */
 		public function import_new_items( $hashtag ) {
+			if ( empty( TGGRSettings::get_instance()->settings[ __CLASS__ ]['api_key'] )  ){
+				return;
+			}
 			$activities = self::get_new_activities(
 				TGGRSettings::get_instance()->settings[ __CLASS__ ]['api_key'],
 				$hashtag

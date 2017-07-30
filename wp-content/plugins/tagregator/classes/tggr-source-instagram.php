@@ -29,11 +29,13 @@ if ( ! class_exists( 'TGGRSourceInstagram' ) ) {
 		 */
 		protected function __construct() {
 			$this->view_folder   = dirname( __DIR__ ) . '/views/'. str_replace( '.php', '', basename( __FILE__ ) );
-			$this->setting_names = array( 'Client ID', 'Client Secret', 'Redirect URL', 'Access Token', 'Highlighted Accounts', 'Banned Accounts', '_newest_media_id' );
+			$this->setting_names = array( 'Client ID', 'Client Secret', 'Redirect URL', 'Access Token', 'Sandbox Mode', 'Highlighted Accounts', 'Banned Accounts', '_newest_media_id' );
 
 			foreach ( $this->setting_names as $key ) {
 				$this->default_settings[ strtolower( str_replace( ' ', '_', $key ) ) ] = '';
 			}
+
+			$this->default_settings[ 'sandbox_mode' ] = 1;
 			$this->default_settings[ '_newest_media_id' ] = 0;
 
 			$this->register_hook_callbacks();
@@ -136,11 +138,16 @@ if ( ! class_exists( 'TGGRSourceInstagram' ) ) {
 		 * @param string $hashtag
 		 */
 		public function import_new_items( $hashtag ) {
+			if ( empty( TGGRSettings::get_instance()->settings[ __CLASS__ ]['client_id'] )
+				|| empty( TGGRSettings::get_instance()->settings[ __CLASS__ ]['access_token'] ) ){
+					return;
+			}
 			$media = self::get_new_media(
 				TGGRSettings::get_instance()->settings[ __CLASS__ ]['client_id'],
 				TGGRSettings::get_instance()->settings[ __CLASS__ ]['access_token'],
 				$hashtag,
-				TGGRSettings::get_instance()->settings[ __CLASS__ ]['_newest_media_id']
+				TGGRSettings::get_instance()->settings[ __CLASS__ ]['_newest_media_id'],
+				TGGRSettings::get_instance()->settings[ __CLASS__ ]['sandbox_mode']
 			);
 			$media = $this->remove_banned_items( $media, 'user', 'username' );
 
@@ -155,36 +162,31 @@ if ( ! class_exists( 'TGGRSourceInstagram' ) ) {
 		 * @param string $client_id
 		 * @param string $access_token
 		 * @param string $hashtag
+		 * @param string $sandbox_mode
 		 * @param string $max_id The ID of the most recent item that is already saved in the database
 		 * @return mixed string|false
 		 */
-		protected static function get_new_media( $client_id, $access_token, $hashtag, $max_id ) {
+		protected static function get_new_media( $client_id, $access_token, $hashtag, $max_id, $sandbox_mode ) {
 			$response = $media = false;
 
-			// url for SELF posts https://api.instagram.com/v1/users/self/media/recent/?access_token=XXXX
-			/*
-			 * $url = sprintf(
-					'%s/v1/users/self/media/recent?access_token=%s&count=6',
-					self::API_URL,
-					urlencode( $access_token )
-				);
-			 */
-			// url for PUBLIC tags // https://api.instagram.com/v1/tags/XXXX/media/recent/?access_token=XXXX
-			/*
-			 * $url = sprintf(
-					'%s/v1/tags/%s/media/recent?access_token=%s',
-					self::API_URL,
-					urlencode( str_replace( '#', '', $hashtag ) ),
-					urlencode( $access_token )
-				);
-			 */
-
 			if ( $access_token && $hashtag ) {
-				$url = sprintf(
-					'%s/v1/users/self/media/recent?access_token=%s&count=6',
-					self::API_URL,
-					urlencode( $access_token )
-				);
+
+				if ( $sandbox_mode === '0' ){
+                    // url for PUBLIC tags // https://api.instagram.com/v1/tags/XXXX/media/recent/?access_token=XXXX
+                    $url = sprintf(
+                            '%s/v1/tags/%s/media/recent?access_token=%s&count=9',
+                                self::API_URL,
+                                urlencode( str_replace( '#', '', $hashtag ) ),
+                                urlencode( $access_token )
+                        );
+                } else {
+                        // url for SELF posts https://api.instagram.com/v1/users/self/media/recent/?access_token=XXXX
+                        $url = sprintf(
+                                '%s/v1/users/self/media/recent?access_token=%s&count=9',
+                                self::API_URL,
+                                urlencode( $access_token )
+                        );
+                }
 
 				$response = wp_remote_get( $url );
 				$body     = json_decode( wp_remote_retrieve_body( $response ) );

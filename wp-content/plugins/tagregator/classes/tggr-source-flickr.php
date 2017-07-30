@@ -137,6 +137,9 @@ if ( ! class_exists( 'TGGRSourceFlickr' ) ) {
 		 * @param string $hashtag
 		 */
 		public function import_new_items( $hashtag ) {
+			if ( empty( TGGRSettings::get_instance()->settings[ __CLASS__ ]['api_key'] )  ){
+				return;
+			}
 			$media = self::get_new_media(
 				TGGRSettings::get_instance()->settings[ __CLASS__ ]['api_key'],
 				$hashtag,

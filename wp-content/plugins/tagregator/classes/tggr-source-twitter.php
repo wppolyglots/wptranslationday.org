@@ -217,6 +217,12 @@ if ( ! class_exists( 'TGGRSourceTwitter' ) ) {
 		 * @param string $hashtag
 		 */
 		public function import_new_items( $hashtag ) {
+			if ( empty( TGGRSettings::get_instance()->settings[ __CLASS__ ]['consumer_key'] )
+				|| empty( TGGRSettings::get_instance()->settings[ __CLASS__ ]['consumer_secret'] )
+				|| empty( TGGRSettings::get_instance()->settings[ __CLASS__ ]['consumer_key'] ) ){
+					return;
+			}
+
 			$tweets = self::get_new_hashtagged_tweets(
 				TGGRSettings::get_instance()->settings[ __CLASS__ ]['_bearer_token'],
 				$hashtag,

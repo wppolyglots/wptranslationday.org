@@ -1,12 +1,15 @@
 <p>Instructions:</p>
-<p>1. You can obtain the Client ID &amp; Client Secret by logging into <a href="https://www.instagram.com/developer/">Instagram's developer portal</a>, and then registering a new client. Insert them to the fields bellow and click 'Save Changes'.</p>
+<p>1. You can obtain the Client ID &amp; Client Secret by logging into <a href="https://www.instagram.com/developer/">Instagram's developer portal</a>, and then registering a new client. Insert them to the fields bellow and click <strong>'Save Changes'</strong>.</p>
 <p></p>
 <p>2. Copy the Redirect URL from the field below and paste it in your <strong>Valid redirect URIs</strong> field in your Instagram API Client Settings.</p>
 <p></p>
-<p>3. <a href="" id="get_access_token">Click here to get your Access Token!</a> - After the Access Token is in the field please press Save Changes.</p>
+<p>3. <a href="" id="get_access_token">Click here to get your Access Token!</a> - After the Access Token is in the field please click <strong>'Save Changes'</strong>.</p>
 <p></p>
+<p><strong>Note:</strong> Sandbox mode will retrieve your account's 9 latest posts ignoring the #hashtag. Non-sandbox will retrieve the latest hashtags posts from all instagram as long as there is permission for 'public_content' in your client.</p>
 <?php
+
 $tggroptions = get_option( 'tggr_settings', array() );
+
 $cid = $tggroptions['TGGRSourceInstagram']['client_id'];
 $cse = $tggroptions['TGGRSourceInstagram']['client_secret'];
 $cre = $tggroptions['TGGRSourceInstagram']['redirect_url'];
