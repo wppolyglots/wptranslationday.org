@@ -218,8 +218,7 @@ if ( ! class_exists( 'TGGRSourceTwitter' ) ) {
 		 */
 		public function import_new_items( $hashtag ) {
 			if ( empty( TGGRSettings::get_instance()->settings[ __CLASS__ ]['consumer_key'] )
-				|| empty( TGGRSettings::get_instance()->settings[ __CLASS__ ]['consumer_secret'] )
-				|| empty( TGGRSettings::get_instance()->settings[ __CLASS__ ]['consumer_key'] ) ){
+				|| empty( TGGRSettings::get_instance()->settings[ __CLASS__ ]['consumer_secret'] ) ){
 					return;
 			}
 
