@@ -94,7 +94,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="twelve columns text-center">
-						<a href="https://wptranslationday.org" title="WPTranslationDay 3">
+						<a href="<?php echo get_home_url(); ?>" title="WPTranslationDay 3">
 							<?php
 							$post = get_post( 37 );
 							the_post_thumbnail();
