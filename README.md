@@ -5,7 +5,7 @@
 
 **Landing Page and theme based on _s.**
 
-Latest stable: **v1.0.7**
+This theme has rolling updates so always download the master.
 
 ## HOW TO:
 
@@ -33,5 +33,11 @@ Go to 'Caldera Forms -> "Name of your form"' and on the next page you will see a
 **See the analytics?**
 
 The theme is connected to google console + analytics you can view them by simply selecting Insights from the Admin Sidebar.
+
+**Hashtag pull with Tagregator?**
+
+Go to Tagregator -> Settings and fill them accordingly with your API credentials.
+
+Make a new page and use the shortcode`[tagregator hashtag="#myhashtag"]` replacing #myhashtag with anything you like to read.
 
 #### Tested on latest: Chrome, Firefox, Edge, IE11
