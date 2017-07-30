@@ -43,7 +43,7 @@
 				if ( $( this ).parent().parent().parent().parent().attr( 'id' ) === 'site-menu' ) {
 					toggleNav();
 				}
-				event.preventDefault();
+				// event.preventDefault();
 				$( 'html,body' ).animate( {
 					scrollTop: $( this.hash ).offset().top
 				}, 500 );

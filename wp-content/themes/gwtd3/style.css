@@ -516,6 +516,26 @@ strong {
 	font-size: 1.5rem;
 }
 
+/* Tagregator
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.tggr-item-content {
+	font-size: 2rem;
+	line-height: 1.2;
+	margin: 3rem 0;
+}
+
+.tggr-author-name {
+	font-size: 2rem;
+}
+
+.tggr-author-username {
+	font-size: 1.3rem;
+}
+
+.tggr-timestamp {
+	font-size: 2rem;
+}
+
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
