@@ -76,6 +76,7 @@ function gwtdle_save_post()
  */
 add_filter('manage_local-event_posts_columns' , 'gwtdle_add_columns');
 function gwtdle_add_columns($columns) {
+    unset($columns['title']);
     unset($columns['date']);
     return array_merge($columns, 
 				array(
@@ -160,7 +161,7 @@ function gwtdle_init() {
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports'           => array( 'title', 'thumbnail' )
+		'supports'           => array( 'thumbnail' )
 	);
 
 	register_post_type( 'local-event', $args );
