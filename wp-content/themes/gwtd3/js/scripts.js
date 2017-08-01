@@ -51,5 +51,32 @@
 			}
 		} );
 
+		$(".theeventmenu").on( 'click', function( event ) {
+			event.preventDefault();
+			return false;
+		});
+
+		$(".theeventmenu").mouseenter(function(){
+			clearTimeout($(document).data('timeoutId'));
+			$(document).find(".section.sub-menus").fadeIn("slow");
+		}).mouseleave(function(){
+			var someElement = $(document),
+				timeoutId = setTimeout(function(){
+					someElement.find(".section.sub-menus").fadeOut("slow");
+				}, 650);
+			someElement.data('timeoutId', timeoutId);
+		});
+
+		$(".section.sub-menus").mouseenter(function(){
+			clearTimeout($(document).data('timeoutId'));
+			$(document).find(".section.sub-menus").fadeIn("slow");
+		}).mouseleave(function(){
+			var someElement = $(document),
+				timeoutId = setTimeout(function(){
+					someElement.find(".section.sub-menus").fadeOut("slow");
+				}, 650);
+			someElement.data('timeoutId', timeoutId);
+		});
+
 	} );
 })( jQuery );

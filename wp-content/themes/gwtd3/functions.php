@@ -44,8 +44,9 @@ function gwtd3_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary-menu' => esc_html__( 'Primary Menu', 'gwtd3' ),
+		'mobile-menu' => esc_html__( 'Mobile Menu', 'gwtd3' ),
 		'gwtd-menu' => esc_html__( 'Gwtd Menu', 'gwtd3' ),
+		'gwsub-menu' => esc_html__( 'Sub Menu', 'gwtd3' ),
 	) );
 
 	/*

@@ -50,14 +50,14 @@
 		<div id="site-menu">
 			<?php
 			wp_nav_menu( array(
-				'theme_location' => 'primary-menu',
+				'theme_location' => 'mobile-menu',
 				'menu_id' => 'primary-menu-mobile',
 			) );
 
-			wp_nav_menu( array(
-				'theme_location' => 'gwtd-menu',
-				'menu_id' => 'gwtd-menu-mobile',
-			) );
+//			wp_nav_menu( array(
+//				'theme_location' => 'gwtd-menu',
+//				'menu_id' => 'gwtd-menu-mobile',
+//			) );
 			?>
 		</div>
 		<?php if ( is_front_page() && get_header_image() != null ) { ?>
@@ -108,7 +108,7 @@
 		<div class="section primary-menus">
 			<div class="container">
 				<div class="row">
-					<div class="five columns text-left">
+					<div class="twelve columns text-left">
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'gwtd-menu',
@@ -116,15 +116,20 @@
 						) );
 						?>
 					</div>
-					<div class="seven columns text-right">
+				</div>
+			</div>
+		</div>
+		<div class="section sub-menus">
+			<div class="container">
+				<div class="row">
+					<div class="twelve columns text-left">
 						<?php
 						wp_nav_menu( array(
-							'theme_location' => 'primary-menu',
-							'menu_id' => 'primary-menu',
+							'theme_location' => 'gwsub-menu',
+							'menu_id' => 'gwsub-menu',
 						) );
 						?>
 					</div>
 				</div>
 			</div>
 		</div>
-
