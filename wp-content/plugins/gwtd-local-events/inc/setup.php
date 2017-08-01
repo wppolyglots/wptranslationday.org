@@ -18,11 +18,13 @@ function gwtdle_metaboxes_metaboxes_html() {
 		'city' => __('City', 'gwtdle'),
 		'country' => __('Country', 'gwtdle'),
 		'continent' => __('Continent', 'gwtdle'),
+		'locale' => __('Locale', 'gwtdle'),
 		'organizer_name' => __('Organizer Name', 'gwtdle'),
 		'organizer_w_org' => __('Organizer w.org username', 'gwtdle'),
 		'organizer_slack' => __('Organizer slack username', 'gwtdle'),
 		'coorganizers' => __('Co-organizers', 'gwtdle'),
 		'utc_start' => __('UTC start time', 'gwtdle'),
+		'utc_end' => __('UTC end time', 'gwtdle'),
 		'announcement_url' => __('Announcement URL', 'gwtdle')
 	);
 
@@ -53,16 +55,20 @@ function gwtdle_save_post()
 		'city' => __('City', 'gwtdle'),
 		'country' => __('Country', 'gwtdle'),
 		'continent' => __('Continent', 'gwtdle'),
+		'locale' => __('Locale', 'gwtdle'),
 		'organizer_name' => __('Organizer Name', 'gwtdle'),
 		'organizer_w_org' => __('Organizer w.org username', 'gwtdle'),
 		'organizer_slack' => __('Organizer slack username', 'gwtdle'),
 		'coorganizers' => __('Co-organizers', 'gwtdle'),
 		'utc_start' => __('UTC start time', 'gwtdle'),
+		'utc_end' => __('UTC end time', 'gwtdle'),
 		'announcement_url' => __('Announcement URL', 'gwtdle')
 	);
 	foreach ($arr as $key=>$item) {
 		update_post_meta($post->ID, $key, $_POST[$key]);
 	}
+	$full_place = $_POST['Continent'] . '/' . $_POST['Country'] . '/' . $_POST['City']; // needed for column sorting
+	update_post_meta($post->ID, 'full_place', $full_place);
 }   
 
 /**
@@ -70,12 +76,14 @@ function gwtdle_save_post()
  */
 add_filter('manage_local-event_posts_columns' , 'gwtdle_add_columns');
 function gwtdle_add_columns($columns) {
+    unset($columns['title']);
     unset($columns['date']);
     return array_merge($columns, 
 				array(
 					'Place' => __('Place', 'gwtdle'),
+					'Locale' =>__( 'Locale', 'gwtdle'),
 					'Organizer' =>__( 'Organizer', 'gwtdle'),
-					'UTC Start' =>__( 'UTC Start', 'gwtdle'),
+					'UTC time' =>__( 'UTC time', 'gwtdle'),
 					'URL' =>__( 'URL', 'gwtdle'),
 				)
 		);
@@ -90,17 +98,32 @@ function gwtdle_render_columns( $column, $post_id ) {
 			$str = get_post_meta( $post_id , 'continent' , true ) . '/' . get_post_meta( $post_id , 'country' , true ) . '/' . get_post_meta( $post_id , 'city' , true );
             echo $str; 
             break;
+		case 'Locale' :
+			echo get_post_meta( $post_id , 'locale' , true );
+			break;
         case 'Organizer' :
 			$w_org = get_post_meta( $post_id , 'organizer_w_org' , true );
-            echo 'WP: <a href="https://profiles.wordpress.org/' . $w_org . '">' . $w_org . '</a><br>Slack: @' . get_post_meta( $post_id , 'organizer_slack' , true ); 
+			$slack = get_post_meta( $post_id , 'organizer_slack' , true );
+            echo 'WP: <a href="https://profiles.wordpress.org/' . $w_org . '">' . $w_org . '</a><br>Slack: <a href="https://wordpress.slack.com/team/' . $slack . '">@' . $slack . '</a>'; 
             break;
-		case 'UTC Start' :
-			echo get_post_meta( $post_id , 'utc_start' , true );
+		case 'UTC time' :
+			echo get_post_meta( $post_id , 'utc_start' , true ) . ' - ' . get_post_meta( $post_id , 'utc_end' , true );
 			break;
 		case 'URL' :
 			echo '<a href="' . get_post_meta( $post_id , 'announcement_url' , true ) . '">Link</a>';
 			break;
 	}
+}
+
+/**
+ * Allow to order columns by clicking the header 
+ */
+add_filter( 'manage_edit-local-event_sortable_columns', 'gwtdle_table_sorting' );
+function gwtdle_table_sorting( $columns ) {
+	$columns['Place'] = 'full_place';
+	$columns['Locale'] = 'locale';
+	$columns['UTC time'] = 'utc_start';
+	return $columns;
 }
 
 /**
@@ -138,7 +161,7 @@ function gwtdle_init() {
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports'           => array( 'title', 'thumbnail' )
+		'supports'           => array( 'thumbnail' )
 	);
 
 	register_post_type( 'local-event', $args );
