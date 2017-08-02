@@ -67,7 +67,7 @@ function gwtdle_save_post()
 	foreach ($arr as $key=>$item) {
 		update_post_meta($post->ID, $key, $_POST[$key]);
 	}
-	$full_place = $_POST['Continent'] . '/' . $_POST['Country'] . '/' . $_POST['City']; // needed for column sorting
+	$full_place = $_POST['continent'] . '/' . $_POST['country'] . '/' . $_POST['city']; // needed for column sorting
 	update_post_meta($post->ID, 'full_place', $full_place);
 }   
 
@@ -124,6 +124,26 @@ function gwtdle_table_sorting( $columns ) {
 	$columns['Locale'] = 'locale';
 	$columns['UTC time'] = 'utc_start';
 	return $columns;
+}
+add_action( 'pre_get_posts', 'gwtdle_table_sorting_meta' );
+function gwtdle_table_sorting_meta( $query ) {
+	if( ! is_admin() )
+		return;
+ 
+	$orderby = $query->get( 'orderby');
+ 
+	if( 'full_place' == $orderby ) {
+		$query->set('meta_key','full_place');
+		$query->set('orderby','meta_value');
+	}
+	if( 'locale' == $orderby ) {
+		$query->set('meta_key','locale');
+		$query->set('orderby','meta_value');
+	}
+	if( 'utc_start' == $orderby ) {
+		$query->set('meta_key','utc_start');
+		$query->set('orderby','meta_value_num');
+	}
 }
 
 /**
