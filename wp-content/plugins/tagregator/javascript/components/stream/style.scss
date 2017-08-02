@@ -1,0 +1,201 @@
+/**
+ * @package Tagregator
+ */
+
+/* http://www.cssmojo.com/latest_new_clearfix_so_far/ */
+@mixin clearfix {
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+#tggr-media-item-container {
+	-ms-word-wrap: break-word;
+	    word-wrap: break-word;
+	padding-top: 1px; // Hack to avoid margin collapses :(
+}
+
+.tggr-loading {
+	height: 25px;
+	width: 100%;
+	text-align: center;
+}
+
+.tggr-stream {
+	@include clearfix;
+}
+
+.tggr-media-items {
+	box-sizing: border-box;
+	display: flex;
+	align-content: flex-start;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.tggr-media-item {
+	position: relative;
+	margin-bottom: 10px;
+	padding: 15px;
+	line-height: 1;
+	background: #fff;
+	border: 1px solid #b6b6b6;
+	border-radius: 3px;
+	box-sizing: border-box;
+
+	// Mobile-first columns layout
+	flex: 1 100%;
+	max-width: 100%;
+
+	@media screen and ( min-width: 500px ) {
+		flex: 1 50%;
+		max-width: calc( 50% - 5px );
+	}
+
+	@media screen and ( min-width: 768px ) {
+		flex: 1 33.33333%;
+		max-width: calc( 33.33333% - 20px/3 );
+	}
+
+	#tggr-media-item-container.two-column & {
+		@media screen and ( min-width: 500px ) {
+			flex: 1 50%;
+			max-width: calc( 50% - 5px );
+		}
+	}
+
+	#tggr-media-item-container.one-column & {
+		flex: 1 100%;
+		max-width: 100%;
+	}
+}
+
+.tggr-media-item a,
+.entry-content .tggr-media-item a,	/* Override TwentyFourteen text-decoration conflict */
+.tggr-item-content a.tggr-tweets-username,
+.tggr-item-content a.tggr-tweets-tag,
+.tggr-media-item .tggr-actions a:hover {
+	text-decoration: none;
+}
+
+	.tggr-media-item a:hover,
+	.tggr-media-item .tggr-actions a:hover span {
+		text-decoration: underline;
+	}
+
+	.tggr-media-item a:hover img {
+		text-decoration: none;
+	}
+
+.tggr-author-profile {
+	display: block;
+	margin: 0 0 10px 0;
+}
+
+	.tggr-author-profile img,
+	#content .tggr-author-profile img {	/* override wordcamp-base max-width conflict */
+		max-width: 50px !important;
+		max-height: 50px !important;
+		margin: 0 10px 0 0;
+	}
+
+	.tggr-author-avatar {
+		float: left;
+		border-radius: 3px;
+	}
+
+	.tggr-author-name {
+		display: block;
+		margin: 5px 0;
+		font-size: 1.2em;
+		font-weight: bold;
+		color: #444;
+	}
+
+	.tggr-author-username {
+		display: block;
+		font-size: .9em;
+		color: #888;
+		color: rgba( 0, 0, 0, 0.5 );
+	}
+
+		.tggr-author-username:hover {
+			color: #555;
+			color: rgba( 0, 0, 0, 0.8 );
+		}
+
+.tggr-item-content {
+	margin: 0 0 1.5em;
+	line-height: 1.7;
+}
+
+	.tggr-item-content a {
+		text-decoration: underline;
+	}
+
+	.tggr-item-content img,
+	.tggr-item-content iframe,
+	#content .tggr-item-content img,
+	#content .tggr-item-content iframe {	/* override wordcamp-base max-width conflict */
+		margin-bottom: 10px;
+		max-width: 100%;
+	}
+
+		.tggr-item-content img,
+		.entry-content .tggr-media-item img {	/* override TwentyTwelve box-shadow conflict */
+			box-shadow: none;
+		}
+
+.tggr-media-item .tggr-actions {
+	list-style: none;
+	margin: 0 0 1.5em 0;
+	padding: 0;
+	text-align: center;
+}
+
+	#tggr-media-item-container .tggr-actions li {
+		display: inline-block;
+		margin: 0 10px 0 0;
+		padding: 0;
+	}
+
+	#tggr-media-item-container .tggr-actions a {
+		color: #888;
+		color: rgba( 0, 0, 0, 0.5 );
+		font-size: 15px;
+	}
+
+	#tggr-media-item-container .tggr-actions a span {
+		margin-left: 2px;
+		font-size: 11px;
+		color: rgba( 0, 0, 0, 0.4 );
+	}
+
+	#tggr-media-item-container .tggr-actions a:hover {
+		color: #555;
+		color: rgba( 0, 0, 0, 0.8 );
+	}
+
+.tggr-timestamp {
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+	font-size: .9em;
+	color: rgba( 0, 0, 0, 0.3 );
+}
+
+img.tggr-source-logo,
+.entry-content img.tggr-source-logo, 	/* Override TwentyThirteen height conflict */
+#content img.tggr-source-logo {			/* Override wordcamp-base height conflict */
+	position: absolute;
+	bottom: 10px;
+	right: 15px;
+	height: 20px;
+}

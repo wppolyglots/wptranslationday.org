@@ -50,14 +50,14 @@
 		<div id="site-menu">
 			<?php
 			wp_nav_menu( array(
-				'theme_location' => 'primary-menu',
+				'theme_location' => 'mobile-menu',
 				'menu_id' => 'primary-menu-mobile',
 			) );
 
-			wp_nav_menu( array(
-				'theme_location' => 'gwtd-menu',
-				'menu_id' => 'gwtd-menu-mobile',
-			) );
+//			wp_nav_menu( array(
+//				'theme_location' => 'gwtd-menu',
+//				'menu_id' => 'gwtd-menu-mobile',
+//			) );
 			?>
 		</div>
 		<?php if ( is_front_page() && get_header_image() != null ) { ?>
@@ -79,10 +79,13 @@
 					</div>
 				</div>
 				<div class="row">
+					<div class="bgholder whenbgholder"></div>
 					<div class="eleven columns offset-by-one">
 						<p><strong>WPTranslationDay 3</strong> will be from <strong>00:00 to 23:59 UTC on September 30, 2017.</strong> To help you get ready, here's the countdown to kick off:</p>
-						<div id="countdown"></div>
 					</div>
+				</div>
+				<div class="row">
+					<div id="countdown"></div>
 				</div>
 			</div>
 		</div>
@@ -91,7 +94,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="twelve columns text-center">
-						<a href="https://wptranslationday.org" title="WPTranslationDay 3">
+						<a href="<?php echo get_home_url(); ?>" title="WPTranslationDay 3">
 							<?php
 							$post = get_post( 37 );
 							the_post_thumbnail();
@@ -105,7 +108,7 @@
 		<div class="section primary-menus">
 			<div class="container">
 				<div class="row">
-					<div class="five columns text-left">
+					<div class="twelve columns text-left">
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'gwtd-menu',
@@ -113,15 +116,20 @@
 						) );
 						?>
 					</div>
-					<div class="seven columns text-right">
+				</div>
+			</div>
+		</div>
+		<div class="section sub-menus">
+			<div class="container">
+				<div class="row">
+					<div class="twelve columns text-left">
 						<?php
 						wp_nav_menu( array(
-							'theme_location' => 'primary-menu',
-							'menu_id' => 'primary-menu',
+							'theme_location' => 'gwsub-menu',
+							'menu_id' => 'gwsub-menu',
 						) );
 						?>
 					</div>
 				</div>
 			</div>
 		</div>
-

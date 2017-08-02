@@ -1,10 +1,10 @@
 /*
 Theme Name: gwtd3
-Theme URI: http://underscores.me/
+Theme URI: https://wptranslationday.org
 Author: TBD...
-Author URI: https://multiple_wordpress_awesome.contributors
-Description: The most awesome theme for gwtd3!
-Version: 1.0.7
+Author URI: https://wptranslationday.org
+Description: The most awesome theme for WP Translation Day!
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: gwtd3
@@ -40,6 +40,11 @@ h1, h2, h3, h4, h5 {
 
 strong {
 	font-weight: 600;
+}
+
+.column, .columns {
+	position: relative;
+	z-index: 100;
 }
 
 /* Colors
@@ -176,8 +181,6 @@ strong {
 	background-color: #d3dde0;
 }
 
-
-
 /* Shared and Helpers
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .text-color-blue {
@@ -187,7 +190,7 @@ strong {
 /* Shared and Helpers
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .container {
-	max-width: 1200px;
+	max-width: 900px;
 }
 
 .button {
@@ -215,6 +218,14 @@ strong {
 	width: 2.5em;
 }
 
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: right;
+}
+
 /* Sections
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .section {
@@ -225,8 +236,8 @@ strong {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 /*#primary {*/
-	/*background: #d3dde0;*/
-	/*color: #17506a;*/
+/*background: #d3dde0;*/
+/*color: #17506a;*/
 /*}*/
 
 #primary a {
@@ -239,38 +250,44 @@ strong {
 	text-decoration: underline;
 }
 
-.section.lp-what-it-is {
-	background-image: url(img/questionmark.png);
-	background-repeat: no-repeat;
-	background-attachment: local;
-	background-position: 8% center;
-	background-size: 350px;
-	background-origin: content-box;
-}
-
-.section.lp-where-it-is {
-	background-image: url(img/globe.png);
-	background-repeat: no-repeat;
-	background-attachment: local;
-	background-position: 8% center;
-	background-size: 350px;
-	background-origin: content-box;
-}
-
-.section.lp-how-to-get-involved {
-	background-image: url(img/rocket.png);
-	background-repeat: no-repeat;
-	background-attachment: local;
-	background-position: 8% center;
-	background-size: 350px;
-	background-origin: content-box;
-}
-
 .section.lp-what-it-is h2,
 .section.lp-where-it-is h2,
-.section.lp-how-to-get-involved h2 {
-	font-size: 8.0rem;
+.section.lp-how-to-get-involved h2,
+.section.lp-when-it-is h2 {
+	font-size: 5.5rem;
 	z-index: 10;
+}
+
+/* tests */
+
+.bgholder {
+	z-index: 5;
+	position: absolute;
+	width: 350px;
+	height: 350px;
+	left: -140px;
+	background-repeat: no-repeat;
+	background-attachment: local;
+	background-position: top left;
+	background-size: 350px;
+	background-origin: content-box;
+}
+
+.whatbgholder {
+	background-image: url(img/questionmark.png);
+}
+
+.wherebgholder {
+	background-image: url(img/globe.png);
+}
+
+.whenbgholder {
+	top: 0;
+	background-image: url(img/clock.png);
+}
+
+.howbgholder {
+	background-image: url(img/rocket.png);
 }
 
 /* Call for Speakers
@@ -451,8 +468,52 @@ strong {
 #gwtd-menu-mobile a:hover,
 #primary-menu a:hover,
 #primary-menu-mobile a:hover {
-	color: #fff !important;
+	color: #eddae2 !important;
 }
+
+/* sub menu */
+
+.section.sub-menus {
+	padding: 1rem 0;
+	background: #eddae2;
+	position: absolute;
+	width: 100%;
+	z-index: 100;
+	display: none;
+}
+
+.section.sub-menus ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 2.5rem;
+}
+
+.section.sub-menus ul li {
+	display: inline-block;
+	margin: 0 1.0rem 0 0;
+}
+
+.section.sub-menus ul li a {
+	display: inline-block;
+	margin-right: 1.0rem;
+	color: #258196;
+	font-weight: 600;
+}
+
+.section.sub-menus ul li a:hover {
+	color: #80456b;
+}
+
+.section.sub-menus .thegray a {
+	color: #666;
+}
+
+.section.sub-menus ul li:last-child {
+	margin-right: 0;
+}
+
+
 
 /* Caldera Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -460,6 +521,72 @@ strong {
 	color: #a52878 !important;
 }
 
+/* Countdown Timer
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+#countdown {
+	display: flex;
+	line-height: 1;
+	z-index: 100;
+	position: relative;
+}
+
+#countdown div {
+	width: 25%;
+	text-align: center;
+	font-size: 5em;
+	font-weight: 600;
+}
+
+#countdown div + div {
+	border-left: 1px solid rgba(237, 218, 226, 0.3);
+}
+
+#countdown div > span {
+	font-size: 20px;
+	display: block;
+	text-transform: uppercase;
+	color: rgba(237, 218, 226, 0.3);
+	font-weight: 400;
+}
+
+#countdown span span {
+	display: inline;
+}
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+#catapult-cookie-bar h3 {
+	font-size: 3rem;
+}
+
+#catapult-cookie-bar button {
+	padding: 0 30px !important;
+}
+
+#catapult-cookie-bar .ctcc-left-side {
+	font-size: 1.5rem;
+}
+
+/* Tagregator
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.tggr-item-content {
+	font-size: 2rem;
+	line-height: 1.2;
+	margin: 3rem 0;
+}
+
+.tggr-author-name {
+	font-size: 2rem;
+}
+
+.tggr-author-username {
+	font-size: 1.3rem;
+}
+
+.tggr-timestamp {
+	font-size: 2rem;
+}
 
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -469,7 +596,7 @@ strong {
 	.section.lp-where-it-is h2,
 	.section.lp-how-to-get-involved h2,
 	.section.lp-when-it-is h2 {
-		font-size: 5.0rem;
+		font-size: 4.5rem;
 	}
 
 	.footer h2 {
@@ -486,6 +613,10 @@ strong {
 		width: 40px;
 		border: 0;
 	}
+
+	#countdown div {
+		font-size: 4.5em;
+	}
 }
 
 /* Small devices (landscape phones, up to 550px)*/
@@ -494,15 +625,8 @@ strong {
 	.section.lp-where-it-is h2,
 	.section.lp-how-to-get-involved h2,
 	.section.lp-when-it-is h2 {
+		font-size: 3.5rem;
 		margin: 5rem 0;
-	}
-
-	.section.lp-what-it-is,
-	.section.lp-where-it-is,
-	.section.lp-how-to-get-involved {
-		background-position: 20px 20px;
-		background-size: 200px;
-		background-origin: padding-box;
 	}
 
 	.section.primary-menus .columns {
@@ -522,104 +646,63 @@ strong {
 	.bottom.sp .crowdcast {
 		margin-top: 3rem;
 	}
-}
 
-/* Countdown timer */
-.section.lp-when-it-is {
-	background-image: url(img/clock.png);
-	background-repeat: no-repeat;
-	background-position: 20px 20px;
-	background-size: 200px;
-}
-
-#countdown {
-	display: flex;
-	line-height: 1;
-}
-
-#countdown div {
-	width: 25%;
-	text-align: center;
-	font-size: 48px;
-	font-weight: 600;
-}
-
-#countdown div + div {
-	border-left: 1px solid rgba(237, 218, 226, 0.3);
-}
-
-#countdown div > span {
-	font-size: 20px;
-	display: block;
-	text-transform: uppercase;
-	color: rgba(237, 218, 226, 0.3);
-	font-weight: 400;
-}
-
-#countdown span span {
-	display: none;
-}
-
-@media (min-width: 568px) {
 	#countdown div {
-		font-size: 60px;
+		font-size: 3em;
 	}
 
-	#countdown span span {
-		display: inline;
+	.bgholder {
+		display: none;
 	}
-}
 
-@media (min-width: 768px) {
+	.home .offset-by-one {
+		margin-left: 0;
+	}
+
+	.section.lp-what-it-is {
+		background-image: url(img/questionmark.png);
+		background-repeat: no-repeat;
+		background-attachment: local;
+		background-position: 20px 20px;
+		background-size: 200px;
+		background-origin: border-box;
+	}
+
+	.section.lp-where-it-is {
+		background-image: url(img/globe.png);
+		background-repeat: no-repeat;
+		background-attachment: local;
+		background-position: 20px 20px;
+		background-size: 200px;
+		background-origin: border-box;
+	}
+
 	.section.lp-when-it-is {
-		background-size: 350px;
-		background-position: 8% center;
-		background-origin: content-box;
+		background-image: url(img/clock.png);
+		background-repeat: no-repeat;
+		background-attachment: local;
+		background-position: 20px 20px;
+		background-size: 200px;
+		background-origin: border-box;
 	}
 
-	.section.lp-when-it-is h2 {
-		font-size: 8rem;
-		margin-bottom: 20px;
+	.section.lp-how-to-get-involved {
+		background-image: url(img/rocket.png);
+		background-repeat: no-repeat;
+		background-attachment: local;
+		background-position: 20px 20px;
+		background-size: 200px;
+		background-origin: border-box;
+	}
+
+}
+
+@media ( max-width: 550px ) {
+	#countdown span span {
+		display: none;
 	}
 
 	#countdown div {
-		font-size: 80px;
-	}
-
-	#countdown div > span {
-		font-size: 25px;
+		font-size: 2em;
 	}
 }
-
-@media (min-width: 992px) {
-	#countdown div {
-		font-size: 120px;
-	}
-
-	#countdown div > span {
-		font-size: 30px;
-	}
-}
-
-@media (min-width: 1200px) {
-	#countdown div {
-		font-size: 180px;
-	}
-
-	#countdown div > span {
-		font-size: 40px;
-	}
-}
-
-/* End: Countdown timer */
-@media (min-width: 1440px) {
-	#countdown div {
-		font-size: 200px;
-	}
-
-	#countdown div > span {
-		font-size: 50px;
-	}
-}
-
-/* End: Countdown timer */

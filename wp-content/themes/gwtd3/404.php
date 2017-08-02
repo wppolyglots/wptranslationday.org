@@ -12,22 +12,12 @@ get_header(); ?>
 	<div id="primary" class="bg-color-blue--neutral-light text-color-blue--darker section content-area">
 		<div class="container">
 			<div class="row">
-				<div class="twelve columns">
-
-				<section class="error-404 not-found">
-					<header class="page-header">
-						<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'gwtd3' ); ?></h1>
-					</header><!-- .page-header -->
-
-					<div class="page-content" style="height: 500px;">
-
-					</div><!-- .page-content -->
-				</section><!-- .error-404 -->
-
+				<div class="six columns offset-by-three text-center">
+					<img alt="404 - Page not found" src="<?php echo get_template_directory_uri(); ?>/img/404.png"/>
 				</div>
 			</div>
 		</div>
-	</div><!-- #primary -->
+	</div>
 
 <?php
 get_footer();
