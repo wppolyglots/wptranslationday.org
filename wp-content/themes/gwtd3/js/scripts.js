@@ -51,11 +51,6 @@
 			}
 		} );
 
-		$(".theeventmenu").on( 'click', function( event ) {
-			event.preventDefault();
-			return false;
-		});
-
 		$(".theeventmenu").mouseenter(function(){
 			clearTimeout($(document).data('timeoutId'));
 			$(document).find(".section.sub-menus").fadeIn("slow");
