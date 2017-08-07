@@ -186,3 +186,9 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+// remove jetpack open graph tags As per instructions on
+// https://crunchify.com/how-to-prevent-jetpack-from-doubling-open-graph-meta-tags-in-wordpress-header
+// Entered by Tobi 2017-08-07
+
+remove_action( 'wp_head','jetpack_og_tags' );
