@@ -133,3 +133,17 @@
 				</div>
 			</div>
 		</div>
+		<div class="section getin-sub-menus">
+			<div class="container">
+				<div class="row">
+					<div class="twelve columns text-left">
+						<?php
+						wp_nav_menu( array(
+							'theme_location' => 'ginvsub-menu',
+							'menu_id' => 'ginv-menu',
+						) );
+						?>
+					</div>
+				</div>
+			</div>
+		</div>

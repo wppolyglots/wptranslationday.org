@@ -53,24 +53,46 @@
 
 		$(".theeventmenu").mouseenter(function(){
 			clearTimeout($(document).data('timeoutId'));
-			$(document).find(".section.sub-menus").fadeIn("slow");
+			$(document).find(".section.sub-menus").fadeIn("fast");
 		}).mouseleave(function(){
 			var someElement = $(document),
 				timeoutId = setTimeout(function(){
-					someElement.find(".section.sub-menus").fadeOut("slow");
-				}, 650);
+					someElement.find(".section.sub-menus").fadeOut("fast");
+				}, 300);
 			someElement.data('timeoutId', timeoutId);
 		});
 
 		$(".section.sub-menus").mouseenter(function(){
 			clearTimeout($(document).data('timeoutId'));
-			$(document).find(".section.sub-menus").fadeIn("slow");
+			$(document).find(".section.sub-menus").fadeIn("fast");
 		}).mouseleave(function(){
 			var someElement = $(document),
 				timeoutId = setTimeout(function(){
-					someElement.find(".section.sub-menus").fadeOut("slow");
-				}, 650);
+					someElement.find(".section.sub-menus").fadeOut("fast");
+				}, 300);
 			someElement.data('timeoutId', timeoutId);
+		});
+
+		$(".getinvolvedmenu").mouseenter(function(){
+			clearTimeout($(document).data('time2outId'));
+			$(document).find(".section.getin-sub-menus").fadeIn("fast");
+		}).mouseleave(function(){
+			var someElement = $(document),
+				time2outId = setTimeout(function(){
+					someElement.find(".section.getin-sub-menus").fadeOut("fast");
+				}, 300);
+			someElement.data('time2outId', time2outId);
+		});
+
+		$(".section.getin-sub-menus").mouseenter(function(){
+			clearTimeout($(document).data('time2outId'));
+			$(document).find(".section.getin-sub-menus").fadeIn("fast");
+		}).mouseleave(function(){
+			var someElement = $(document),
+				time2outId = setTimeout(function(){
+					someElement.find(".section.getin-sub-menus").fadeOut("fast");
+				}, 300);
+			someElement.data('time2outId', time2outId);
 		});
 
 	} );
