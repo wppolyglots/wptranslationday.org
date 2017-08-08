@@ -47,6 +47,7 @@ function gwtd3_setup() {
 		'mobile-menu' => esc_html__( 'Mobile Menu', 'gwtd3' ),
 		'gwtd-menu' => esc_html__( 'Gwtd Menu', 'gwtd3' ),
 		'gwsub-menu' => esc_html__( 'Sub Menu', 'gwtd3' ),
+		'footer-menu' => esc_html__( 'Footer Menu', 'gwtd3' ),
 	) );
 
 	/*

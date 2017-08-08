@@ -517,7 +517,33 @@ strong {
 	margin-right: 0;
 }
 
+.footer-menu-holder {
+	background: #3c4444 !important;
+	padding: 1rem 0 1rem 0 !important;
+}
 
+#footer-menu {
+	list-style: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	font-size: 2.5rem !important;
+}
+
+#footer-menu li {
+	display: inline-block !important;
+	margin: 0 1.0rem 0 0 !important;
+}
+
+#footer-menu li a {
+	display: inline-block !important;
+	margin-right: 1.0rem !important;
+	color: #90c3d3 !important;
+	font-weight: 600 !important;
+}
+
+#footer-menu li a:hover {
+	color: #fff !important;
+}
 
 /* Caldera Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -699,6 +725,14 @@ strong {
 		background-origin: border-box;
 	}
 
+	#footer-menu {
+		text-align: center !important;
+	}
+
+	#footer-menu li {
+		display: block !important;
+		margin: 0 1.0rem 0 0 !important;
+	}
 }
 
 @media ( max-width: 550px ) {
