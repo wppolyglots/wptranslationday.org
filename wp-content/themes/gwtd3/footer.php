@@ -45,16 +45,22 @@
 		<div class="section bottom sp bg-color-gray--darker">
 			<div class="container">
 				<div class="row">
-					<div class="six columns siteground text-center item">
-						<h4 class="title text-color-gray--lighter">Proudly hosted by SiteGround</h4>
+					<div class="four columns siteground text-center item">
+						<h4 class="title text-color-gray--lighter">Proudly hosted by<br/>SiteGround</h4>
 						<a href="https://siteground.com/" target="_blank" title="SiteGround">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/sp/siteground.png" alt="SiteGround logo" width="400" />
 						</a>
 					</div>
-					<div class="six columns crowdcast text-center item">
-						<h4 class="title text-color-gray--lighter">Live sessions powered by crowdcast</h4>
+					<div class="four columns crowdcast text-center item">
+						<h4 class="title text-color-gray--lighter">Live sessions powered by<br/>Crowdcast</h4>
 						<a href="https://www.crowdcast.io/" target="_blank" title="crowdcast">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/sp/crowdcast.png" alt="crowdcast logo" width="300" />
+						</a>
+					</div>
+					<div class="four columns mailpoet text-center item">
+						<h4 class="title text-color-gray--lighter">Mailings powered by<br/>MailPoet</h4>
+						<a href="https://www.mailpoet.com/" target="_blank" title="mailpoet">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/sp/mailpoet.png" alt="mailpoet logo" width="300" />
 						</a>
 					</div>
 				</div>

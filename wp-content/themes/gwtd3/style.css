@@ -348,6 +348,11 @@ strong {
 	padding: 0 2rem;
 }
 
+.bottom.sp h4 {
+	font-size: 2rem !important;
+	font-weight: 400 !important;
+}
+
 .bottom.sp .item img {
 	max-width: 200px;
 }
@@ -684,7 +689,8 @@ strong {
 		margin-left: 0;
 	}
 
-	.bottom.sp .crowdcast {
+	.bottom.sp .crowdcast,
+	.bottom.sp .mailpoet {
 		margin-top: 3rem;
 	}
 
