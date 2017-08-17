@@ -21,6 +21,7 @@ get_header(); ?>
 					<?php
 					$query = new WP_Query( array('post_type' => 'local-event', 'posts_per_page' => -1, 'meta_key' => 'full_place', 'orderby' => 'meta_value', 'order' => 'ASC' ) );
 					$previous_continent = 'Empty';
+					$event_count = $query->post_count;
 					while ( $query->have_posts() ) : $query->the_post();
 						$continent = get_post_meta($post->ID, 'continent', true);
 						if ( $previous_continent != $continent ) {
@@ -28,13 +29,13 @@ get_header(); ?>
 								echo '<br>';
 							}
 							$previous_continent = $continent;
-							echo '<h2>' . $continent . '</h2>';
+							echo '<h3>' . $continent . '</h3>';
 						} ?>
 						<div class="entry-content">
 						<?php echo '<b>' . get_post_meta( $post->ID, 'country', true ) . ' / ' . get_post_meta( $post->ID, 'city', true ) . '</b> for locale(s) <b>' . get_post_meta( $post->ID, 'locale', true ) . '</b>.';
 						$utc_start = get_post_meta( $post->ID, 'utc_start', true );
 						if ($utc_start) {
-							echo ' Starting at ' . $utc_start . ' UTC';
+							echo ' Starting at ' . $utc_start . ' UTC.';
 						}
 						echo '<br>';
 						$w_org = get_post_meta( $post->ID, 'organizer_w_org', true );
@@ -48,6 +49,7 @@ get_header(); ?>
 						</div>
 					<?php
 					endwhile;
+					echo '<br>' . $event_count . ' local events found.';
 					wp_reset_postdata();
 					?>
 				</div>
