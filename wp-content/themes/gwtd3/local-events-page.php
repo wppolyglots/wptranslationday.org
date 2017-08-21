@@ -30,9 +30,18 @@ get_header(); ?>
 							}
 							$previous_continent = $continent;
 							echo '<h3>' . $continent . '</h3>';
-						} ?>
+						}
+						$locales = get_post_meta( $post->ID, 'locale', true );
+						if ( strpos($locales, ',') != false ) {
+							// plural
+							$locales = 'for locales <b>' . $locales . '</b>.';
+						} else {
+							$locales = 'for locale <b>' . $locales . '</b>.';
+						}
+
+						 ?>
 						<div class="entry-content">
-						<?php echo '<b>' . get_post_meta( $post->ID, 'country', true ) . ' / ' . get_post_meta( $post->ID, 'city', true ) . '</b> for locale(s) <b>' . get_post_meta( $post->ID, 'locale', true ) . '</b>.';
+						<?php echo '<b>' . get_post_meta( $post->ID, 'country', true ) . ' / ' . get_post_meta( $post->ID, 'city', true ) . '</b> ' . $locales; 
 						$utc_start = get_post_meta( $post->ID, 'utc_start', true );
 						if ($utc_start) {
 							echo ' Starting at ' . $utc_start . ' UTC.';
