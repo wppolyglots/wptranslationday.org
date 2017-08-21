@@ -11,6 +11,8 @@
 /wp-content/plugins/wordpress-seo
 /wp-content/plugins/wp-super-cache
 
+wp-content/uploads
+
 advanced-cache.php
 wp-cache-config.php
 
