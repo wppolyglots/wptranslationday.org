@@ -322,6 +322,10 @@ strong {
 	color: #565555;
 }
 
+article .entry-title {
+	color: #206480;
+}
+
 article.type-post h2 {
 	color: #471530;
 	font-size: 2rem;
