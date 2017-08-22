@@ -45,7 +45,6 @@
 			</div>
 		</div>
 	</div>
-	<?php if ( is_front_page() && get_header_image() != null ) { ?>
 	<div id="when" class="section lp-when-it-is bg-color-pink--dark text-color-pink--light">
 		<div class="container">
 			<div class="row">
@@ -64,7 +63,6 @@
 			</div>
 		</div>
 	</div>
-	<?php } ?>
 	<div id="how" class="section lp-how-to-get-involved bg-color-blue--darker text-color-pink--light">
 		<div class="container">
 			<div class="row">

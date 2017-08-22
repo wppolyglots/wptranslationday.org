@@ -53,39 +53,34 @@
 				'theme_location' => 'mobile-menu',
 				'menu_id' => 'primary-menu-mobile',
 			) );
-
-//			wp_nav_menu( array(
-//				'theme_location' => 'gwtd-menu',
-//				'menu_id' => 'gwtd-menu-mobile',
-//			) );
 			?>
 		</div>
-		<?php if ( is_front_page() && get_header_image() != null ) { ?>
+		<?php if ( is_front_page() ) { ?>
 		<div class="section hero bg-color-pink--darker">
 			<div class="container">
 				<div class="row">
-					<div class="twelve columns text-center">
-						<?php the_header_image_tag(); ?>
+					<div class="twelve columns text-center land-head-img">
+						<?php
+						if ( get_theme_mod( 'gwtd3_landing_header_img' ) ) {
+							echo '<div class="col-sm-12 text-center">';
+							echo '<img src="' . esc_url( get_theme_mod( 'gwtd3_landing_header_img' ) ) . '" alt="';
+							bloginfo( 'title' );
+							echo '"/>';
+							echo '</div>';
+						}
+						?>
 					</div>
-				</div>
-			</div>
-		</div>
-		<?php } elseif ( is_front_page() ) { ?>
-		<div id="when" class="section lp-when-it-is bg-color-pink--dark text-color-pink--light">
-			<div class="container">
-				<div class="row">
-					<div class="twelve columns">
-						<h2><?php echo 'When is WPTranslationDay 3?'; ?></h2>
+					<div class="twelve columns text-center land-head-mobile-img">
+						<?php
+						if ( get_theme_mod( 'gwtd3_landing_mobile_header_img' ) ) {
+							echo '<div class="col-sm-12 text-center">';
+							echo '<img src="' . esc_url( get_theme_mod( 'gwtd3_landing_mobile_header_img' ) ) . '" alt="';
+							bloginfo( 'title' );
+							echo '"/>';
+							echo '</div>';
+						}
+						?>
 					</div>
-				</div>
-				<div class="row">
-					<div class="bgholder whenbgholder"></div>
-					<div class="eleven columns offset-by-one">
-						<p><strong>WPTranslationDay 3</strong> will be from <strong>00:00 to 23:59 UTC on September 30, 2017.</strong> To help you get ready, here's the countdown to kick off:</p>
-					</div>
-				</div>
-				<div class="row">
-					<div id="countdown"></div>
 				</div>
 			</div>
 		</div>
@@ -93,11 +88,29 @@
 		<div class="section hero header bg-color-pink--darker">
 			<div class="container">
 				<div class="row">
-					<div class="twelve columns text-center">
+					<div class="twelve columns text-center int-head-img">
 						<a href="<?php echo get_home_url(); ?>" title="WPTranslationDay 3">
 							<?php
-							$post = get_post( 37 );
-							the_post_thumbnail();
+							if ( get_theme_mod( 'gwtd3_internal_header_img' ) ) {
+								echo '<div class="col-sm-12 text-center">';
+								echo '<img src="' . esc_url( get_theme_mod( 'gwtd3_internal_header_img' ) ) . '" alt="';
+								bloginfo( 'title' );
+								echo '"/>';
+								echo '</div>';
+							}
+							?>
+						</a>
+					</div>
+					<div class="twelve columns text-center int-head-mobile-img">
+						<a href="<?php echo get_home_url(); ?>" title="WPTranslationDay 3">
+							<?php
+							if ( get_theme_mod( 'gwtd3_internal_mobile_header_img' ) ) {
+								echo '<div class="col-sm-12 text-center">';
+								echo '<img src="' . esc_url( get_theme_mod( 'gwtd3_internal_mobile_header_img' ) ) . '" alt="';
+								bloginfo( 'title' );
+								echo '"/>';
+								echo '</div>';
+							}
 							?>
 						</a>
 					</div>

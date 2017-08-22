@@ -242,6 +242,18 @@ strong {
 	padding: 2rem 0 2rem;
 }
 
+/* Header Images
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.land-head-img,
+.int-head-img {
+	display: block;
+}
+
+.land-head-mobile-img,
+.int-head-mobile-img {
+	display: none;
+}
+
 /* LP sections
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -786,5 +798,15 @@ article.type-post h2 {
 
 	#countdown div {
 		font-size: 2em;
+	}
+
+	.land-head-img,
+	.int-head-img {
+		display: none;
+	}
+
+	.land-head-mobile-img,
+	.int-head-mobile-img {
+		display: block;
 	}
 }

@@ -11,7 +11,7 @@ This theme has rolling updates so always download the master.
 
 **Change the header?**
 
-Go to Appearance -> Customize -> Header Image and select your Header image. This image will be shown in the Front Page. If no Image is selected then the Countdown timer will take its place instead.
+Go to Appearance -> Customize -> Header Images and select your Header images for Landing Page ( Screen size / Mobile Size ) and Internal Pages ( Screen size / Mobile Size ).
 
 **Change the 'internal pages' header**
 

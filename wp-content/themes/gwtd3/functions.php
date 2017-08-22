@@ -162,10 +162,105 @@ function gwtd3_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'gwtd3_scripts' );
 
+/*-----------------------------------------------------------------------------------*/
+/* Theme customizer options
+/*-----------------------------------------------------------------------------------*/
+function gwtd3_customize( $wp_customize )
+{
+
+	//	General Options
+
+	$wp_customize->add_section(
+		'gwtd3_options',
+		array(
+			'title' => __( 'Header Images', 'gwtd3' ),
+			'priority' => 30,
+			'capability' => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_setting( 'gwtd3_landing_header_img',
+		array(
+			'default' => '',
+			'sanitize_callback' => 'simplespace_sanitize_customizer_url',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control( $wp_customize, 'gwtd3_landing_header_img',
+			array(
+				'label' => __( 'Landing Page Header Image', 'gwtd3' ),
+				'section' => 'gwtd3_options',
+				'settings' => 'gwtd3_landing_header_img',
+			)
+		)
+	);
+
+	$wp_customize->add_setting( 'gwtd3_landing_mobile_header_img',
+		array(
+			'default' => '',
+			'sanitize_callback' => 'simplespace_sanitize_customizer_url',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control( $wp_customize, 'gwtd3_landing_mobile_header_img',
+			array(
+				'label' => __( 'Landing Page Mobile Header Image', 'gwtd3' ),
+				'section' => 'gwtd3_options',
+				'settings' => 'gwtd3_landing_mobile_header_img',
+			)
+		)
+	);
+
+	$wp_customize->add_setting( 'gwtd3_internal_header_img',
+		array(
+			'default' => '',
+			'sanitize_callback' => 'simplespace_sanitize_customizer_url',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control( $wp_customize, 'gwtd3_internal_header_img',
+			array(
+				'label' => __( 'Internal Page Header Image', 'gwtd3' ),
+				'section' => 'gwtd3_options',
+				'settings' => 'gwtd3_internal_header_img',
+			)
+		)
+	);
+
+	$wp_customize->add_setting( 'gwtd3_internal_mobile_header_img',
+		array(
+			'default' => '',
+			'sanitize_callback' => 'simplespace_sanitize_customizer_url',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control( $wp_customize, 'gwtd3_internal_mobile_header_img',
+			array(
+				'label' => __( 'Internal Page Mobile Header Image', 'gwtd3' ),
+				'section' => 'gwtd3_options',
+				'settings' => 'gwtd3_internal_mobile_header_img',
+			)
+		)
+	);
+
+}
+
+add_action( 'customize_register', 'gwtd3_customize' );
+
+function simplespace_sanitize_customizer_url( $value )
+{
+	$sanitized = esc_url( $value );
+	return $sanitized;
+}
+
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
