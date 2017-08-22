@@ -25,9 +25,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 
 body {
-	font-size: 2.5rem;
-	font-family: 'Changa', sans-serif;
+	font-size: 1.5rem;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
+}
+
+body.home {
+	font-family: 'Changa', sans-serif;
+	font-size: 2.5rem;
 }
 
 a {
@@ -36,6 +41,7 @@ a {
 
 h1, h2, h3, h4, h5 {
 	font-weight: 600;
+	font-family: 'Changa', sans-serif;
 }
 
 strong {
@@ -294,6 +300,18 @@ strong {
 	background-image: url(img/rocket.png);
 }
 
+/* Blog pages */
+.entry-meta {
+	font-family: 'Changa', sans-serif;
+	color: #565555;
+}
+
+article.type-post h2 {
+	color: #471530;
+	font-size: 2rem;
+	font-weight: 600;
+}
+
 /* Call for Speakers
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -308,9 +326,10 @@ strong {
 .caldera-grid .btn-default {
 	background-color: #d4aeba !important;
 	color: #471530 !important;
-	font-size: 3rem !important;
+	font-size: 2rem !important;
 	font-weight: 600 !important;
 	height: auto !important;
+	font-family: 'Changa', sans-serif;
 }
 
 /* Footer
@@ -377,6 +396,7 @@ strong {
 }
 
 #site-menu {
+	font-family: 'Changa', sans-serif;
 	width: 200px;
 	height: 100%;
 	position: absolute;
@@ -438,6 +458,7 @@ strong {
 .section.primary-menus {
 	padding: 1rem 0;
 	background: #206480;
+	font-family: 'Changa', sans-serif;
 }
 
 .section.primary-menus ul {
@@ -483,6 +504,7 @@ strong {
 /* sub menu */
 .section.getin-sub-menus,
 .section.sub-menus {
+	font-family: 'Changa', sans-serif;
 	padding: 1rem 0;
 	background: #eddae2;
 	position: absolute;
@@ -534,6 +556,7 @@ strong {
 }
 
 #footer-menu {
+	font-family: 'Changa', sans-serif;
 	list-style: none !important;
 	margin: 0 !important;
 	padding: 0 !important;

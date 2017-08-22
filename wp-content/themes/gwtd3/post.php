@@ -19,7 +19,7 @@ get_header(); ?>
 							/* Start the Loop */
 							while ( have_posts() ) :
 								the_post();
-							?>
+								?>
 								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 									<header class="entry-header">
 										<?php
@@ -50,12 +50,12 @@ get_header(); ?>
 										</div>
 									</div><!-- .entry-content -->
 								</article><!-- #post-<?php the_ID(); ?> -->
-							<?php
+								<?php
 							endwhile;
 
 							the_posts_navigation();
 
-						?>
+							?>
 
 						</main><!-- #main -->
 					</div><!-- #primary -->
