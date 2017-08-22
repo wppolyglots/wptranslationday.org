@@ -10,6 +10,7 @@
 /wp-content/plugins/jetpack
 /wp-content/plugins/wordpress-seo
 /wp-content/plugins/wp-super-cache
+/wp-content/plugins/post-duplicator
 
 wp-content/uploads
 
@@ -19,6 +20,8 @@ wp-cache-config.php
 /wp-content/themes/gwtd3/php_errorlog
 
 .svn
+
+wp-content/debug.log
 
 # But not these files...
 !.gitignore
