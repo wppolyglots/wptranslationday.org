@@ -53,6 +53,10 @@ strong {
 	z-index: 100;
 }
 
+.hideMe {
+	display: none !important;
+}
+
 /* Colors
 -------------------------------------------------- */
 
@@ -477,7 +481,7 @@ article.type-post h2 {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	font-size: 2.5rem;
+	font-size: 2rem;
 }
 
 .section.primary-menus ul li {
@@ -514,6 +518,8 @@ article.type-post h2 {
 }
 
 /* sub menu */
+.section.thepeople-sub-menus,
+.section.mediakit-sub-menus,
 .section.getin-sub-menus,
 .section.sub-menus {
 	font-family: 'Changa', sans-serif;
@@ -525,20 +531,26 @@ article.type-post h2 {
 	display: none;
 }
 
+.section.thepeople-sub-menus ul,
+.section.mediakit-sub-menus ul,
 .section.getin-sub-menus ul,
 .section.sub-menus ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	font-size: 2.5rem;
+	font-size: 2rem;
 }
 
+.section.thepeople-sub-menus ul li,
+.section.mediakit-sub-menus ul li,
 .section.getin-sub-menus ul li,
 .section.sub-menus ul li {
 	display: inline-block;
 	margin: 0 1.0rem 0 0;
 }
 
+.section.thepeople-sub-menus ul li a,
+.section.mediakit-sub-menus ul li a,
 .section.getin-sub-menus ul li a,
 .section.sub-menus ul li a {
 	display: inline-block;
@@ -547,16 +559,22 @@ article.type-post h2 {
 	font-weight: 600;
 }
 
+.section.thepeople-sub-menus ul li a:hover,
+.section.mediakit-sub-menus ul li a:hover,
 .section.getin-sub-menus ul li a:hover,
 .section.sub-menus ul li a:hover {
 	color: #80456b;
 }
 
+.section.thepeople-sub-menus .thegray a,
+.section.mediakit-sub-menus .thegray a,
 .section.getin-sub-menus .thegray a,
 .section.sub-menus .thegray a {
 	color: #666;
 }
 
+.section.thepeople-sub-menus ul li:last-child,
+.section.mediakit-sub-menus ul li:last-child,
 .section.getin-sub-menus ul li:last-child,
 .section.sub-menus ul li:last-child {
 	margin-right: 0;

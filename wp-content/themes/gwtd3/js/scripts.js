@@ -95,5 +95,49 @@
 			someElement.data('time2outId', time2outId);
 		});
 
+		$(".thepeoplemenu").mouseenter(function(){
+			clearTimeout($(document).data('time3outId'));
+			$(document).find(".section.thepeople-sub-menus").fadeIn("fast");
+		}).mouseleave(function(){
+			var someElement = $(document),
+				time3outId = setTimeout(function(){
+					someElement.find(".section.thepeople-sub-menus").fadeOut("fast");
+				}, 300);
+			someElement.data('time3outId', time3outId);
+		});
+
+		$(".section.thepeople-sub-menus").mouseenter(function(){
+			clearTimeout($(document).data('time3outId'));
+			$(document).find(".section.thepeople-sub-menus").fadeIn("fast");
+		}).mouseleave(function(){
+			var someElement = $(document),
+				time3outId = setTimeout(function(){
+					someElement.find(".section.thepeople-sub-menus").fadeOut("fast");
+				}, 300);
+			someElement.data('time3outId', time3outId);
+		});
+
+		$(".themediakitmenu").mouseenter(function(){
+			clearTimeout($(document).data('time4outId'));
+			$(document).find(".section.mediakit-sub-menus").fadeIn("fast");
+		}).mouseleave(function(){
+			var someElement = $(document),
+				time4outId = setTimeout(function(){
+					someElement.find(".section.mediakit-sub-menus").fadeOut("fast");
+				}, 300);
+			someElement.data('time4outId', time4outId);
+		});
+
+		$(".section.mediakit-sub-menus").mouseenter(function(){
+			clearTimeout($(document).data('time4outId'));
+			$(document).find(".section.mediakit-sub-menus").fadeIn("fast");
+		}).mouseleave(function(){
+			var someElement = $(document),
+				time4outId = setTimeout(function(){
+					someElement.find(".section.mediakit-sub-menus").fadeOut("fast");
+				}, 300);
+			someElement.data('time4outId', time4outId);
+		});
+
 	} );
 })( jQuery );

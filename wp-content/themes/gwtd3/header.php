@@ -160,3 +160,31 @@
 				</div>
 			</div>
 		</div>
+		<div class="section thepeople-sub-menus">
+			<div class="container">
+				<div class="row">
+					<div class="twelve columns text-left">
+						<?php
+						wp_nav_menu( array(
+							'theme_location' => 'thepeoplesub-menu',
+							'menu_id' => 'thepeople-menu',
+						) );
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section mediakit-sub-menus">
+			<div class="container">
+				<div class="row">
+					<div class="twelve columns text-left">
+						<?php
+						wp_nav_menu( array(
+							'theme_location' => 'medkitsub-menu',
+							'menu_id' => 'medkit-menu',
+						) );
+						?>
+					</div>
+				</div>
+			</div>
+		</div>

@@ -48,6 +48,8 @@ function gwtd3_setup() {
 		'gwtd-menu' => esc_html__( 'Gwtd Menu', 'gwtd3' ),
 		'gwsub-menu' => esc_html__( 'Sub Menu', 'gwtd3' ),
 		'ginvsub-menu' => esc_html__( 'Get Involved Sub Menu', 'gwtd3' ),
+		'thepeoplesub-menu' => esc_html__( 'The People Sub Menu', 'gwtd3' ),
+		'medkitsub-menu' => esc_html__( 'Media Kit Sub Menu', 'gwtd3' ),
 		'footer-menu' => esc_html__( 'Footer Menu', 'gwtd3' ),
 	) );
 
