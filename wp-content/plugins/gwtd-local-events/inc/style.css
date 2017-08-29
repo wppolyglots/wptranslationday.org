@@ -1,0 +1,16 @@
+#le-custom-fields,
+#le-custom-fields input {
+	width: 100%;
+}
+
+#le-custom-fields tr td:first-child {
+	width: 200px;
+}
+
+@media (max-width: 425px) {
+	#le-custom-fields td {
+		display: block;
+		clear: both;
+		width: 100% !important;
+	}
+}
