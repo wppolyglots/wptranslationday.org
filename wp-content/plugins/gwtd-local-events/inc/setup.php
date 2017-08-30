@@ -133,20 +133,32 @@ add_action( 'pre_get_posts', 'gwtdle_table_sorting_meta' );
 function gwtdle_table_sorting_meta( $query ) {
 	if( ! is_admin() )
 		return;
- 
+
+	if( ! $query->is_main_query() || 'local-event' != $query->get( 'post_type' )  )
+        	return;
+	
 	$orderby = $query->get( 'orderby');
- 
-	if( 'full_place' == $orderby ) {
-		$query->set('meta_key','full_place');
-		$query->set('orderby','meta_value');
-	}
-	if( 'locale' == $orderby ) {
-		$query->set('meta_key','locale');
-		$query->set('orderby','meta_value');
-	}
-	if( 'utc_start' == $orderby ) {
-		$query->set('meta_key','utc_start');
-		$query->set('orderby','meta_value_num');
+	
+	switch ( $orderby ) {
+		case '':
+			$query->set('order','ASC');
+			$query->set('meta_key','full_place');
+			$query->set('orderby','meta_value');
+			break;
+		case 'full_place':
+			$query->set('meta_key','full_place');
+			$query->set('orderby','meta_value');
+			break;
+		case 'locale':
+			$query->set('meta_key','locale');
+			$query->set('orderby','meta_value');
+			break;
+		case 'utc_start':
+			$query->set('meta_key','utc_start');
+			$query->set('orderby','meta_value_num');
+			break;
+		default:
+			break;
 	}
 }
 
