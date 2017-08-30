@@ -10,6 +10,7 @@ License: GPL2
 */
 
 include( dirname(__FILE__) . '/inc/setup.php');
+include( dirname(__FILE__) . '/inc/api.php');
 
 function gwtd_local_events_load_scripts()
 {
