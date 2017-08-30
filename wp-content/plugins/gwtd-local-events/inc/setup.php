@@ -64,7 +64,7 @@ function gwtdle_save_post()
 		'coorganizers' => __('Co-organizers', 'gwtdle'),
 		'utc_start' => __('UTC start time', 'gwtdle'),
 		'utc_end' => __('UTC end time', 'gwtdle'),
-		'announcement_url' => __('Announcement URL', 'gwtdle')
+		'announcement_url' => __('Announcement URL', 'gwtdle'),
 		'latitude' => __('Latitude', 'gwtdle'),
 		'longitude' => __('Longitude', 'gwtdle'),
 	);
