@@ -12,7 +12,8 @@
 /wp-content/plugins/wp-super-cache
 /wp-content/plugins/post-duplicator
 
-wp-content/uploads
+/wp-content/uploads
+/wp-content/uploads/*
 
 advanced-cache.php
 wp-cache-config.php
