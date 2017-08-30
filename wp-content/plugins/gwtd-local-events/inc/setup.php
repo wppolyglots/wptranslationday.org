@@ -84,10 +84,10 @@ function gwtdle_add_columns($columns) {
     unset($columns['date']);
     return array_merge($columns, 
 				array(
-					'Place' => __('Place', 'gwtdle'),
-					'Locale' =>__( 'Locale', 'gwtdle'),
-					'Organizer' =>__( 'Organizer', 'gwtdle'),
-					'UTC time' =>__( 'UTC time', 'gwtdle'),
+					'place' => __('Place', 'gwtdle'),
+					'locale' =>__( 'Locale', 'gwtdle'),
+					'organizer' =>__( 'Organizer', 'gwtdle'),
+					'utc_time' =>__( 'UTC time', 'gwtdle'),
 					'URL' =>__( 'URL', 'gwtdle'),
 				)
 		);
@@ -98,14 +98,14 @@ function gwtdle_add_columns($columns) {
 add_filter( 'manage_local-event_posts_custom_column', 'gwtdle_render_columns', 10, 2 );
 function gwtdle_render_columns( $column, $post_id ) {
 	switch ( $column ) {
-        case 'Place' :
+        case 'place' :
 			$str = get_post_meta( $post_id , 'continent' , true ) . '/' . get_post_meta( $post_id , 'country' , true ) . '/' . get_post_meta( $post_id , 'city' , true );
             echo $str; 
             break;
 		case 'Locale' :
 			echo get_post_meta( $post_id , 'locale' , true );
 			break;
-        case 'Organizer' :
+        case 'organizer' :
 			$w_org = get_post_meta( $post_id , 'organizer_w_org' , true );
 			$slack = get_post_meta( $post_id , 'organizer_slack' , true );
             echo 'WP: <a href="https://profiles.wordpress.org/' . $w_org . '">' . $w_org . '</a><br>Slack: <a href="https://wordpress.slack.com/team/' . $slack . '">@' . $slack . '</a>'; 
@@ -124,9 +124,9 @@ function gwtdle_render_columns( $column, $post_id ) {
  */
 add_filter( 'manage_edit-local-event_sortable_columns', 'gwtdle_table_sorting' );
 function gwtdle_table_sorting( $columns ) {
-	$columns['Place'] = 'full_place';
-	$columns['Locale'] = 'locale';
-	$columns['UTC time'] = 'utc_start';
+	$columns['place'] = 'full_place';
+	$columns['locale'] = 'locale';
+	$columns['utc_time'] = 'utc_start';
 	return $columns;
 }
 add_action( 'pre_get_posts', 'gwtdle_table_sorting_meta' );
