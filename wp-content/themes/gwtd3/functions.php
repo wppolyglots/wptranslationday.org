@@ -144,8 +144,6 @@ function gwtd3_scripts() {
 
 	wp_enqueue_style( 'gwtd3-fonts', 'https://fonts.googleapis.com/css?family=Changa:400,600,700|Open+Sans:400,400i,600,700' );
 
-	wp_enqueue_style( 'gwtd3-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' );
-
 	if ( get_page_template_slug($post->ID) == 'local-events-page.php' ) {
 		wp_enqueue_style( 'gwtd-map', get_template_directory_uri() . '/layouts/gwtd-map.css', array(), '20170830' );
 	}
@@ -169,12 +167,6 @@ function gwtd3_scripts() {
         wp_enqueue_script( 'gwtd-map-base' );
         wp_enqueue_script( 'gwtd-map-design' );
         wp_enqueue_script( 'gwtd-map' );
-	}
-
-	if ( is_page( 'social-mentions' ) ) {
-		wp_enqueue_script( 'gwtd3-masonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array( 'jquery' ), '20170725', true );
-		wp_enqueue_script( 'gwtd3-imagesloaded', get_template_directory_uri() . '/js/imagesLoaded.pkgd.min.js', array( 'jquery' ), '20170725', true );
-
 	}
 
 	wp_enqueue_script( 'gwtd3-custom-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '20170725', true );

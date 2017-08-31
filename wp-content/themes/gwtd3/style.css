@@ -729,6 +729,14 @@ article.type-post h2 {
 	clear: both;
 }
 
+/* Social-Mentions
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+#socment-hashtag-header,
+#socment-hashtag-footer {
+	font-family: 'Changa',sans-serif !important;
+}
+
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
