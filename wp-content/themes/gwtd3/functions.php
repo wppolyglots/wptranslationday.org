@@ -169,6 +169,12 @@ function gwtd3_scripts() {
         wp_enqueue_script( 'gwtd-map' );
 	}
 
+	if ( is_page( 'social-mentions' ) ) {
+		wp_enqueue_script( 'gwtd3-masonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array( 'jquery' ), '20170725', true );
+		wp_enqueue_script( 'gwtd3-imagesloaded', get_template_directory_uri() . '/js/imagesLoaded.pkgd.min.js', array( 'jquery' ), '20170725', true );
+
+	}
+
 	wp_enqueue_script( 'gwtd3-custom-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '20170725', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
