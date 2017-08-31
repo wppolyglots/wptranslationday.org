@@ -5,9 +5,11 @@
  *
  * Learn more: https://developer.wordpress.org/themes/basics/template-files/
 */
-.section-localevents {
-	padding-top: 0;
+
+.section-localevents .container {
+	margin-top: 4rem;
 }
+
 .gwtd_map {
 	height: 600px;
 	margin: 0;
