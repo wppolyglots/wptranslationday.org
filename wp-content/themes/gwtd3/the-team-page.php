@@ -55,16 +55,16 @@ get_header(); ?>
 					echo get_post_meta( $post->ID, 'tt_title', true );
 					echo '</br>';
 					if ( ! empty( $twitter_account ) ) {
-						echo '<i class="fa fa-twitter"></i> <a href="https://twitter.com/' . $twitter_account . '">@' . $twitter_account . '</a> ';
+						echo '<span><i class="fa fa-twitter"></i> <a href="https://twitter.com/' . $twitter_account . '">@' . $twitter_account . '</a></span> ';
 					}
 					if ( ! empty( $w_org_account ) ) {
-						echo '<i class="fa fa-wordpress"></i> <a href="https://profiles.wordpress.org/' . $w_org_account . '">' . $w_org_account . '</a> ';
+						echo '<span><i class="fa fa-wordpress"></i> <a href="https://profiles.wordpress.org/' . $w_org_account . '">' . $w_org_account . '</a></span> ';
 					}
 					if ( ! empty( $slack_account ) ) {
-						echo '<i class="fa fa-slack"></i> <a href="https://wordpress.slack.com/team/' . $slack_account . '">' . $slack_account . '</a> ';
+						echo '<span><i class="fa fa-slack"></i> <a href="https://wordpress.slack.com/team/' . $slack_account . '">' . $slack_account . '</a></span> ';
 					}
 					if ( ! empty( $website ) ) {
-						echo '<i class="fa fa-globe"></i> <a href="' . $website . '">' . $website . '</a>';
+						echo '<span><i class="fa fa-globe"></i> <a href="' . $website . '">' . $website . '</a></span>';
 					}
 					echo '</div>';
 					echo '</div>';
@@ -81,40 +81,5 @@ get_header(); ?>
 		</div>
 	</div>
 </div>
-<style>
-	.gwtd-team-member {
-		width: 100%;
-		display: block;
-		margin-bottom: 5rem;
-	}
-
-	.gwtd-team-member-header {
-		display: block;
-		width: 100%;
-		clear: both;
-	}
-
-	.gwtd-team-member-header h4 {
-		margin-bottom: 0 !important;
-	}
-
-	.gwtd-team-member-image {
-		float: left;
-		width: 100px;
-		margin-right: 10px;
-	}
-
-	.gwtd-team-member-name {
-		float: left;
-		width: calc( 100% - 110px );
-	}
-
-	.gwtd-team-member-bio {
-		display:block;
-		width: 100%;
-		margin-top: 1rem;
-		clear: both;
-	}
-</style>
 <?php
 get_footer();

@@ -692,6 +692,43 @@ article.type-post h2 {
 	font-size: 2rem;
 }
 
+.gwtd-team-member {
+	width: 100%;
+	display: block;
+	margin-bottom: 5rem;
+}
+
+/* The Team
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.gwtd-team-member-header {
+	display: table;
+	width: 100%;
+	clear: both;
+}
+
+.gwtd-team-member-header h4 {
+	margin-bottom: 0 !important;
+}
+
+.gwtd-team-member-image {
+	float: left;
+	width: 100px;
+	margin-right: 10px;
+}
+
+.gwtd-team-member-name {
+	float: left;
+	width: calc( 100% - 110px );
+}
+
+.gwtd-team-member-bio {
+	display:block;
+	width: 100%;
+	margin-top: 1rem;
+	clear: both;
+}
+
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -837,4 +874,26 @@ article.type-post h2 {
 	.int-head-mobile-img {
 		display: block;
 	}
+	
+	.gwtd-team-member-bio,
+	.gwtd-team-member-image {
+		text-align: center;
+		width: 100%;
+		clear: both;
+	}
+
+	.gwtd-team-member-name span {
+		display: inline-block;
+	}
+
+	.gwtd-team-member-name {
+		text-align: center;
+	}
+
+	.gwtd-team-member-image,
+	.gwtd-team-member-name {
+		width: 100%;
+		clear: both;
+	}
+
 }
