@@ -55,16 +55,16 @@ get_header(); ?>
 					echo get_post_meta( $post->ID, 'tt_title', true );
 					echo '</br>';
 					if ( ! empty( $twitter_account ) ) {
-						echo 'Twitter: <a href="https://twitter.com/' . $twitter_account . '">@' . $twitter_account . '</a> ';
+						echo '<i class="fa fa-twitter"></i> <a href="https://twitter.com/' . $twitter_account . '">@' . $twitter_account . '</a> ';
 					}
 					if ( ! empty( $w_org_account ) ) {
-						echo  '| WordPress: <a href="https://profiles.wordpress.org/' . $w_org_account . '">' . $w_org_account . '</a> ';
+						echo '<i class="fa fa-wordpress"></i> <a href="https://profiles.wordpress.org/' . $w_org_account . '">' . $w_org_account . '</a> ';
 					}
 					if ( ! empty( $slack_account ) ) {
-						echo '| Slack: <a href="https://wordpress.slack.com/team/' . $slack_account . '">' . $slack_account . '</a>';
+						echo '<i class="fa fa-slack"></i> <a href="https://wordpress.slack.com/team/' . $slack_account . '">' . $slack_account . '</a> ';
 					}
 					if ( ! empty( $website ) ) {
-						echo '| Website: <a href="' . $website . '">' . $website . '</a>';
+						echo '<i class="fa fa-globe"></i> <a href="' . $website . '">' . $website . '</a>';
 					}
 					echo '</div>';
 					echo '</div>';
