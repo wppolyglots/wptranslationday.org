@@ -51,12 +51,9 @@ get_header(); ?>
 					echo '<img src="https://wordpress.org/grav-redirect.php?user=' . $w_org_account . '&s=' . $pic_size . '">';
 					echo '</div>';
 					echo '<div class="gwtd-team-member-name">';
-					echo '<b>' . get_post_meta( $post->ID, 'tt_name', true ) . '</b> - ' . get_post_meta( $post->ID, 'tt_title', true );
-					echo '</div>';
-					echo '</div>';
-					echo '</div>';
-
-
+					echo '<h4>' . get_post_meta( $post->ID, 'tt_name', true ) . '</h4>';
+					echo get_post_meta( $post->ID, 'tt_title', true );
+					echo '</br>';
 					if ( ! empty( $twitter_account ) ) {
 						echo 'Twitter: <a href="https://twitter.com/' . $twitter_account . '">@' . $twitter_account . '</a> ';
 					}
@@ -69,7 +66,13 @@ get_header(); ?>
 					if ( ! empty( $website ) ) {
 						echo '| Website: <a href="' . $website . '">' . $website . '</a>';
 					}
+					echo '</div>';
+					echo '</div>';
+					echo '<div class="gwtd-team-member-bio">';
 					echo get_post_meta( $post->ID, 'tt_bio', true );
+					echo '</div>';
+					echo '</div>';
+
 				endwhile;
 				wp_reset_postdata();
 				?>
@@ -78,6 +81,40 @@ get_header(); ?>
 		</div>
 	</div>
 </div>
+<style>
+	.gwtd-team-member {
+		width: 100%;
+		display: block;
+		margin-bottom: 5rem;
+	}
 
+	.gwtd-team-member-header {
+		display: block;
+		width: 100%;
+		clear: both;
+	}
+
+	.gwtd-team-member-header h4 {
+		margin-bottom: 0 !important;
+	}
+
+	.gwtd-team-member-image {
+		float: left;
+		width: 100px;
+		margin-right: 10px;
+	}
+
+	.gwtd-team-member-name {
+		float: left;
+		width: calc( 100% - 110px );
+	}
+
+	.gwtd-team-member-bio {
+		display:block;
+		width: 100%;
+		margin-top: 1rem;
+		clear: both;
+	}
+</style>
 <?php
 get_footer();
