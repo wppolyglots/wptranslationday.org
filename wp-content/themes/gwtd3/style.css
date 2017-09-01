@@ -731,6 +731,11 @@ article.type-post h2 {
 
 /* Mailpoet Form
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.parsley-errors-list,
+.mailpoet_message {
+	position: absolute !important;
+	font-size: 1.5rem !important;
+}
 .mailpoet_text {
 	font-size: 1.4rem !important;
 	width: 150px !important;

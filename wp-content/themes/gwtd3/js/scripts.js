@@ -1,6 +1,8 @@
 (function( $ ) {
 	$( document ).ready( function( $ ) {
 
+		$('input.mailpoet_text').attr("placeholder", "enter your e-mail");
+
 		$( '#mobile-menu-trigger' ).click( function() {
 			toggleNav();
 		});
