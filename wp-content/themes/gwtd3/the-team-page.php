@@ -48,7 +48,11 @@ get_header(); ?>
 					echo '<div class="gwtd-team-member">';
 					echo '<div class="gwtd-team-member-header">';
 					echo '<div class="gwtd-team-member-image">';
-					echo '<img src="https://wordpress.org/grav-redirect.php?user=' . $w_org_account . '&s=' . $pic_size . '">';
+					if ( has_post_thumbnail() ) {
+						echo '<img src="' . get_the_post_thumbnail_url() . '">';
+					} else {
+						echo '<img src="https://wordpress.org/grav-redirect.php?user=' . $w_org_account . '&s=' . $pic_size . '">';
+					}
 					echo '</div>';
 					echo '<div class="gwtd-team-member-name">';
 					echo '<h4>' . get_post_meta( $post->ID, 'tt_name', true ) . '</h4>';
