@@ -778,6 +778,11 @@ article.type-post h2 {
 	font-family: 'Changa',sans-serif;
 }
 
+#subscribe-form .mailpoet_submit:hover {
+	color: #17506a !important;
+	background-color: #d3dde0 !important;
+}
+
 /* Social-Mentions
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
