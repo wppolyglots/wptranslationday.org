@@ -39,9 +39,21 @@ a {
 	text-decoration: none;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
 	font-weight: 600;
 	font-family: 'Changa', sans-serif;
+}
+
+h4 {
+	font-size: 1.8rem !important;
+	color: #80456b;
+}
+
+@media (min-width: 550px) {
+	h4 {
+		font-size: 2.4rem !important;
+		color: #80456b;
+	}
 }
 
 strong {
