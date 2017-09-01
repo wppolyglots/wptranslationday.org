@@ -837,6 +837,10 @@ article.type-post h2 {
 	.mailpoet_text {
 		width: 130px !important;
 	}
+
+	#footer-social {
+		margin: 0 !important;
+	}
 }
 
 /* Small devices (landscape phones, up to 550px)*/
@@ -924,7 +928,7 @@ article.type-post h2 {
 	#footer-menu {
 		text-align: center !important;
 	}
-	
+
 	#footer-menu li {
 		margin: 0 !important;
 	}
