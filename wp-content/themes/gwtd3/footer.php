@@ -24,23 +24,32 @@
 						<?php endif; ?>
 					</div>
 				</div>
+				<div class="row">
+					<div class="twelve columns text-left">
+						<?php if ( is_active_sidebar( 'subscribe-area' ) ) : ?>
+							<div id="subscribe-form">
+								<?php dynamic_sidebar( 'subscribe-area' ); ?>
+							</div>
+						<?php endif; ?>
+					</div>
+				</div>
 			</div>
 		</div>
 
-<div class="section footer-menu-holder bg-color-gray--dark text-color-gray--light">
-	<div class="container">
-		<div class="row">
-			<div class="twelve columns text-left">
-				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'footer-menu',
-					'menu_id' => 'footer-menu',
-				) );
-				?>
+		<div class="section footer-menu-holder bg-color-gray--dark text-color-gray--light">
+			<div class="container">
+				<div class="row">
+					<div class="twelve columns text-left">
+						<?php
+						wp_nav_menu( array(
+							'theme_location' => 'footer-menu',
+							'menu_id' => 'footer-menu',
+						) );
+						?>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-</div>
 
 		<div class="section bottom sp bg-color-gray--darker">
 			<div class="container">

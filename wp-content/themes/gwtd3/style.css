@@ -729,6 +729,55 @@ article.type-post h2 {
 	clear: both;
 }
 
+/* Mailpoet Form
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.widget_mailpoet_form {
+	margin-bottom: 6rem !important;
+}
+
+.mailpoet_text {
+	font-size: 1.4rem !important;
+}
+
+#subscribe-form {
+	text-align:center !important;;
+}
+
+#subscribe-form p {
+	margin-bottom: 0 !important;
+}
+#subscribe-form input {
+	border: 0 !important;
+	height: 40px !important;
+	border-radius: 0 !important;
+	display: inline-block !important;
+}
+
+#subscribe-form h2 {
+	font-size: 3rem !important;
+	margin-top: 0 !important;
+}
+
+#subscribe-form .mailpoet_paragraph {
+	margin-left: 20px !important;
+	display: inline-block !important;
+	width: auto !important;
+	height: auto !important;
+}
+
+#subscribe-form .mailpoet_text_label {
+	display: none !important;
+}
+
+#subscribe-form .mailpoet_submit {
+	background-color: #d4aeba !important;
+	color: #471530 !important;
+	font-size: 2rem !important;
+	font-weight: 600 !important;
+	height: auto !important;
+	font-family: 'Changa',sans-serif;
+}
+
 /* Social-Mentions
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
