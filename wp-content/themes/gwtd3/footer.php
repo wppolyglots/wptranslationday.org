@@ -10,25 +10,20 @@
  */
 
 ?>
-		<div class="section footer bg-color-gray--dark text-color-gray--light">
+		<div class="section footer-tuned bg-color-gray--dark text-color-gray--light">
 			<div class="container">
 				<div class="row">
-					<div class="six columns">
-						<h2>Stay tuned!</h2>
-					</div>
-					<div class="six columns text-right">
-						<?php if ( is_active_sidebar( 'footer-social' ) ) : ?>
-							<div id="footer-social">
-								<?php dynamic_sidebar( 'footer-social' ); ?>
-							</div>
-						<?php endif; ?>
-					</div>
-				</div>
-				<div class="row">
-					<div class="twelve columns text-left">
+					<div class="six columns text-left">
 						<?php if ( is_active_sidebar( 'subscribe-area' ) ) : ?>
 							<div id="subscribe-form">
 								<?php dynamic_sidebar( 'subscribe-area' ); ?>
+							</div>
+						<?php endif; ?>
+					</div>
+					<div class="six columns text-center">
+						<?php if ( is_active_sidebar( 'footer-social' ) ) : ?>
+							<div id="footer-social">
+								<?php dynamic_sidebar( 'footer-social' ); ?>
 							</div>
 						<?php endif; ?>
 					</div>
