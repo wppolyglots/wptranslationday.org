@@ -155,6 +155,8 @@ function gwtd3_scripts() {
 
 	wp_enqueue_style( 'gwtd3-fonts', 'https://fonts.googleapis.com/css?family=Changa:400,600,700|Open+Sans:400,400i,600,700' );
 
+	wp_enqueue_style( 'gwtd3-font-awesome', get_template_directory_uri() . '/layouts/font-awesome/css/font-awesome.min.css', array(), '20170725' );
+
 	if ( get_page_template_slug($post->ID) == 'local-events-page.php' ) {
 		wp_enqueue_style( 'gwtd-map', get_template_directory_uri() . '/layouts/gwtd-map.css', array(), '20170830' );
 	}
