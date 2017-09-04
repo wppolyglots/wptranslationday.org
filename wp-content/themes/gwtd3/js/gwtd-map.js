@@ -5,11 +5,14 @@ jQuery(document).ready(function() {
 	}
 	var map = AmCharts.makeChart( 'gwtd_map', {
 		'type': 'map',
-		'projection': 'miller',
+		'projection': 'mercator',
 		'addClassNames': true,
   		'dataProvider': {
-			'map': 'worldLow',
-  			'images': markers
+			'map': 'worldHigh',
+  			'images': markers,
+  			'zoomLevel': 1.4,
+  			'zoomLatitude': 20,
+  			'zoomLongitude': 0
   		},
   		'balloon': {
 	  		'color': '#FFFFFF',
@@ -25,7 +28,7 @@ jQuery(document).ready(function() {
 			'selectedScale': 1.5
 		},
 		'zoomControl': {
-			'homeButtonEnabled': false,
+			//'homeButtonEnabled': false,
 			'panControlEnabled': panControlEnabled,
 			'top': '50'
 		},
