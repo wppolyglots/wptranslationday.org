@@ -175,7 +175,7 @@ function gwtd3_scripts() {
 
 	if ( get_page_template_slug($post->ID) == 'local-events-page.php' ) {
 		wp_register_script( 'gwtd-map-base', get_template_directory_uri() . '/js/ammap.js', array(), false, true );
-		wp_register_script( 'gwtd-map-design', get_template_directory_uri() . '/js/worldLow.js', array(), false, true );
+		wp_register_script( 'gwtd-map-design', get_template_directory_uri() . '/js/worldHigh.js', array(), false, true );
 		wp_register_script( 'gwtd-map', get_template_directory_uri() . '/js/gwtd-map.js', array(), false, true );
         wp_enqueue_script( 'gwtd-map-base' );
         wp_enqueue_script( 'gwtd-map-design' );

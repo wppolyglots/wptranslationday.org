@@ -28,7 +28,6 @@ get_header(); ?>
 					$event_count = $query->post_count;
 					// Init JS array for map markers
 					$map_datas = '<script>var markers = new Array();';
-					$color = '#206480';
 					while ( $query->have_posts() ) : $query->the_post();
 						$continent = get_post_meta($post->ID, 'continent', true);
 						if ( $previous_continent != $continent ) {
@@ -63,9 +62,7 @@ get_header(); ?>
 							$url = '';
 						}
 						echo '<br>';
-						
-						if ($color == '#206480') : $color = '#471530'; else: $color = '#206480'; endif;
-							
+													
 						// Data storage for the map
 						if ( 
 							get_post_meta( $post->ID, 'country', true ) &&
@@ -73,18 +70,19 @@ get_header(); ?>
 							get_post_meta( $post->ID, 'latitude', true) && 
 							get_post_meta( $post->ID, 'longitude', true)
 						) {
-		
+							if ($url != '') { $url_label = '<br /><small>click to visit website</small>'; } else { $url_label = ''; }
+							
 							$map_datas .= '
 								markers.push({
 									"id": ' . json_encode( sanitize_title( get_post_meta( $post->ID, 'country', true ) . '-' . get_post_meta( $post->ID, 'city', true ) ) ) . ',
-									"title": ' . json_encode(get_post_meta( $post->ID, 'country', true ) . ' / ' . get_post_meta( $post->ID, 'city', true ) . '<br /><small>Starting at ' . $utc_start . ' UTC.</small><br /><small>click to visit website</small>') .',
+									"title": ' . json_encode(get_post_meta( $post->ID, 'country', true ) . ' / ' . get_post_meta( $post->ID, 'city', true ) . '<br /><small>Starting at ' . $utc_start . ' UTC.</small>' . $url_label) . ',
 									"eventURL": ' . json_encode( $url ) . ',
 									"selectable": true,
 									"latitude": ' . get_post_meta( $post->ID, 'latitude', true) . ',
 									"longitude": ' . get_post_meta( $post->ID, 'longitude', true) . ',
-									"svgPath": "M77.692,32.692C77.692,17.399,65.3,5,50,5C34.707,5,22.308,17.399,22.308,32.692c0,5.05,1.381,9.769,3.739,13.846h-0.035   L50,95l23.999-48.462h-0.038C76.332,42.461,77.692,37.743,77.692,32.692",
-									"scale": 0.15,
-									"color": "' . $color . '"
+									"imageURL": "' . get_template_directory_uri() . '/img/marker.svg",
+									"width" : "16",
+									"height" : "24"
 								});
 							';
 						}
