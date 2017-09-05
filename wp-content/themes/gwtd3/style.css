@@ -493,6 +493,10 @@ article.type-post h2 {
 	font-size: 4rem;
 }
 
+.menu-mobile-menu-container {
+	font-size: 1.8rem !important;
+}
+
 .section.primary-menus {
 	padding: 1rem 0;
 	background: #206480;
@@ -870,10 +874,6 @@ article.type-post h2 {
 	#mobile-menu-trigger {
 		display: block;
 		z-index: 1000;
-	}
-
-	.menu-mobile-menu-container {
-		font-size: 1.8rem !important;
 	}
 }
 
