@@ -35,7 +35,7 @@
 			}
 		});
 
-		$( 'a[href*=\\#]' ).on( 'click', function( event ) {
+		$( 'a[href*=\\#][href!="#none"]' ).on( 'click', function( event ) {
 			if ( $( this ).attr( 'id' ) === 'smoothup' ) {
 				$( 'html, body' ).animate( {
 					scrollTop: 0
