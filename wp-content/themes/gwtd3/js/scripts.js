@@ -3,9 +3,7 @@
 
 		$('input.mailpoet_text').attr("placeholder", "enter your e-mail");
 
-		$( '#mobile-menu-trigger' ).click( function() {
-			toggleNav();
-		});
+		// main function to show/hide the mobile menu
 
 		function toggleNav() {
 			if ( $( '#site-wrapper' ).hasClass( 'show-nav' ) ) {
@@ -19,6 +17,12 @@
 			}
 		}
 
+		$( '#mobile-menu-trigger' ).click( function() {
+			toggleNav();
+		});
+
+		// on window scroll show and hide the back to top button
+
 		$( window ).scroll( function() {
 			if ( $( this ).scrollTop() < 400 ) {
 				$( '#to-top' ).fadeOut();
@@ -27,13 +31,12 @@
 			}
 		} );
 
-		$( window ).resize(function() {
-			if ( $( '#site-wrapper' ).hasClass( 'show-nav' ) ) {
-				$( '#site-wrapper' ).removeClass( 'show-nav' );
-				$( '#mobile-menu-trigger .dashicons' ).removeClass( 'dashicons-no' );
-				$( '#mobile-menu-trigger .dashicons' ).addClass( 'dashicons-menu' );
-			}
-		});
+		// Checks if there's an # in the link
+		// and if not #none
+		// scroll to the given anchor
+		// if the mobile menu is on then hide it
+		// if the id of the click is #smoothup it scrolls to top
+
 
 		$( 'a[href*=\\#][href!="#none"]' ).on( 'click', function( event ) {
 			if ( $( this ).attr( 'id' ) === 'smoothup' ) {
@@ -52,15 +55,17 @@
 			}
 		} );
 
+		// Hide Mobile Menu on Click Outside
+
 		$(document).mouseup(function(event)
 		{
-			var wrapper = $( '#site-wrapper');
-
-			if ( wrapper.hasClass('show-nav') )
-			{
+			var target = $( event.target );
+			if ( !target.is('span.dashicons-no') && $( '#site-wrapper').hasClass( 'show-nav' ) ) {
 				toggleNav();
 			}
 		});
+
+		// Custom Menus -> Sub Menus
 
 		$(".theeventmenu").mouseenter(function(){
 			clearTimeout($(document).data('timeoutId'));
