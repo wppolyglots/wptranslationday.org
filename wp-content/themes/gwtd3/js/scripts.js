@@ -42,11 +42,9 @@
 				}, 500 );
 				return false;
 			} else {
-				// if ( $( this ).parent().parent().parent().parent().attr( 'id' ) === 'site-menu' ) {
 				if ( $('#site-wrapper').hasClass('show-nav') ) {
 					toggleNav();
 				}
-				// event.preventDefault();
 				$( 'html,body' ).animate( {
 					scrollTop: $( this.hash ).offset().top
 				}, 500 );
@@ -56,7 +54,6 @@
 
 		$(document).mouseup(function(event)
 		{
-			var container = $("#site-menu");
 			var wrapper = $( '#site-wrapper');
 
 			if ( wrapper.hasClass('show-nav') )
