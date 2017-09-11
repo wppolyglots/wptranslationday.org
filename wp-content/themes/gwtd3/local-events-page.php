@@ -47,10 +47,14 @@ get_header(); ?>
 
 						 ?>
 						<div class="entry-content">
-						<?php echo '<b>' . get_post_meta( $post->ID, 'country', true ) . ' / ' . get_post_meta( $post->ID, 'city', true ) . '</b> ' . $locales; 
+						<?php
+						echo '<b>' . get_post_meta( $post->ID, 'country', true ) . ' / ' . get_post_meta( $post->ID, 'city', true ) . '</b>';
 						$utc_start = get_post_meta( $post->ID, 'utc_start', true );
 						if ($utc_start) {
-							echo ' Starting at ' . $utc_start . ' UTC.';
+							echo ' - ';
+							echo '<i class="fa fa-clock-o"></i> ' . $utc_start . ' UTC.';
+						} else {
+							echo '.';
 						}
 						echo '<br>';
 						$w_org = get_post_meta( $post->ID, 'organizer_w_org', true );
