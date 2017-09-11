@@ -31,7 +31,8 @@ function gwtd_speakers_list_page() {
 	$form_id = 'CF5978d3104ee98';
 	$data = Caldera_Forms_Admin::get_entries( $form_id, 1, 9999999 );
 	$entries = $data['entries'];
-
+	$counter = 0;
+	echo '<div class="postbox-group">';
 	foreach ( $entries as $entry ) {
 	?>
 	<div class="postbox">
@@ -53,5 +54,23 @@ function gwtd_speakers_list_page() {
 		</div>
 	</div>
 	<?php
+	if ( 0 == ++$counter % 3 ) {
+		echo '</div><div class="postbox-group">';
 	}
+	}
+	echo '</div>';
+	?>
+	<style>
+		.postbox {
+			width: 30%;
+			float:left;
+			margin: 8px;
+		}
+		.postbox-group {
+			display: block;
+			width: 100%;
+			clear: both;
+		}
+	</style>
+<?php
 }// end gwtd_speakers_list_page
