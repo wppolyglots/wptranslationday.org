@@ -52,7 +52,7 @@ get_header(); ?>
 						$utc_start = get_post_meta( $post->ID, 'utc_start', true );
 						if ($utc_start) {
 							echo ' - ';
-							echo '<i class="fa fa-clock-o"></i> ' . $utc_start . ' UTC.';
+							echo '<i class="fa fa-clock-o" title="Starting at"></i> ' . $utc_start . ' UTC.';
 						} else {
 							echo '.';
 						}
