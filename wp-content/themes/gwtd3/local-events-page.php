@@ -61,7 +61,7 @@ get_header(); ?>
 						echo 'Organizer: <a href="https://profiles.wordpress.org/' . $w_org . '">' . $w_org . '</a>';
 						$url = get_post_meta( $post->ID, 'announcement_url' , true );
 						if ($url) {
-							echo ', <a href="' . $url . '">announcement url</a>';
+							echo '</br>Event link: <a title="View the event" href="' . $url . '">View</a>';
 						} else {
 							$url = '';
 						}
