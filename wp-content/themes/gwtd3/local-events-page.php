@@ -19,7 +19,7 @@ get_header(); ?>
 					$event_count = $query->post_count;
 					?>
 					<header class="page-header">
-						<h2><?php echo $event_count; ?> local events near you and counting!</h2>
+						<h2><?php echo $event_count; ?> local events near you... and counting!</h2>
 						<?php
 						$page = get_post( 418 );
 						echo $page->post_content;
