@@ -42,7 +42,8 @@ function gwtd_speakers_list_page() {
 					<?php
 					echo '<strong>Name: </strong> ' . $entry['data']['name'] . ' ' . $entry['data']['last_name'] . '<br/>';
 					echo '<strong>Slack: </strong> ' . $entry['data']['your_wordpress_slack_username'] . '<br/>';
-					echo '<strong>Country: </strong> ' . $entry['data']['country'] . '<br/><br/>';
+					echo '<strong>Country: </strong> ' . $entry['data']['country'] . '<br/>';
+					echo '<strong>Presentation Languages</strong> ' . $entry['data']['presentation_languages'] . '<br/><br/>';
 					echo '<strong>Talk Title: </strong> ' . $entry['data']['title_what_would_you_like_to_talk_about'] . '<br/><br/>';
 					echo '<strong>Talk Summary: </strong><br/>' . $entry['data']['talk_summary'] . '<br/><br/>';
 					echo '<strong>Talk Format: </strong> ' . $entry['data']['talk_format'] . '<br/>';
