@@ -64,7 +64,6 @@ function schedule_post_type() {
 		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
-		'menu_position'         => 5,
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
@@ -72,6 +71,7 @@ function schedule_post_type() {
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
+		'rewrite'            => array( 'slug' => 'schedule' ),
 	);
 	register_post_type( 'gwtd_schedule', $args );
 
@@ -104,7 +104,8 @@ function gwtds_metaboxes_metaboxes_html() {
 	$custom = get_post_custom( $post->ID );
 	$arr = array(
 		's_name' => __( 'Speaker Name' ),
-		's_username' => __( 'Speaker username' ),
+		's_username' => __( 'Speaker Username' ),
+		's_bio' => __( 'Speaker Bio' ),
 		't_time' => __( 'Talk Time UTC' ),
 		't_duration' => __( 'Talk Duration' ),
 		't_type' => __( 'Talk Type' ),
@@ -143,7 +144,8 @@ function schedule_save_metaboxes() {
 	global $post;
 	$arr = array(
 		's_name' => __( 'Speaker Name' ),
-		's_username' => __( 'Speaker username' ),
+		's_username' => __( 'Speaker Username' ),
+		's_bio' => __( 'Speaker Bio' ),
 		't_time' => __( 'Talk Time UTC' ),
 		't_duration' => __( 'Talk Duration' ),
 		't_type' => __( 'Talk Type' ),

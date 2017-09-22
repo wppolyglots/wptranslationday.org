@@ -296,7 +296,9 @@ strong {
 .section.lp-what-it-is h2,
 .section.lp-where-it-is h2,
 .section.lp-how-to-get-involved h2,
-.section.lp-when-it-is h2 {
+.section.lp-when-it-is h2,
+.section.lp-now-it-is h2,
+.section.lp-after-it-is h2 {
 	font-size: 5.5rem;
 	z-index: 10;
 }
@@ -318,6 +320,10 @@ strong {
 
 .whatbgholder {
 	background-image: url(img/questionmark.png);
+}
+
+.nowbgholder {
+	background-image: url(img/speaker.png);
 }
 
 .wherebgholder {
@@ -736,11 +742,11 @@ article.type-post h2 {
 
 .gwtd-team-member-name {
 	float: left;
-	width: calc( 100% - 110px );
+	width: calc(100% - 110px);
 }
 
 .gwtd-team-member-bio {
-	display:block;
+	display: block;
 	width: 100%;
 	margin-top: 1rem;
 	clear: both;
@@ -753,6 +759,7 @@ article.type-post h2 {
 	position: absolute !important;
 	font-size: 1.5rem !important;
 }
+
 .mailpoet_text {
 	font-size: 1.4rem !important;
 	width: 150px !important;
@@ -761,6 +768,7 @@ article.type-post h2 {
 #subscribe-form p {
 	margin-bottom: 0 !important;
 }
+
 #subscribe-form input {
 	border: 0 !important;
 	height: 40px !important;
@@ -789,7 +797,7 @@ article.type-post h2 {
 	font-size: 2rem !important;
 	font-weight: 600 !important;
 	height: auto !important;
-	font-family: 'Changa',sans-serif;
+	font-family: 'Changa', sans-serif;
 	margin-left: 2rem;
 	width: 150px !important;
 	padding: 0 10px !important;
@@ -805,7 +813,77 @@ article.type-post h2 {
 
 #socment-hashtag-header,
 #socment-hashtag-footer {
-	font-family: 'Changa',sans-serif !important;
+	font-family: 'Changa', sans-serif !important;
+}
+
+/* Schedule
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.the-talk .talk-title,
+.the-talk .subtitle {
+	color: #206480;
+}
+
+.the-talk h4 {
+	color: #206480;
+}
+
+.current-talk p,
+.the-talk p {
+	margin: 0;
+}
+
+.the-talk .talk-title,
+.the-talk .the-time h1 {
+	line-height: 30px;
+}
+
+.current-talk .bgholder {
+	top: -30px;
+}
+
+.current-talk h2 {
+	color: #80456b;
+}
+
+.current-talk h3,
+.current-talk h4 {
+	color: #471530;
+}
+
+.subtitle {
+	margin-top: -30px;
+}
+
+.the-time {
+	text-align: center;
+}
+
+.the-time h1,
+.the-time h6 {
+	margin: 0;
+	padding: 0;
+}
+
+.the-time h6 {
+	color: #7ba1af;
+	font-size: 1.3rem;
+}
+
+.the-time .localtime {
+	color: #7ba1af;
+}
+
+.talk-info {
+	font-weight: 600;
+	font-size: 18px;
+	font-family: 'Changa', sans-serif;
+	clear: both;
+	display: inline-block;
+}
+
+.current-talk .the-time {
+	display: none;
 }
 
 /* Media Queries
@@ -815,7 +893,9 @@ article.type-post h2 {
 	.section.lp-what-it-is h2,
 	.section.lp-where-it-is h2,
 	.section.lp-how-to-get-involved h2,
-	.section.lp-when-it-is h2 {
+	.section.lp-when-it-is h2,
+	.section.lp-now-it-is h2,
+	.section.lp-after-it-is h2 {
 		font-size: 4.5rem;
 	}
 
@@ -842,7 +922,7 @@ article.type-post h2 {
 @media (max-width: 843px) {
 	.footer-tuned .six.columns {
 		width: 100% !important;
-		clear:both;
+		clear: both;
 		margin: 0 !important;
 	}
 
@@ -865,9 +945,8 @@ article.type-post h2 {
 	}
 }
 
-
 @media (max-width: 980px) {
-.section.primary-menus .columns {
+	.section.primary-menus .columns {
 		display: none;
 	}
 
@@ -881,7 +960,9 @@ article.type-post h2 {
 	.section.lp-what-it-is h2,
 	.section.lp-where-it-is h2,
 	.section.lp-how-to-get-involved h2,
-	.section.lp-when-it-is h2 {
+	.section.lp-when-it-is h2,
+	.section.lp-now-it-is h2,
+	.section.lp-after-it-is h2 {
 		font-size: 3.5rem;
 		margin: 5rem 0;
 	}
@@ -911,6 +992,15 @@ article.type-post h2 {
 
 	.section.lp-what-it-is {
 		background-image: url(img/questionmark.png);
+		background-repeat: no-repeat;
+		background-attachment: local;
+		background-position: 20px 20px;
+		background-size: 200px;
+		background-origin: border-box;
+	}
+
+	.section.lp-now-it-is {
+		background-image: url(img/speaker.png);
 		background-repeat: no-repeat;
 		background-attachment: local;
 		background-position: 20px 20px;
@@ -976,7 +1066,7 @@ article.type-post h2 {
 	.int-head-mobile-img {
 		display: block;
 	}
-	
+
 	.gwtd-team-member-bio,
 	.gwtd-team-member-image {
 		width: 100%;
