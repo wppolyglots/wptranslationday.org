@@ -1,0 +1,20 @@
+#schedule-custom-fields,
+#schedule-custom-fields input {
+	width: 100%;
+}
+
+#schedule-custom-fields tr td:first-child {
+	width: 200px;
+}
+
+@media (max-width: 425px) {
+	#schedule-custom-fields td {
+		display: block;
+		clear: both;
+		width: 100% !important;
+	}
+}
+
+#wpfooter {
+	display: none;
+}

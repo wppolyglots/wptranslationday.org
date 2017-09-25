@@ -886,6 +886,24 @@ article.type-post h2 {
 	display: none;
 }
 
+.talk-holder .row {
+	margin-top: 3rem;
+}
+
+/* Speakers
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-template-the-speakers-page .gwtd-team-member-header h4 {
+	margin-bottom: 2rem !important;
+}
+
+.page-template-the-speakers-page .gwtd-team-member-bio a {
+	color: #17506a !important;
+}
+
+.page-template-the-speakers-page .gwtd-team-member {
+	margin-bottom: 0;
+}
+
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 

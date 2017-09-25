@@ -1,9 +1,9 @@
 <?php
 
 /*
-Plugin Name: GWTD Schedule
+Plugin Name: GWTD Speakers
 Plugin URI: https://wptranslationday.org
-Description: Custom Admin CPT for the event schedule combined with a front-end page.
+Description: Custom Admin CPT for the Speakers.
 Version: 0.1
 Author: Xenos (xkon) Konstantinos
 Author URI: https://xkon.gr
@@ -14,23 +14,23 @@ License: GPL2
  * Load CSS
 */
 
-function gwtd_schedule_load_scripts() {
-	wp_enqueue_style( 'gwtd-schedule', plugin_dir_url( __FILE__ ) . '/style.css', array(), '0.1' );
+function gwtd_speakers_load_scripts() {
+	wp_enqueue_style( 'gwtd-speakers', plugin_dir_url( __FILE__ ) . '/style.css', array(), '0.1' );
 }
 
-add_action( 'admin_enqueue_scripts', 'gwtd_schedule_load_scripts' );
+add_action( 'admin_enqueue_scripts', 'gwtd_speakers_load_scripts' );
 
 /*
  * Create CPT
 */
 
-function schedule_post_type() {
+function speakers_post_type() {
 
 	$labels = array(
-		'name'                  => _x( 'Schedule', 'Post Type General Name', 'gwtd' ),
-		'singular_name'         => _x( 'Schedule', 'Post Type Singular Name', 'gwtd' ),
-		'menu_name'             => __( 'Schedule', 'gwtd' ),
-		'name_admin_bar'        => __( 'Schedule', 'gwtd' ),
+		'name'                  => _x( 'Speakers', 'Post Type General Name', 'gwtd' ),
+		'singular_name'         => _x( 'Speaker', 'Post Type Singular Name', 'gwtd' ),
+		'menu_name'             => __( 'Speakers', 'gwtd' ),
+		'name_admin_bar'        => __( 'Speakers', 'gwtd' ),
 		'archives'              => __( 'Item Archives', 'gwtd' ),
 		'attributes'            => __( 'Item Attributes', 'gwtd' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'gwtd' ),
@@ -56,8 +56,8 @@ function schedule_post_type() {
 		'filter_items_list'     => __( 'Filter items list', 'gwtd' ),
 	);
 	$args = array(
-		'label'                 => __( 'Schedule', 'gwtd' ),
-		'description'           => __( 'Schedule', 'gwtd' ),
+		'label'                 => __( 'Speakers', 'gwtd' ),
+		'description'           => __( 'Speakers', 'gwtd' ),
 		'labels'                => $labels,
 		'supports'              => array(),
 		'hierarchical'          => false,
@@ -71,72 +71,45 @@ function schedule_post_type() {
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
-		'rewrite'            => array( 'slug' => 'schedule' ),
+		'rewrite'            => array( 'slug' => 'speakers' ),
 	);
-	register_post_type( 'gwtd_schedule', $args );
+	register_post_type( 'gwtd_speakers', $args );
 
 }
-add_action( 'init', 'schedule_post_type', 0 );
+add_action( 'init', 'speakers_post_type', 0 );
 
 /*
- * Add metaboxes to Schedule
+ * Add metaboxes to Speakers
  */
 
-function schedule_metaboxes() {
+function speakers_metaboxes() {
 	global $wp_meta_boxes;
 	add_meta_box(
 		'mbox_schedule',
 		__( 'Fields' ),
-		'gwtds_metaboxes_metaboxes_html',
-		'gwtd_schedule',
+		'gwtdsp_metaboxes_metaboxes_html',
+		'gwtd_speakers',
 		'normal',
 		'high'
 	);
 }// end gwtdle_metaboxes
 
-add_action( 'add_meta_boxes_gwtd_schedule', 'schedule_metaboxes' );
+add_action( 'add_meta_boxes_gwtd_speakers', 'speakers_metaboxes' );
 
 /**
  * Setup metaboxes
  */
-function gwtds_metaboxes_metaboxes_html() {
+function gwtdsp_metaboxes_metaboxes_html() {
 	global $post;
 	$custom = get_post_custom( $post->ID );
 	$arr = array(
-		't_speaker' => __( 'Speaker' ),
-		't_time' => __( 'Talk Time UTC' ),
-		't_duration' => __( 'Talk Duration' ),
-		't_type' => __( 'Talk Type' ),
-		't_live' => __( 'Talk Live' ),
-		't_audience' => __( 'Target Audience' ),
-		't_language' => __( 'Target Language' ),
+		's_username' => __( 'Speaker Username' ),
 	);
 	?>
 	<table id="schedule-custom-fields">
 		<?php
 		foreach ( $arr as $key => $item ) {
 			$value = isset( $custom[ $key ][0] ) ? $custom[ $key ][0] : '';
-			if ( 't_speaker' == $key ) {
-
-				$speaker = new WP_Query( array(
-					'post_type' => 'gwtd_speakers',
-					'order' => 'ASC',
-					'posts_per_page' => -1,
-					'order' => 'ASC',
-				) );
-				echo '<tr><td>Speaker: </td><td>';
-				echo '<select name="' . $key . '">';
-				while ( $speaker->have_posts() ) :
-					$speaker->the_post();
-					if ( get_the_ID() == $value ) {
-						$selected = 'selected="selected"';
-					} else {
-						$selected = '';
-					}
-					echo '<option value="' . get_the_ID() . '" ' . $selected . '>' . get_the_title() . '</option>';
-				endwhile;
-				echo '</select></td></tr>';
-			} else {
 		?>
 			<tr>
 				<td>
@@ -149,7 +122,6 @@ function gwtds_metaboxes_metaboxes_html() {
 				</td>
 			</tr>
 		<?php
-			}
 		}
 		?>
 	</table>
@@ -160,19 +132,13 @@ function gwtds_metaboxes_metaboxes_html() {
  * Save metaboxes
  */
 
-function schedule_save_metaboxes() {
+function speakers_save_metaboxes() {
 	global $post;
 	$arr = array(
-		't_speaker' => __( 'Speaker' ),
-		't_time' => __( 'Talk Time UTC' ),
-		't_duration' => __( 'Talk Duration' ),
-		't_type' => __( 'Talk Type' ),
-		't_live' => __( 'Talk Live' ),
-		't_audience' => __( 'Target Audience' ),
-		't_language' => __( 'Target Language' ),
+		's_username' => __( 'Speaker Username' ),
 	);
 	foreach ( $arr as $key => $item ) {
 		update_post_meta( $post->ID, $key, $_POST[ $key ] );
 	}
 }
-add_action( 'save_post_gwtd_schedule', 'schedule_save_metaboxes' );
+add_action( 'save_post_gwtd_speakers', 'speakers_save_metaboxes' );

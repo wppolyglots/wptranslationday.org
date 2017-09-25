@@ -8,7 +8,10 @@ get_header();
 $talks = new WP_Query( array(
 	'post_type' => 'gwtd_schedule',
 	'order' => 'ASC',
-	'posts_per_page' => '-1',
+	'posts_per_page' => -1,
+	'meta_key' => 't_time',
+	'orderby' => 'meta_value',
+	'order' => 'ASC',
 ) );
 $pic_size = 100;
 ?>
@@ -33,7 +36,7 @@ $pic_size = 100;
 				<div class="twelve columns">
 					<header class="entry-header">
 						<h1>The 24hr timeline!</h1>
-						<h4 class="subtitle">If you missed a talk don't worry: after the event you will be able to see them on <a href="https://wordpress.tv" target="_blank">WordPress.tv</a></h4>
+						<h4 class="subtitle">If you missed a talk don't worry: after the event you will be able to see them on <a href="https://wordpress.tv/event/global-wordpress-translation-day-3/" target="_blank">WordPress.tv</a></h4>
 					</header><!-- .entry-header -->
 				</div>
 			</div>
@@ -41,17 +44,15 @@ $pic_size = 100;
 				<?php
 				while ( $talks->have_posts() ) :
 					$talks->the_post();
-
-					$s_name = get_post_meta( get_the_ID(), 's_name', true );
-					$s_username = get_post_meta( get_the_ID(), 's_username', true );
-					$s_bio = get_post_meta( get_the_ID(), 's_bio', true );
+					$t_speaker = get_post_meta( get_the_ID(), 't_speaker', true );
+					$s_name = get_the_title( $t_speaker );
+					$s_username = get_post_meta( $t_speaker, 's_username', true );
 					$t_time = get_post_meta( get_the_ID(), 't_time', true );
 					$t_duration = get_post_meta( get_the_ID(), 't_duration', true );
 					$t_type = get_post_meta( get_the_ID(), 't_type', true );
 					$t_live = get_post_meta( get_the_ID(), 't_live', true );
 					$t_audience = get_post_meta( get_the_ID(), 't_audience', true );
 					$t_language = get_post_meta( get_the_ID(), 't_language', true );
-
 					echo '<div class="row" data-when="now" data-time="2017-09-22 ' . $t_time . ':00">';
 					echo '<div class="two columns the-time">';
 					echo '<h1 class="utctime">' . $t_time . '</h1>';
@@ -62,7 +63,11 @@ $pic_size = 100;
 					echo '<h3 class="talk-title">' . $s_name . ' - ';
 					the_title();
 					echo '</h3>';
-					echo '<img class="alignleft" src="https://wordpress.org/grav-redirect.php?user=' . $s_username . '&s=' . $pic_size . '">';
+					if ( has_post_thumbnail() ) {
+						echo '<img class="alignleft" src="' . get_the_post_thumbnail_url() . '">';
+					} else {
+						echo '<img class="alignleft" src="https://wordpress.org/grav-redirect.php?user=' . $s_username . '&s=' . $pic_size . '">';
+					}
 					echo wp_trim_words( get_the_content(), 38, '...' );
 					echo '<h4 class="talk-info">';
 					echo $t_live . ' | ' . $t_duration . ' minutes | ' . $t_language . ' | audience: ' . $t_audience;
@@ -89,9 +94,7 @@ $pic_size = 100;
 
 					var currTimeUTC = moment().utc().format('YYYY-MM-DD HH:mm:ss');
 
-					console.log('talkTimeUTC = ' + talkTimeUTC);
-					console.log('timeLocal = ' + timeLocal);
-					console.log('currTimeUTC = ' + currTimeUTC);
+					// TODO: fix between for 'now'
 
 					if ( currTimeUTC > talkTimeUTC ) {
 						$(this).parent().parent().attr('data-when', 'past');
