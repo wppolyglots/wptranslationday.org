@@ -59,7 +59,7 @@ function schedule_post_type() {
 		'label'                 => __( 'Schedule', 'gwtd' ),
 		'description'           => __( 'Schedule', 'gwtd' ),
 		'labels'                => $labels,
-		'supports'              => array(),
+		'supports'              => array( 'thumbnail', 'title', 'editor' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,

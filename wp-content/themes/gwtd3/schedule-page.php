@@ -64,7 +64,7 @@ $pic_size = 100;
 					the_title();
 					echo '</h3>';
 					if ( has_post_thumbnail() ) {
-						echo '<img class="alignleft" src="' . get_the_post_thumbnail_url() . '">';
+						echo '<img class="alignleft" style="width:100px;height:100px;" src="' . get_the_post_thumbnail_url() . '">';
 					} else {
 						echo '<img class="alignleft" src="https://wordpress.org/grav-redirect.php?user=' . $s_username . '&s=' . $pic_size . '">';
 					}

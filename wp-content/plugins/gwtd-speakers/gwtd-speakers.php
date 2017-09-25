@@ -59,7 +59,7 @@ function speakers_post_type() {
 		'label'                 => __( 'Speakers', 'gwtd' ),
 		'description'           => __( 'Speakers', 'gwtd' ),
 		'labels'                => $labels,
-		'supports'              => array(),
+		'supports'              => array( 'thumbnail', 'title', 'editor' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,

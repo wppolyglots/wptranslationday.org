@@ -828,6 +828,10 @@ article.type-post h2 {
 	color: #206480;
 }
 
+.current-talk {
+	min-height: 420px;
+}
+
 .current-talk p,
 .the-talk p {
 	margin: 0;
@@ -887,7 +891,11 @@ article.type-post h2 {
 }
 
 .talk-holder .row {
-	margin-top: 3rem;
+	margin-top: 5rem;
+}
+
+.viewfulllinks h4 {
+	margin-bottom: 5px;
 }
 
 /* Speakers
@@ -902,6 +910,10 @@ article.type-post h2 {
 
 .page-template-the-speakers-page .gwtd-team-member {
 	margin-bottom: 0;
+}
+
+.page-template-the-speakers-page .entry-content {
+	margin-top: 3rem !important;
 }
 
 /* Media Queries
