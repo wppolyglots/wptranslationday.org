@@ -1,6 +1,15 @@
 <?php
-get_header();
+/**
+ * Template Name: The Speakers
+ */
 
+get_header();
+$speaker = new WP_Query( array(
+	'post_type' => 'gwtd_speakers',
+	'orderby' => 'title',
+	'order' => 'ASC',
+	'posts_per_page' => -1,
+) );
 $pic_size = 100;
 ?>
 
@@ -22,7 +31,7 @@ $pic_size = 100;
 				<?php
 					echo '<div class="gwtd-team-member">';
 						echo '<div class="gwtd-team-member-header">';
-							echo '<h4 class="text-color-pink--darker"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a> - ';
+							echo '<h4 class="text-color-blue--darker"><a style="color:#17506a;" href="' . get_the_permalink() . '">' . get_the_title() . '</a> - ';
 							$talks = new WP_Query( array(
 								'post_type' => 'gwtd_schedule',
 								'meta_key' => 't_speaker',
@@ -59,7 +68,7 @@ $pic_size = 100;
 								echo '<img class="alignleft" src="https://wordpress.org/grav-redirect.php?user=' . $s_username . '&s=' . $pic_size . '">';
 							}
 							echo '</a>';
-							echo '<span><i class="fa fa-wordpress"></i> <a href="https://profiles.wordpress.org/' . $s_username . '">' . $s_username . '</a></span>';
+							echo '<span><i class="fa fa-wordpress"></i> <a href="https://profiles.wordpress.org/' . $s_username . '" target="_blank">' . $s_username . '</a></span>';
 							the_content();
 							echo '</div>';
 						echo '</div>';

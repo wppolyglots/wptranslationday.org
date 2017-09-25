@@ -156,8 +156,7 @@ function gwtd3_scripts() {
 	wp_enqueue_style( 'gwtd3-fonts', 'https://fonts.googleapis.com/css?family=Changa:400,600,700|Open+Sans:400,400i,600,700' );
 
 	wp_enqueue_style( 'gwtd3-font-awesome', get_template_directory_uri() . '/layouts/font-awesome/css/font-awesome.min.css', array(), '20170725' );
-
-	if ( get_page_template_slug($post->ID) == 'local-events-page.php' ) {
+	if ( get_page_template_slug() == 'local-events-page.php' ) {
 		wp_enqueue_style( 'gwtd-map', get_template_directory_uri() . '/layouts/gwtd-map.css', array(), '20170830' );
 	}
 
@@ -167,13 +166,13 @@ function gwtd3_scripts() {
 
 	wp_enqueue_script( 'jquery' );
 
-	if ( is_front_page() || get_page_template_slug($post->ID) == 'schedule-page.php' ) {
+	if ( is_front_page() || get_page_template_slug() == 'schedule-page.php' ) {
 		wp_enqueue_script( 'gwtd3-moment', get_template_directory_uri() . '/js/moment.js', array( 'jquery' ), '20170725', true );
 		wp_enqueue_script( 'gwtd3-moment-data', get_template_directory_uri() . '/js/moment.timezone.with.data.js', array( 'jquery' ), '20170725', true );
 		wp_enqueue_script( 'gwtd3-countdown', get_template_directory_uri() . '/js/jquery.countdown.min.js', array( 'jquery' ), '20170725', true );
 	}
 
-	if ( get_page_template_slug($post->ID) == 'local-events-page.php' ) {
+	if ( get_page_template_slug() == 'local-events-page.php' ) {
 		wp_register_script( 'gwtd-map-base', get_template_directory_uri() . '/js/ammap.js', array(), false, true );
 		wp_register_script( 'gwtd-map-design', get_template_directory_uri() . '/js/worldHigh.js', array(), false, true );
 		wp_register_script( 'gwtd-map', get_template_directory_uri() . '/js/gwtd-map.js', array(), false, true );

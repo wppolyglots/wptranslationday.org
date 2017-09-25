@@ -46,6 +46,7 @@ $pic_size = 100;
 					$talks->the_post();
 					$t_speaker = get_post_meta( get_the_ID(), 't_speaker', true );
 					$s_name = get_the_title( $t_speaker );
+					$s_permalink = get_the_permalink( $t_speaker );
 					$s_username = get_post_meta( $t_speaker, 's_username', true );
 					$t_time = get_post_meta( get_the_ID(), 't_time', true );
 					$t_duration = get_post_meta( get_the_ID(), 't_duration', true );
@@ -60,14 +61,18 @@ $pic_size = 100;
 					echo '<h1 class="localtime"></h1>';
 					echo '</div>';
 					echo '<div class="ten columns right-side">';
-					echo '<h3 class="talk-title">' . $s_name . ' - ';
+					echo '<h3 class="talk-title" style="font-size: 3rem;">' . $s_name . ' - ';
+					echo '<a href="' . $s_permalink . '">';
 					the_title();
+					echo '</a>';
 					echo '</h3>';
+					echo '<a href="' . $s_permalink . '">';
 					if ( has_post_thumbnail() ) {
 						echo '<img class="alignleft" style="width:100px;height:100px;" src="' . get_the_post_thumbnail_url() . '">';
 					} else {
 						echo '<img class="alignleft" src="https://wordpress.org/grav-redirect.php?user=' . $s_username . '&s=' . $pic_size . '">';
 					}
+					echo '</a>';
 					echo wp_trim_words( get_the_content(), 38, '...' );
 					echo '<h4 class="talk-info">';
 					echo $t_live . ' | ' . $t_duration . ' minutes | ' . $t_language . ' | audience: ' . $t_audience;
