@@ -99,23 +99,23 @@ add_filter( 'manage_local-event_posts_custom_column', 'gwtdle_render_columns', 1
 function gwtdle_render_columns( $column, $post_id ) {
 	switch ( $column ) {
         case 'place' :
-			$str = get_post_meta( $post_id , 'continent' , true ) . '/' . get_post_meta( $post_id , 'country' , true ) . '/' . get_post_meta( $post_id , 'city' , true );
-            echo $str; 
-            break;
-		case 'Locale' :
-			echo get_post_meta( $post_id , 'locale' , true );
-			break;
+		$str = get_post_meta( $post_id , 'continent' , true ) . '/' . get_post_meta( $post_id , 'country' , true ) . '/' . get_post_meta( $post_id , 'city' , true );
+        	echo $str; 
+        	break;
+	case 'locale' :
+		echo get_post_meta( $post_id , 'locale' , true );
+		break;
         case 'organizer' :
-			$w_org = get_post_meta( $post_id , 'organizer_w_org' , true );
-			$slack = get_post_meta( $post_id , 'organizer_slack' , true );
-            echo 'WP: <a href="https://profiles.wordpress.org/' . $w_org . '">' . $w_org . '</a><br>Slack: <a href="https://wordpress.slack.com/team/' . $slack . '">@' . $slack . '</a>'; 
-            break;
-		case 'UTC time' :
-			echo get_post_meta( $post_id , 'utc_start' , true ) . ' - ' . get_post_meta( $post_id , 'utc_end' , true );
-			break;
-		case 'URL' :
-			echo '<a href="' . get_post_meta( $post_id , 'announcement_url' , true ) . '">Link</a>';
-			break;
+		$w_org = get_post_meta( $post_id , 'organizer_w_org' , true );
+		$slack = get_post_meta( $post_id , 'organizer_slack' , true );
+        	echo 'WP: <a href="https://profiles.wordpress.org/' . $w_org . '">' . $w_org . '</a><br>Slack: <a href="https://wordpress.slack.com/team/' . $slack . '">@' . $slack . '</a>'; 
+        	break;
+	case 'utc_time' :
+		echo get_post_meta( $post_id , 'utc_start' , true ) . ' - ' . get_post_meta( $post_id , 'utc_end' , true );
+		break;
+	case 'URL' :
+		echo '<a href="' . get_post_meta( $post_id , 'announcement_url' , true ) . '">Link</a>';
+		break;
 	}
 }
 
