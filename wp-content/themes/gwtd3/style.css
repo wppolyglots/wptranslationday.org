@@ -30,10 +30,10 @@ body {
 	font-weight: 400;
 }
 
-body.home {
-	font-family: 'Changa', sans-serif;
-	font-size: 2.5rem;
-}
+/*body.home {*/
+	/*font-family: 'Changa', sans-serif;*/
+	/*font-size: 2.5rem;*/
+/*}*/
 
 a {
 	text-decoration: none;
@@ -257,6 +257,10 @@ strong {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .section {
 	padding: 6rem 0 6rem;
+}
+
+.home .section.hero.bg-color-pink--darker {
+	padding: 6rem 0 3rem;
 }
 
 .hero.header {
@@ -937,6 +941,13 @@ article.type-post h2 {
 
 .page-template-the-speakers-page .entry-content {
 	margin-top: 3rem !important;
+}
+
+/* extra last minute stuff */
+
+body.page-template-landing-page {
+	font-family: 'Changa', sans-serif !important;
+	font-size: 2.5rem !important;
 }
 
 /* Media Queries

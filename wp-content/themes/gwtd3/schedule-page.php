@@ -129,6 +129,8 @@ $pic_size = 100;
 
 				if ( theLiveDay != currDay ) {
 					$('#now.section.current-talk').css('display', 'none');
+					$('.entry-header .subtitle').css('display', 'none');
+					$('.entry-header h1').html('The 24hr timeline for September 30, 2017');
 				}
 			})
 		})( jQuery );
