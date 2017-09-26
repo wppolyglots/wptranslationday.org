@@ -114,7 +114,15 @@ function gwtdle_render_columns( $column, $post_id ) {
 		echo get_post_meta( $post_id , 'utc_start' , true ) . ' - ' . get_post_meta( $post_id , 'utc_end' , true );
 		break;
 	case 'URL' :
-		echo '<a href="' . get_post_meta( $post_id , 'announcement_url' , true ) . '">Link</a>';
+		$lnk = get_post_meta( $post_id , 'announcement_url' , true );
+		if ($lnk) {
+			$extra_txt = '';
+			if (strpos($lnk, 'meetup.com/') !== false) $extra_txt = '(meetup)';
+			if (strpos($lnk, 'facebook.com/') !== false) $extra_txt = '(facebook)';
+			echo '<a href="' . get_post_meta( $post_id , 'announcement_url' , true ) . '">Link ' . $extra_txt . '</a>';
+		} else {
+			echo '-';
+		}
 		break;
 	}
 }
