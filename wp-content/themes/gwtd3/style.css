@@ -970,31 +970,21 @@ article.type-post h2 {
 	#countdown div {
 		font-size: 4.5em;
 	}
+
+	.the-time h1 {
+		font-size: 3rem;
+	}
+	.the-time h6 {
+		font-size: 1rem;
+	}
 }
 
-@media (max-width: 843px) {
-	.footer-tuned .six.columns {
-		width: 100% !important;
-		clear: both;
-		margin: 0 !important;
+@media (max-width: 992px) {
+	.the-time h6 {
+		font-size: 1.1rem;
 	}
-
-	#subscribe-form {
-		width: 280px !important;
-		margin: 0 auto !important;
-	}
-
-	#subscribe-form .mailpoet_submit {
-		width: 130px !important;
-		margin-left: 1rem !important;
-	}
-
-	.mailpoet_text {
-		width: 130px !important;
-	}
-
-	#footer-social {
-		margin: 0 !important;
+	.the-time h1 {
+		font-size: 4rem;
 	}
 }
 
@@ -1101,6 +1091,41 @@ article.type-post h2 {
 	}
 }
 
+@media (max-width: 920px) {
+	.the-time h6 {
+		font-size: 1vw;
+	}
+	.the-time h1 {
+		font-size: 4vw;
+	}
+}
+
+@media (max-width: 843px) {
+	.footer-tuned .six.columns {
+		width: 100% !important;
+		clear: both;
+		margin: 0 !important;
+	}
+
+	#subscribe-form {
+		width: 280px !important;
+		margin: 0 auto !important;
+	}
+
+	#subscribe-form .mailpoet_submit {
+		width: 130px !important;
+		margin-left: 1rem !important;
+	}
+
+	.mailpoet_text {
+		width: 130px !important;
+	}
+
+	#footer-social {
+		margin: 0 !important;
+	}
+}
+
 @media ( max-width: 550px ) {
 	#countdown span span {
 		display: none;
@@ -1136,4 +1161,15 @@ article.type-post h2 {
 		clear: both;
 	}
 
+	.the-time h1 {
+		font-size: 5rem;
+	}
+
+	.the-time h6 {
+		font-size: 1.3rem;
+	}
+	.the-time {
+		text-align: left;
+		margin-bottom: 2rem;
+	}
 }
