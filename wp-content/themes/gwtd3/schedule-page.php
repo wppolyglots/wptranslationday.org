@@ -54,7 +54,7 @@ $pic_size = 100;
 					$t_live = get_post_meta( get_the_ID(), 't_live', true );
 					$t_audience = get_post_meta( get_the_ID(), 't_audience', true );
 					$t_language = get_post_meta( get_the_ID(), 't_language', true );
-					echo '<div class="row" data-when="now" data-time="2017-09-22 ' . $t_time . ':00">';
+					echo '<div class="row" data-duration="' . $t_duration . '" data-when="now" data-time="2017-09-26 ' . $t_time . ':00">';
 					echo '<div class="two columns the-time">';
 					echo '<h1 class="utctime">' . $t_time . '</h1>';
 					echo '<h6>IN YOUR LOCAL TIME</h6>';
@@ -90,33 +90,39 @@ $pic_size = 100;
 		/* Countdown timer */
 		///////////////////
 		(function( $ ) {
-			$( 'document' ).ready( function() {
-				$('.utctime').each(function(){
-
-					var talkTimeUTC = $(this).parent().parent().attr('data-time');
-
-					var timeLocal  = moment.utc( $(this).parent().parent().attr('data-time') ).toDate();
-
-					var currTimeUTC = moment().utc().format('YYYY-MM-DD HH:mm:ss');
-
-					// TODO: fix between for 'now'
-
+			function fixTalkList() {
+				$( '.utctime' ).each( function () {
+					var talkTimeUTC = $( this ).parent().parent().attr( 'data-time' );
+					var timeLocal = moment.utc( $( this ).parent().parent().attr( 'data-time' ) ).toDate();
+					var currTimeUTC = moment().utc().format( 'YYYY-MM-DD HH:mm:ss' );
+					var durTimeUTC = $( this ).parent().parent().attr( 'data-duration' );
+					var durTime = moment( talkTimeUTC ).add( durTimeUTC, 'm' );
+					var endTime = durTime.format( 'YYYY-MM-DD HH:mm:ss' );
 					if ( currTimeUTC > talkTimeUTC ) {
-						$(this).parent().parent().attr('data-when', 'past');
+						$( this ).parent().parent().attr( 'data-when', 'past' );
 					} else {
-						$(this).parent().parent().attr('data-when', 'future');
+						$( this ).parent().parent().attr( 'data-when', 'future' );
 					}
+					if ( currTimeUTC < endTime && currTimeUTC > talkTimeUTC ) {
+						$( this ).parent().parent().attr( 'data-when', 'now' );
+					}
+					timeLocal = moment( timeLocal ).format( 'HH:mm' );
+					$( this ).parent().children( '.localtime' ).html( timeLocal );
+				} );
 
-					// insert the local time
-					timeLocal = moment(timeLocal).format('HH:mm');
-					$(this).parent().children('.localtime').html(timeLocal);
-				});
+				$( 'div[data-when=past]' ).each( function () {
+					$( this ).css( 'opacity', '.4' );
+				} );
 
-				var currTalk = $('div[data-when=now]').clone();
-				$('.current-talk .talk-holder').html(currTalk);
-				$('.current-talk .the-time').remove();
+				var currTalk = $( 'div[data-when=now]' ).clone();
+				$( '.current-talk .talk-holder' ).html( currTalk );
+			}
 
-				$('.current-talk .ten.columns').addClass('offset-by-two');
+			$( 'document' ).ready( function() {
+				fixTalkList();
+				setInterval(function () {
+					fixTalkList();
+					}, 300000);
 			})
 		})( jQuery );
 	</script>

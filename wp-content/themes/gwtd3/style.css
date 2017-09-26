@@ -886,8 +886,27 @@ article.type-post h2 {
 	display: inline-block;
 }
 
-.current-talk .the-time {
-	display: none;
+.current-talk .the-time h6,
+.current-talk .the-time .localtime {
+	color: #80456b !important;
+	/*display: none;*/
+}
+
+.current-talk .talk-title, .current-talk .the-time h1 {
+	line-height: 30px;
+}
+
+.current-talk .talk-holder .row {
+	margin-top: 2rem !important;
+}
+
+.current-talk .talk-title {
+	color: #206480 !important;
+}
+
+.current-talk .talk-title a {
+	color: #80456b !important;
+	text-decoration: underline;
 }
 
 .talk-holder .row {
