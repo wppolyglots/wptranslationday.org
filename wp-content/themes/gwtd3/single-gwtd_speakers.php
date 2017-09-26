@@ -27,14 +27,16 @@ $pic_size = 100;
 									echo '<div class="gwtd-team-member">';
 									echo '<div class="gwtd-team-member-header">';
 									echo '<div class="gwtd-team-member-name text-color-blue--darker">';
-									echo '<a href="' . get_the_permalink() . '">';
-									if ( has_post_thumbnail() ) {
-										echo '<img class="alignleft"  style="width:100px;height:100px;" src="' . get_the_post_thumbnail_url() . '">';
-									} else {
-										echo '<img class="alignleft" src="https://wordpress.org/grav-redirect.php?user=' . $s_username . '&s=' . $pic_size . '">';
+									if ( ! empty( $s_username ) || '' != $s_username ) {
+										echo '<a href="' . get_the_permalink() . '">';
+										if ( has_post_thumbnail() ) {
+											echo '<img class="alignleft"  style="width:100px;height:100px;" src="' . get_the_post_thumbnail_url() . '">';
+										} else {
+											echo '<img class="alignleft" src="https://wordpress.org/grav-redirect.php?user=' . $s_username . '&s=' . $pic_size . '">';
+										}
+										echo '</a>';
+										echo '<span><i class="fa fa-wordpress"></i> <a href="https://profiles.wordpress.org/' . $s_username . '" target="_blank">' . $s_username . '</a></span>';
 									}
-									echo '</a>';
-									echo '<span><i class="fa fa-wordpress"></i> <a href="https://profiles.wordpress.org/' . $s_username . '" target="_blank">' . $s_username . '</a></span>';
 									the_content();
 									echo '</div>';
 									echo '</div>';
