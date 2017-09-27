@@ -45,7 +45,8 @@ $pic_size = 100;
 									echo '<div class="gwtd-team-member text-color-pink--darker">';
 									$talks = new WP_Query( array(
 										'post_type' => 'gwtd_schedule',
-										'meta_key' => 't_speaker',
+										'meta_key' => 't_time',
+										'orderby' => 'meta_value',
 										'meta_query' => array(
 											array(
 												'key' => 't_speaker',
@@ -53,7 +54,6 @@ $pic_size = 100;
 												'compare' => 'LIKE',
 											),
 										),
-										'orderby' => 'title',
 										'order' => 'ASC',
 										'posts_per_page' => -1,
 									) );
