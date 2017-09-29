@@ -28,6 +28,7 @@ function gwtdle_metaboxes_metaboxes_html() {
 		'announcement_url' => __('Announcement URL', 'gwtdle'),
 		'latitude' => __('Latitude', 'gwtdle'),
 		'longitude' => __('Longitude', 'gwtdle'),
+		'interviewer' => __('Interviewer', 'gwtdle'),
 	);
 
 	?>
@@ -67,6 +68,7 @@ function gwtdle_save_post()
 		'announcement_url' => __('Announcement URL', 'gwtdle'),
 		'latitude' => __('Latitude', 'gwtdle'),
 		'longitude' => __('Longitude', 'gwtdle'),
+		'interviewer' => __('Interviewer', 'gwtdle'),
 	);
 	foreach ($arr as $key=>$item) {
 		update_post_meta($post->ID, $key, $_POST[$key]);
@@ -82,6 +84,7 @@ add_filter('manage_local-event_posts_columns' , 'gwtdle_add_columns');
 function gwtdle_add_columns($columns) {
     unset($columns['title']);
     unset($columns['date']);
+
     return array_merge($columns, 
 				array(
 					'place' => __('Place', 'gwtdle'),
@@ -89,6 +92,7 @@ function gwtdle_add_columns($columns) {
 					'organizer' =>__( 'Organizer', 'gwtdle'),
 					'utc_time' =>__( 'UTC time', 'gwtdle'),
 					'URL' =>__( 'URL', 'gwtdle'),
+					'interviewer' => __('Interviewer', 'gwtdle'),
 				)
 		);
 }
@@ -108,8 +112,8 @@ function gwtdle_render_columns( $column, $post_id ) {
         case 'organizer' :
 		$w_org = get_post_meta( $post_id , 'organizer_w_org' , true );
 		$slack = get_post_meta( $post_id , 'organizer_slack' , true );
-        	echo 'WP: <a href="https://profiles.wordpress.org/' . $w_org . '">' . $w_org . '</a><br>Slack: <a href="https://wordpress.slack.com/team/' . $slack . '">@' . $slack . '</a>'; 
-        	break;
+		echo 'WP: <a href="https://profiles.wordpress.org/' . $w_org . '">' . $w_org . '</a><br>Slack: <a href="https://wordpress.slack.com/team/' . $slack . '">@' . $slack . '</a>'; 
+		break;
 	case 'utc_time' :
 		echo get_post_meta( $post_id , 'utc_start' , true ) . ' - ' . get_post_meta( $post_id , 'utc_end' , true );
 		break;
@@ -120,6 +124,14 @@ function gwtdle_render_columns( $column, $post_id ) {
 			if (strpos($lnk, 'meetup.com/') !== false) $extra_txt = '(meetup)';
 			if (strpos($lnk, 'facebook.com/') !== false) $extra_txt = '(facebook)';
 			echo '<a href="' . get_post_meta( $post_id , 'announcement_url' , true ) . '">Link ' . $extra_txt . '</a>';
+		} else {
+			echo '-';
+		}
+		break;
+	case 'interviewer' :
+		$ivwr = get_post_meta( $post_id , 'interviewer' , true );
+		if ($ivwr) {
+			echo $ivwr;
 		} else {
 			echo '-';
 		}
