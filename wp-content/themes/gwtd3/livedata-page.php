@@ -15,7 +15,7 @@ $talks = new WP_Query( array(
 ) );
 $pic_size = 100;
 ?>
-	<div id="now" class="section current-talk lp-now-it-is bg-color-pink text-color-pink--darker">
+	<div id="now" class="section current-talk lp-now-it-is lp-live-stream-it-is bg-color-pink text-color-pink--darker">
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">
