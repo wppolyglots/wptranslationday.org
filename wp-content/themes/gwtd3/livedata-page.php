@@ -16,7 +16,7 @@ $pic_size = 100;
 			</div>
 			<div class="row">
 				<div class="ten columns offset-by-two">
-					<iframe src="https://www.crowdcast.io/e/wptranslationday3dryrun1" width="800" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+					<iframe src="https://www.crowdcast.io/e/gwtd3/" width="800" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 				</div>
 			</div>
 			<div class="row">
@@ -31,7 +31,7 @@ $pic_size = 100;
 						<h4><a href="https://wptranslationday.org/wptd3-schedule/">View the full schedule for upcoming talks</a></h4>
 					</div>
 					<div class="six columns viefulllinks" style="margin-top:0 !important;">
-						<h4><a href="https://wptranslationday.org/wptd3-schedule/">Go to CrowdCast for full interaction</a></h4>
+						<h4><a target="_blank" href="https://www.crowdcast.io/e/gwtd3/">Go to CrowdCast for full interaction</a></h4>
 					</div>
 				</div>
 			</div>
