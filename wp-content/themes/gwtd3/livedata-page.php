@@ -67,7 +67,7 @@ $pic_size = 100;
 					</div>
 				</div>
 
-				<?php if ( intval( $translators->total_pte) > 0 ) : ?>
+				<?php if ( intval( $translators->total_pte ) > 0 ) : ?>
 				<div class="row">
 					<div class="four columns major">
 						<h1 class="livedata-counter" data-value="<?php echo intval( $translators->total_pte ); ?>"><?php echo $translators->total_pte; ?></h1>
@@ -78,7 +78,7 @@ $pic_size = 100;
 				</div>
 				<?php endif; ?>
 
-				<?php if ( intval( $translators->new_pte) > 0 ) : ?>
+				<?php if ( intval( $translators->new_pte ) > 0 ) : ?>
 				<div class="row">
 					<div class="four columns major">
 						<h1 class="text-color-blue--lighter livedata--exception-relativetopminus40 livedata-counter">

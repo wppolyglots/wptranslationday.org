@@ -88,12 +88,12 @@ function gwtd3_get_translators() {
 		endif;
 
 	// If the transient does NOT EXISTS so let's get the remote data
-	else : 
+	else :
 		$response = wp_remote_get( 'http://wp-info.org/api/polyglots/translators' );
 
 		// IF there is no error
 		if( !is_wp_error( $response ) ) :
-			$object_response = json_decode( $response['body'] );	
+			$object_response = json_decode( $response['body'] );
 			
 			// If old data exists
 			if ( get_option( 'gwtd_livedata_translators' ) !== false ) :
@@ -115,7 +115,7 @@ function gwtd3_get_translators() {
 				update_option( 'gwtd_livedata_translators', json_encode( $array_translators ) );
 			
 			// Else, if old data DONT exists
-			else : 
+			else :
 				$array_translators = array(
 					'total_gte' 		=> 		intval( $object_response->total_gte ),
 					'total_pte' 		=> 		intval( $object_response->total_pte ),
@@ -137,7 +137,7 @@ function gwtd3_get_translators() {
 			set_transient( 'gwtd_livedata_translators_tr', wp_json_encode( $array_translators ), HOUR_IN_SECONDS );
 
 		// ELSE, if there is an error, return old data and dont update anything
-		else : 
+		else :
 			$old_data = json_decode( get_option( 'gwtd_livedata_translators' ) );
 			$array_translators = array(
 				'total_gte' 		=> 		intval( $old_data->total_gte ),
@@ -213,12 +213,30 @@ function gwtd3_get_top120() {
 			$object_response = json_decode( $response['body'] );	
 			$total_strings = 0;
 			foreach ( $object_response->plugins as $plugin_name => $plugin_infos ) :
-				foreach ( $plugin_infos->locale as $plugin_locale ) : 
-					$plugin_dev_s = $plugin_locale->dev_s;
-					$plugin_stable_s = $plugin_locale->stable_s;
+				foreach ( $plugin_infos->locale as $plugin_locale ) :
+					if ( ! empty( $plugin_locale->dev_s ) ) {
+						$plugin_dev_s = $plugin_locale->dev_s;
+					} else {
+						$plugin_dev_s = 0;
+					}
+
+					if ( ! empty( $plugin_locale->stable_s ) ) {
+						$plugin_stable_s = $plugin_locale->stable_s;
+					} else {
+						$plugin_stable_s = 0;
+					}
+
+					//$plugin_dev_s = $plugin_locale->dev_s;
+					//$plugin_stable_s = $plugin_locale->stable_s;
+
+
 					$plugin_waiting_s = $plugin_locale->waiting_s;
+
+
 					$plugin_s = $plugin_dev_s + $plugin_stable_s;
 					$total_strings = $total_strings + $plugin_s;
+
+
 				endforeach;
 			endforeach;
 			
