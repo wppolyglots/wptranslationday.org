@@ -16,7 +16,7 @@ $pic_size = 100;
 			</div>
 			<div class="row">
 				<div class="ten columns offset-by-two">
-					<iframe src="https://www.crowdcast.io/e/wptranslationday3dryrun1" width="800" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+					<iframe src="https://www.crowdcast.io/e/gwtd3/" width="800" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 				</div>
 			</div>
 			<div class="row">
