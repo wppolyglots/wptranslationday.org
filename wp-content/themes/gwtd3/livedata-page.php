@@ -31,7 +31,7 @@ $pic_size = 100;
 						<h4><a href="https://wptranslationday.org/wptd3-schedule/">View the full schedule for upcoming talks</a></h4>
 					</div>
 					<div class="six columns viefulllinks" style="margin-top:0 !important;">
-						<h4><a href="https://wptranslationday.org/wptd3-schedule/">Go to CrowdCast for full interaction</a></h4>
+						<h4><a target="_blank" href="https://www.crowdcast.io/e/gwtd3/">Go to CrowdCast for full interaction</a></h4>
 					</div>
 				</div>
 			</div>
