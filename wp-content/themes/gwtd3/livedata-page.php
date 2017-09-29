@@ -5,14 +5,6 @@
 
 get_header();
 
-$talks = new WP_Query( array(
-	'post_type' => 'gwtd_schedule',
-	'order' => 'ASC',
-	'posts_per_page' => -1,
-	'meta_key' => 't_time',
-	'orderby' => 'meta_value',
-	'order' => 'ASC',
-) );
 $pic_size = 100;
 ?>
 	<div id="now" class="section current-talk lp-now-it-is lp-live-stream-it-is bg-color-pink text-color-pink--darker">
@@ -24,10 +16,7 @@ $pic_size = 100;
 			</div>
 			<div class="row">
 				<div class="ten columns offset-by-two">
-					<?php
-						$embed_code = wp_oembed_get( 'https://www.youtube.com/watch?v=0eSfcUzGTdk' );
-						echo $embed_code;
-					?>
+					<iframe src="https://www.crowdcast.io/e/wptranslationday3dryrun1" width="800" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 				</div>
 			</div>
 			<div class="row">
@@ -62,7 +51,14 @@ $pic_size = 100;
 					<h5 style="margin:0;">* data is refreshed every hour</h5>
 				</div>
 			</div>
-			<!-- TODO: LIVE DATA DIVS FOR JB -->
+
+			<?php
+			// Get livedata stuff
+			$translators = gwtd3_get_translators();
+			$top120 = gwtd3_get_top120();
+			$wptranslations = gwtd3_get_wp_translations();
+			?>
+			
 			<div class="jbsdata">
 
 				<div class="row" style="margin-top:2rem;">
@@ -71,76 +67,127 @@ $pic_size = 100;
 					</div>
 				</div>
 
+				<?php if ( intval( $translators->total_pte) > 0 ) : ?>
 				<div class="row">
 					<div class="four columns major">
-						<h1>235</h1>
+						<h1 class="livedata-counter" data-value="<?php echo intval( $translators->total_pte ); ?>"><?php echo $translators->total_pte; ?></h1>
 					</div>
 					<div class="eight columns minor borderleft">
 						<h3 class="text-color-blue--light">PTE - Project Translation Editors</h3>
 					</div>
 				</div>
+				<?php endif; ?>
+
+				<?php if ( intval( $translators->new_pte) > 0 ) : ?>
 				<div class="row">
 					<div class="four columns major">
-						<h1 class="text-color-blue--lighter">+15</h1>
+						<h1 class="text-color-blue--lighter livedata--exception-relativetopminus40 livedata-counter">
+							<span class="data-number" data-value="<?php echo intval( $translators->new_pte ); ?>">
+								+<?php echo $translators->new_pte; ?>
+							</span>
+						</h1>
 					</div>
 					<div class="eight columns minor borderleft">
-						<h3 class="text-color-blue--lighter">since the beginning of WPTD3</h3>
+						<h3 class="text-color-blue--lighter livedata--exception-relativetopminus40">since the beginning of WPTD3</h3>
 					</div>
 				</div>
-
+				<?php endif; ?>
+				
+				<?php if ( intval( $translators->total_contrib ) > 0 ) : ?>
 				<div class="row">
 					<div class="four columns major">
-						<h1>3597</h1>
+						<h1 class="livedata-counter">
+							<span class="data-number" data-value="<?php echo intval( $translators->total_contrib ); ?>">
+								<?php echo $translators->total_contrib; ?>
+							</span>
+						</h1>
 					</div>
 					<div class="eight columns minor borderleft">
 						<h3 class="text-color-blue--light">Translators</h3>
 					</div>
 				</div>
+				<?php endif; ?>
+
+				<?php if ( intval( $translators->new_contrib ) > 0 ) : ?>
 				<div class="row">
 					<div class="four columns major">
-						<h1 class="text-color-blue--lighter">+158</h1>
+						<h1 class="text-color-blue--lighter livedata--exception-relativetopminus40 livedata-counter">
+							<span class="data-number" data-value="<?php echo intval( $translators->new_contrib ); ?>">
+								+<?php echo $translators->new_contrib; ?>
+							</span>
+						</h1>
 					</div>
 					<div class="eight columns minor borderleft">
-						<h3 class="text-color-blue--lighter">since the beginning of WPTD3</h3>
+						<h3 class="text-color-blue--lighter livedata--exception-relativetopminus40">since the beginning of WPTD3</h3>
 					</div>
 				</div>
+				<?php endif; ?>
+
+				<?php if ( intval( $top120->total_translated_strings ) > 0 ) : ?>
+				<div class="row">
+					<div class="four columns major">
+						<?php
+						// Lets format this stuff a bit!
+						$n = intval( $top120->total_translated_strings );
+						if ($n < 1000000) {
+							$n_format = number_format($n);
+						} elseif ($n < 1000000000) {
+							$n_format_number = number_format($n / 1000000);
+							$n_format = '<span class="data-number" data-value="' . $n_format_number . '">' . number_format($n / 1000000) . '</span>' . '<abbr title="Millions">M</abbr>';
+						} else {
+							$n_format = number_format($n / 1000000000) . 'B';
+						}
+						?>
+						<h1 class="livedata-counter"><?php echo $n_format; ?></h1>
+					</div>
+					<div class="eight columns minor borderleft">
+						<h3 class="text-color-blue--light livedata--exception-mt1rem">Translated strings in the 120 top plugins</h3>
+					</div>
+				</div>
+				<?php endif; ?>
+
+				<?php if ( intval( $top120->new_translated_strings ) > 0 ) : ?>
+				<div class="row">
+					<div class="four columns major">
+						<h1 class="text-color-blue--lighter livedata--exception-relativetopminus40 livedata-counter">
+							+<span class="data-number" data-value="<?php echo intval( $top120->new_translated_strings ); ?>"><?php echo $top120->new_translated_strings; ?></span>
+						</h1>
+					</div>
+					<div class="eight columns minor borderleft">
+						<h3 class="text-color-blue--lighter livedata--exception-relativetopminus40">since the beginning of WPTD3</h3>
+					</div>
+				</div>
+				<?php endif; ?>
 
 				<div class="row">
 					<div class="four columns major">
-						<h1>7850</h1>
-					</div>
-					<div class="eight columns minor borderleft">
-						<h3 class="text-color-blue--light">Translated strings in the 120 top plugins</h3>
-					</div>
-				</div>
-				<div class="row">
-					<div class="four columns major">
-						<h1 class="text-color-blue--lighter">+1258</h1>
-					</div>
-					<div class="eight columns minor borderleft">
-						<h3 class="text-color-blue--lighter">since the beginning of WPTD3</h3>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="four columns major">
-						<h1>89</h1>
+						<h1 class="livedata-counter">
+							<span class="data-number" data-value="<?php echo intval( $wptranslations->total_translated_wp ); ?>">
+								<?php echo $wptranslations->total_translated_wp; ?>
+							</span>
+						</h1>
 					</div>
 					<div class="eight columns minor borderleft">
 						<h3 class="text-color-blue--light">Locales at 100% of WP 4.8.2</h3>
 					</div>
 				</div>
+
+				<?php if ( intval( $wptranslations->new_translated_wp ) > 0 ) : ?>
 				<div class="row">
 					<div class="four columns major">
-						<h1 class="text-color-blue--lighter">+8</h1>
+						<h1 class="text-color-blue--lighter livedata-counter">
+							<span class="data-number" data-value="<?php echo intval( $wptranslations->new_translated_wp ); ?>">
+								+<?php echo $wptranslations->new_translated_wp; ?>
+							</span>
+						</h1>
 					</div>
 					<div class="eight columns minor borderleft">
-						<h3 class="text-color-blue--lighter">since the beginning of WPTD3</h3>
+						<h3 class="text-color-blue--lighter livedata--exception-relativetopminus40">since the beginning of WPTD3</h3>
 					</div>
 				</div>
+				<?php endif; ?>
 
 			</div>
-			<!-- TODO: END LIVE DATA DIVS FOR JB -->
 		</div>
 	</div>
 
@@ -148,15 +195,59 @@ $pic_size = 100;
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">
-					<h2>Today's local events:</h2>
+					<?php
+					$queryMap = new WP_Query( 
+						array(
+							'post_type' => 'local-event', 
+							'posts_per_page' => -1, 
+							'meta_key' => 'full_place', 
+							'orderby' => 'meta_value', 
+							'order' => 'ASC' 
+						) 
+					);
+					
+					// Init JS array for map markers
+					$map_datas = '<script>var markers = new Array();';
+					
+					if ($queryMap->have_posts()) {
+						$event_count = $queryMap->post_count;
+						while ($queryMap->have_posts()) {
+							$queryMap->the_post();					
+							// Data storage for the map
+							if ( 
+								get_post_meta( $post->ID, 'country', true ) &&
+								get_post_meta( $post->ID, 'city', true ) &&
+								get_post_meta( $post->ID, 'latitude', true) && 
+								get_post_meta( $post->ID, 'longitude', true)
+							) {
+								if ($url != '') { $url_label = '<br /><small>click to visit website</small>'; } else { $url_label = ''; }
+								$map_datas .= '
+									markers.push({
+										"id": ' . json_encode( sanitize_title( get_post_meta( $post->ID, 'country', true ) . '-' . get_post_meta( $post->ID, 'city', true ) ) ) . ',
+										"title": ' . json_encode(get_post_meta( $post->ID, 'country', true ) . ' / ' . get_post_meta( $post->ID, 'city', true ) . '<br /><small>Starting at ' . $utc_start . ' UTC.</small>' . $url_label) . ',
+										"eventURL": ' . json_encode( $url ) . ',
+										"selectable": true,
+										"latitude": ' . get_post_meta( $post->ID, 'latitude', true) . ',
+										"longitude": ' . get_post_meta( $post->ID, 'longitude', true) . ',
+										"imageURL": "' . get_template_directory_uri() . '/img/marker.svg",
+										"width" : "16",
+										"height" : "24"
+									});
+								';
+							}
+						}
+					}
+					// Closing map's JS data var and then write them
+					$map_datas .= '</script>';
+					echo $map_datas;
+					wp_reset_postdata();
+					?>
+					<h2>Today's <?php echo $event_count; ?> local events:</h2>
 				</div>
 			</div>
-			<div class="row">
-				<div class="twelve columns ">
-					<!-- TODO: PLACE MAP IN HERE -->
-				</div>
-			</div>
-
+		</div>
+		<div class="gwtd_map_wrapper">
+			<div id="gwtd_map" class="gwtd_map"></div>
 		</div>
 	</div>
 
@@ -174,6 +265,14 @@ $pic_size = 100;
 			</div>
 			<div class="talk-holder">
 				<?php
+				$talks = new WP_Query( array(
+					'post_type' => 'gwtd_schedule',
+					'order' => 'ASC',
+					'posts_per_page' => -1,
+					'meta_key' => 't_time',
+					'orderby' => 'meta_value',
+					'order' => 'ASC',
+				) );
 				while ( $talks->have_posts() ) :
 					$talks->the_post();
 					$t_speaker = get_post_meta( get_the_ID(), 't_speaker', true );
@@ -212,6 +311,7 @@ $pic_size = 100;
 					echo '</div>';
 					echo '</div>';
 				endwhile;
+				wp_reset_postdata();
 				?>
 			</div>
 		</div>

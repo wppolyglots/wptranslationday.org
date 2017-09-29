@@ -1,6 +1,50 @@
 (function( $ ) {
 	$( document ).ready( function( $ ) {
 
+/*
+		// Add dynamic counters to livedata
+		$(window).load(function() {
+			var keyFigures = new Array();
+			$(".keyfigure_bloc_figure").each(function() {
+				if ($(this).parent(".keyfigure_bloc").hasClass("keyfigure_bloc_type_number")) {
+					' . $textPositionJS_Size . '
+					keyFigures.push(0);
+					' . $textPositionJS_Order . '
+					var counterFinalValue = $(this).text();
+					$(this).attr("data-value", counterFinalValue);
+					$(this).css("width", $(this).width()+"px");
+				}
+			});
+			
+			$(window).scroll(function() {
+				var i = 0;
+				$(".keyfigure_bloc_figure").each(function() {
+					var oTop = jQuery(this).offset().top - window.innerHeight;
+					if (keyFigures[i] == 0 && jQuery(window).scrollTop() > oTop) {
+						var counter = jQuery(this);
+						countTo = counter.children(this).attr("data-value");
+						jQuery({
+							countNum: 0
+						}).animate({
+							countNum: parseFloat(counter.text())
+						}, {
+							duration: ' . $optionFigureAnimationDuration . ',
+							easing: "swing",
+							step: function() {
+								counter.text(Math.floor(this.countNum));
+							},
+							complete: function() {
+								counter.text(this.countNum);
+							}
+						});
+						keyFigures[i] = 1;
+					}
+					i++;
+				});
+			});
+		});
+*/		
+
 		$('input.mailpoet_text').attr("placeholder", "enter your e-mail");
 
 		// main function to show/hide the mobile menu

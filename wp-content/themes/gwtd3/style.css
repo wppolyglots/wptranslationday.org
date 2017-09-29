@@ -39,6 +39,11 @@ a {
 	text-decoration: none;
 }
 
+abbr, abbr[title] {
+	text-decoration: underline dotted;	
+	border-bottom: 0 none;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 600;
 	font-family: 'Changa', sans-serif;
@@ -972,6 +977,16 @@ article.type-post h2 {
 	font-size: 5.5rem;
 }
 
+/* Some exceptions (canceled in mobile MQ) */
+.livedata--exception-mt1rem {
+	margin-top: 1rem;
+}
+
+.livedata--exception-relativetopminus40 {
+	position: relative;
+	top: -40px;	
+}
+
 /* Speakers
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .page-template-the-speakers-page .gwtd-team-member-header h4 {
@@ -1224,6 +1239,13 @@ body.page-template-landing-page {
 	.page-template-livedata-page .minor h3 {
 		margin-top: 2rem;
 		font-size: 2.6rem;
+	}
+	.livedata--exception-mt1rem {
+		margin-top: 2rem;
+	}
+	.livedata--exception-relativetopminus40 {
+		position: static;
+		top: auto;	
 	}
 }
 
