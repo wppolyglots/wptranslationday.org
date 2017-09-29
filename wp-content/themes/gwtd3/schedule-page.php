@@ -115,6 +115,7 @@ $pic_size = 100;
 				} );
 
 				var currTalk = $( 'div[data-when=now]' ).clone();
+				$( '.current-talk .talk-holder' ).html('');
 				$( '.current-talk .talk-holder' ).html( currTalk );
 			}
 
