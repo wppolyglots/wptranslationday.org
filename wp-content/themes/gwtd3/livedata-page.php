@@ -186,7 +186,7 @@ $pic_size = 100;
 					$t_live = get_post_meta( get_the_ID(), 't_live', true );
 					$t_audience = get_post_meta( get_the_ID(), 't_audience', true );
 					$t_language = get_post_meta( get_the_ID(), 't_language', true );
-					echo '<div class="row" data-duration="' . $t_duration . '" data-when="now" data-time="2017-09-29 ' . $t_time . ':00">';
+					echo '<div class="row" data-duration="' . $t_duration . '" data-when="now" data-time="2017-09-30 ' . $t_time . ':00">';
 					echo '<div class="two columns the-time">';
 					echo '<h1 class="utctime">' . $t_time . '</h1>';
 					echo '<h6>IN YOUR LOCAL TIME</h6>';
@@ -255,7 +255,7 @@ $pic_size = 100;
 				fixTalkList();
 				setInterval(function () {
 					fixTalkList();
-					}, 300000);
+					}, 60000);
 			})
 		})( jQuery );
 	</script>

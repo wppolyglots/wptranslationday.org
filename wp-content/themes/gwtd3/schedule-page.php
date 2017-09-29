@@ -123,7 +123,7 @@ $pic_size = 100;
 				fixTalkList();
 				setInterval(function () {
 					fixTalkList();
-					}, 300000);
+					}, 60000);
 
 				var theLiveDay = '2017-09-30';
 				var currDay = moment().utc().format( 'YYYY-MM-DD' );
