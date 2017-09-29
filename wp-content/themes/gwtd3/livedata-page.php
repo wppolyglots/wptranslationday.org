@@ -224,6 +224,7 @@ $pic_size = 100;
 		(function( $ ) {
 			function fixTalkList() {
 				$( '.utctime' ).each( function () {
+					$( '.current-talk .talk-holder' ).html('');
 					var talkTimeUTC = $( this ).parent().parent().attr( 'data-time' );
 					var timeLocal = moment.utc( $( this ).parent().parent().attr( 'data-time' ) ).toDate();
 					var currTimeUTC = moment().utc().format( 'YYYY-MM-DD HH:mm:ss' );
@@ -247,7 +248,6 @@ $pic_size = 100;
 				} );
 
 				var currTalk = $( 'div[data-when=now]' ).clone();
-				$( '.current-talk .talk-holder' ).html('');
 				$( '.current-talk .talk-holder' ).html( currTalk );
 			}
 
@@ -256,9 +256,6 @@ $pic_size = 100;
 				setInterval(function () {
 					fixTalkList();
 					}, 300000);
-
-				var theLiveDay = '2017-09-29';
-				var currDay = moment().utc().format( 'YYYY-MM-DD' );
 			})
 		})( jQuery );
 	</script>
