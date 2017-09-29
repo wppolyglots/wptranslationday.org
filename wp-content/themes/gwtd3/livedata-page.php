@@ -215,20 +215,34 @@ $pic_size = 100;
 							$queryMap->the_post();					
 							// Data storage for the map
 							if ( 
-								get_post_meta( $post->ID, 'country', true ) &&
-								get_post_meta( $post->ID, 'city', true ) &&
-								get_post_meta( $post->ID, 'latitude', true) && 
-								get_post_meta( $post->ID, 'longitude', true)
+								get_post_meta( get_the_ID(), 'country', true ) &&
+								get_post_meta( get_the_ID(), 'city', true ) &&
+								get_post_meta( get_the_ID(), 'latitude', true) && 
+								get_post_meta( get_the_ID(), 'longitude', true)
 							) {
-								if ($url != '') { $url_label = '<br /><small>click to visit website</small>'; } else { $url_label = ''; }
+								$url_label = '';
+								$url = '';
+								if ( get_post_meta( get_the_ID(), 'announcement_url' , true ) ) {
+									$url_label = '<br /><small>click to visit website</small>'; 
+									$url = get_post_meta( get_the_ID(), 'announcement_url' , true );
+								} else {
+									$url_label = '';
+									$url = '';
+								}
+								if ( get_post_meta( $post->ID, 'utc_start', true ) ) {
+									$utc_start = get_post_meta( $post->ID, 'utc_start', true );
+								} else {
+									$utc_start = '';
+								}
+								
 								$map_datas .= '
 									markers.push({
-										"id": ' . json_encode( sanitize_title( get_post_meta( $post->ID, 'country', true ) . '-' . get_post_meta( $post->ID, 'city', true ) ) ) . ',
-										"title": ' . json_encode(get_post_meta( $post->ID, 'country', true ) . ' / ' . get_post_meta( $post->ID, 'city', true ) . '<br /><small>Starting at ' . $utc_start . ' UTC.</small>' . $url_label) . ',
+										"id": ' . json_encode( sanitize_title( get_post_meta( get_the_ID(), 'country', true ) . '-' . get_post_meta( get_the_ID(), 'city', true ) ) ) . ',
+										"title": ' . json_encode(get_post_meta( get_the_ID(), 'country', true ) . ' / ' . get_post_meta( get_the_ID(), 'city', true ) . '<br /><small>Starting at ' . $utc_start . ' UTC.</small>' . $url_label) . ',
 										"eventURL": ' . json_encode( $url ) . ',
 										"selectable": true,
-										"latitude": ' . get_post_meta( $post->ID, 'latitude', true) . ',
-										"longitude": ' . get_post_meta( $post->ID, 'longitude', true) . ',
+										"latitude": ' . get_post_meta( get_the_ID(), 'latitude', true) . ',
+										"longitude": ' . get_post_meta( get_the_ID(), 'longitude', true) . ',
 										"imageURL": "' . get_template_directory_uri() . '/img/marker.svg",
 										"width" : "16",
 										"height" : "24"
