@@ -110,6 +110,7 @@ function gwtds_metaboxes_metaboxes_html() {
 		't_live' => __( 'Talk Live' ),
 		't_audience' => __( 'Target Audience' ),
 		't_language' => __( 'Target Language' ),
+		't_recording_link' => __( 'Recording URL' ),
 	);
 	?>
 	<table id="schedule-custom-fields">
@@ -170,6 +171,7 @@ function schedule_save_metaboxes() {
 		't_live' => __( 'Talk Live' ),
 		't_audience' => __( 'Target Audience' ),
 		't_language' => __( 'Target Language' ),
+		't_recording_link' => __( 'Recording URL' ),
 	);
 	foreach ( $arr as $key => $item ) {
 		update_post_meta( $post->ID, $key, $_POST[ $key ] );
