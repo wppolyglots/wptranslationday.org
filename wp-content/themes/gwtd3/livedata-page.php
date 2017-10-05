@@ -141,20 +141,20 @@ $pic_size = 100;
 						<h1 class="livedata-counter"><?php echo $n_format; ?></h1>
 					</div>
 					<div class="eight columns minor borderleft">
-						<h3 class="text-color-blue--light livedata--exception-mt1rem">Translated strings in the 120 top plugins</h3>
+						<h3 class="text-color-blue--light livedata--exception-mt1rem">Strings still waiting to be translated in the Top 120 plugins</h3>
 					</div>
 				</div>
 				<?php endif; ?>
 
-				<?php if ( intval( $top120->new_translated_strings ) > 0 ) : ?>
+				<?php if ( intval( $top120->new_translated_strings ) < 0 ) : ?>
 				<div class="row">
 					<div class="four columns major">
 						<h1 class="text-color-blue--lighter livedata--exception-relativetopminus40 livedata-counter">
-							+<span class="data-number" data-value="<?php echo intval( $top120->new_translated_strings ); ?>"><?php echo $top120->new_translated_strings; ?></span>
+							+<span class="data-number" data-value="<?php echo intval( $top120->new_translated_strings ); ?>"><?php echo str_replace("-", "", $top120->new_translated_strings); ?></span>
 						</h1>
 					</div>
 					<div class="eight columns minor borderleft">
-						<h3 class="text-color-blue--lighter livedata--exception-relativetopminus40">since the beginning of WPTD3</h3>
+						<h3 class="text-color-blue--lighter livedata--exception-relativetopminus40">Strings translated in the Top 120 plugins since the beginning of WPTD3</h3>
 					</div>
 				</div>
 				<?php endif; ?>

@@ -14,3 +14,7 @@
 		width: 100% !important;
 	}
 }
+
+#wpfooter {
+	display: none;
+}
