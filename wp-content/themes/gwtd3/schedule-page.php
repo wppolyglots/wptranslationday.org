@@ -19,13 +19,14 @@ $pic_size = 100;
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">
-					<h2>Look who's talking now!</h2>
+					<h2>See who spoke and catch the video</h2>
 				</div>
 			</div>
 			<div class="row">
 				<div class="bgholder nowbgholder"></div>
-				<div class="talk-holder">
-
+				<div class="ten columns talk-holder offset-by-two">
+					<h4>Yup the event is over, and it was awesome!</h4>
+					<h4>But if you missed one or more talks - or you just want to see them again - don't worry: below, after each talk, you will find the link to the recording.</h4>
 				</div>
 			</div>
 		</div>
@@ -35,8 +36,8 @@ $pic_size = 100;
 			<div class="row">
 				<div class="twelve columns">
 					<header class="entry-header">
-						<h1>The 24hr timeline!</h1>
-						<h4 class="subtitle">If you missed a talk don't worry: after the event you will be able to see them on <a href="https://wordpress.tv/event/global-wordpress-translation-day-3/" target="_blank">WordPress.tv</a></h4>
+						<h1 style="font-size:4.6rem;">The 24hr timeline for September 30, 2017!</h1>
+<!--						<h4 class="subtitle">If you missed a talk don't worry: after the event you will be able to see them on <a href="https://wordpress.tv/event/global-wordpress-translation-day-3/" target="_blank">WordPress.tv</a></h4>-->
 					</header><!-- .entry-header -->
 				</div>
 			</div>
@@ -54,6 +55,7 @@ $pic_size = 100;
 					$t_live = get_post_meta( get_the_ID(), 't_live', true );
 					$t_audience = get_post_meta( get_the_ID(), 't_audience', true );
 					$t_language = get_post_meta( get_the_ID(), 't_language', true );
+					$t_video = get_post_meta( get_the_ID(), 't_recording_link', true );
 					echo '<div class="row" data-duration="' . $t_duration . '" data-when="now" data-time="2017-09-30 ' . $t_time . ':00">';
 					echo '<div class="two columns the-time">';
 					echo '<h1 class="utctime">' . $t_time . '</h1>';
@@ -77,6 +79,7 @@ $pic_size = 100;
 					echo '<h4 class="talk-info">';
 					echo $t_live . ' | ' . $t_duration . ' minutes | ' . $t_language . ' | audience: ' . $t_audience;
 					echo '</h4>';
+					echo '<h3 style="font-size: 3rem;"><a href="' . $t_video . '" target="_blank">watch the video</a></h3>';
 					echo '</div>';
 					echo '</div>';
 				endwhile;
@@ -92,7 +95,7 @@ $pic_size = 100;
 		(function( $ ) {
 			function fixTalkList() {
 				$( '.utctime' ).each( function () {
-					$( '.current-talk .talk-holder' ).html('');
+//					$( '.current-talk .talk-holder' ).html('');
 					var talkTimeUTC = $( this ).parent().parent().attr( 'data-time' );
 					var timeLocal = moment.utc( $( this ).parent().parent().attr( 'data-time' ) ).toDate();
 					var currTimeUTC = moment().utc().format( 'YYYY-MM-DD HH:mm:ss' );
@@ -111,28 +114,28 @@ $pic_size = 100;
 					$( this ).parent().children( '.localtime' ).html( timeLocal );
 				} );
 
-				$( 'div[data-when=past]' ).each( function () {
-					$( this ).css( 'opacity', '.4' );
-				} );
+//				$( 'div[data-when=past]' ).each( function () {
+//					$( this ).css( 'opacity', '.4' );
+//				} );
 
-				var currTalk = $( 'div[data-when=now]' ).clone();
-				$( '.current-talk .talk-holder' ).html( currTalk );
+//				var currTalk = $( 'div[data-when=now]' ).clone();
+//				$( '.current-talk .talk-holder' ).html( currTalk );
 			}
 
 			$( 'document' ).ready( function() {
 				fixTalkList();
-				setInterval(function () {
-					fixTalkList();
-					}, 60000);
-
-				var theLiveDay = '2017-09-30';
-				var currDay = moment().utc().format( 'YYYY-MM-DD' );
-
-				if ( theLiveDay != currDay ) {
-					$('#now.section.current-talk').css('display', 'none');
-					$('.entry-header .subtitle').css('display', 'none');
-					$('.entry-header h1').html('The 24hr timeline for September 30, 2017');
-				}
+//				setInterval(function () {
+//					fixTalkList();
+//					}, 60000);
+//
+//				var theLiveDay = '2017-09-30';
+//				var currDay = moment().utc().format( 'YYYY-MM-DD' );
+//
+//				if ( theLiveDay != currDay ) {
+//					$('#now.section.current-talk').css('display', 'none');
+//					$('.entry-header .subtitle').css('display', 'none');
+//					$('.entry-header h1').html('The 24hr timeline for September 30, 2017');
+//				}
 			})
 		})( jQuery );
 	</script>
