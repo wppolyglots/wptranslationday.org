@@ -76,7 +76,7 @@ $pic_size = 100;
 					}
 					echo '</a>';
 					echo wp_trim_words( get_the_content(), 38, '...' );
-					echo '<h4 class="talk-info">';
+					echo '<h4 class="talk-info" style="margin-bottom:0;">';
 					echo $t_live . ' | ' . $t_duration . ' minutes | ' . $t_language . ' | audience: ' . $t_audience;
 					echo '</h4>';
 					echo '<h3 style="font-size: 3rem;"><a href="' . $t_video . '" target="_blank">watch the video</a></h3>';
